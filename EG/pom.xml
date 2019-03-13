@@ -7,6 +7,7 @@
   <modules>
   	<module>edu.zut.com.software</module>
   	<module>service</module>
+<<<<<<< HEAD
   	<module>service-web</module>
   </modules>
   
@@ -50,4 +51,7 @@
   <!-- =========================text end==================== -->
 </dependencies>
 
+=======
+  </modules>
+>>>>>>> 9fd6eed027141f5efe4a2cd5618a29dd2e458e52
 </project>
