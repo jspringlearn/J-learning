@@ -7,5 +7,51 @@
   <modules>
   	<module>edu.zut.com.software</module>
   	<module>service</module>
+<<<<<<< HEAD
+  	<module>service-web</module>
   </modules>
+  
+  
+ <dependencies>
+  <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>5.1.5.RELEASE</version>
+</dependency>
+
+
+
+
+
+  
+   <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>5.1.5.RELEASE</version>
+   </dependency>
+  
+  <!-- =========================text begin==================== -->
+    <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+    </dependency>
+ 
+   <!-- spring对测试框架的简单封装功能 -->
+   
+   <dependency>
+  <groupId>org.springframework</groupId>
+  <artifactId>spring-test</artifactId>
+  <version>${spring.version}</version>
+  </dependency>
+  
+   
+  <!-- =========================text end==================== -->
+</dependencies>
+
+=======
+  </modules>
+>>>>>>> 9fd6eed027141f5efe4a2cd5618a29dd2e458e52
 </project>
