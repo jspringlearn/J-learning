@@ -1,5 +1,8 @@
-package service;
+package edu.zut.cs.software.bean;
 
+import org.springframework.stereotype.Service;
+
+@Service("UserManager")
 public class UserManager implements ExeTest {
 
 	public String say(String name) {

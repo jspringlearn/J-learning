@@ -7,12 +7,21 @@
   <modules>
   	<module>edu.zut.com.software</module>
   	<module>service</module>
-<<<<<<< HEAD
   	<module>service-web</module>
   </modules>
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<spring.version>5.1.0.RELEASE</spring.version>
+		<spring-data-jpa.version>2.1.0.RELEASE</spring-data-jpa.version>
+		<hibernate.version>5.2.16.Final</hibernate.version>
+	</properties>
   
   
  <dependencies>
+ 
+ 
+ 
   <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 <dependency>
     <groupId>org.springframework</groupId>
@@ -47,11 +56,30 @@
   <version>${spring.version}</version>
   </dependency>
   
+  
+  <dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+  
    
   <!-- =========================text end==================== -->
 </dependencies>
 
-=======
-  </modules>
->>>>>>> 9fd6eed027141f5efe4a2cd5618a29dd2e458e52
 </project>
