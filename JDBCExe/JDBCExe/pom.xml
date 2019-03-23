@@ -36,11 +36,10 @@
 		</dependency>
 
 
-		<dependency>
+		<dependency><!-- JUnit单元测试框架 -->
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
+			<version>4.12</version>
 		</dependency>
 	</dependencies>
 
@@ -52,4 +51,28 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.6.RELEASE</version>
 	</parent>
+	
+	<dependencyManagement>
+     <dependencies>
+        <dependency>
+            <!-- 从 Spring Boot 导入依赖管理 -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>1.5.3.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        
+        <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.0</version>
+		</dependency>
+    </dependencies>
+</dependencyManagement>
 </project>
