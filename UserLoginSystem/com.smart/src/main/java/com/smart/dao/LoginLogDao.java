@@ -9,9 +9,9 @@ import com.smart.domain.LoginLog;
 @Repository
 public class LoginLogDao {
 	
-	private JdbcTemplate jdbcTemplate;
+	private static JdbcTemplate jdbcTemplate;
 	private final static String INSERT_LOG_SQL="INSERT INTO t_login_log(user_id,ip,login_datetime) VALUES(?,?,?)"; 
-	public void insertLoginLog(LoginLog loginLog) {
+	public static void insertLoginLog(LoginLog loginLog) {
 		Object[]args= {loginLog.getUserId(),loginLog.getIp(),loginLog.getLoginDate()};
 		jdbcTemplate.update(INSERT_LOG_SQL,args);
 	}
