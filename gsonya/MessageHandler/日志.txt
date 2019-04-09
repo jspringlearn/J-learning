@@ -1,0 +1,13 @@
+2019-4-6 
+未解决：1.从Excel中读取编号和成绩出来的是日期形式
+             2.未实现写入数据库
+已实现：发送、接收数据
+2019-4-8 
+问题：You have an error in your SQL syntax（出错）
+解决：将MySQL中的关键字当做表名
+       参考：https://blog.csdn.net/qq_29656961/article/details/80158283
+问题：Duplicate entry '1' for key 'PRIMARY'
+解决:主键重复
+       参考：https://blog.csdn.net/zhangyr_student/article/details/80119238
+2019-4-9 
+完善程序
