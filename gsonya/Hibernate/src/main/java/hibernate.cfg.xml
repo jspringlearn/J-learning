@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- configure the database setting -->
+        <property name="connection.username">root</property>
+        <property name="connection.password">1234</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/runoob</property>
+
+        <!-- configure the hibernate setting -->
+        <!-- transaction is supported by org.hibernate.dialect.MySQL5InnoDBDialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+<!-- show sql in the console -->
+        <property name="show_sql">true</property>
+　　　　 <!-- create and update the database automaticlly -->
+        <property name="hbm2ddl.auto">update</property>
+        
+        <!-- javax.persistence.validation.mode默认情况下是auto的，就是说如果不设置的话它是会自动去你的classpath下面找一个
+        bean-validation**包，但是找不到，所以beanvalitionFactory错误 -->
+        <property name="javax.persistence.validation.mode">none</property>
+  
+      <mapping resource="cn/gsonya/Hibernate/model/Person.hbm.xml" />
+    
+    </session-factory>
+</hibernate-configuration>
