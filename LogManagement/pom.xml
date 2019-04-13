@@ -70,7 +70,8 @@
                 <failOnMissingWebXml>false</failOnMissingWebXml>
             </configuration>
         </plugin>
-			
-		</plugins>
-	</build>
+
+    </plugins>
+</build>
+
 </project>
