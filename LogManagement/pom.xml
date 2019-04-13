@@ -70,12 +70,8 @@
                 <failOnMissingWebXml>false</failOnMissingWebXml>
             </configuration>
         </plugin>
-<<<<<<< HEAD
+
     </plugins>
-</build> 
-=======
-			
-		</plugins>
-	</build>
->>>>>>> d6160ec00f7fa28b63b3af970e86d2131ba141e1
+</build>
+
 </project>
