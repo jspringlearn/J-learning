@@ -1,0 +1,6 @@
+2019-4-10
+导入Hibernate,搭建Hibernate环境
+2019-4-11
+弃用org.hibernate.service.ServiceRegistryBuilder类 
+各个版本的sessionfactory写法：https://blog.csdn.net/weixin_38447578/article/details/78516239
+问题：还没有实现测试类和映射关系
