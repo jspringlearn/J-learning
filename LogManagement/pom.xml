@@ -1,7 +1,12 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+=======
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+>>>>>>> b33545086fb7a60df006d940cb30b1a82d2dbfba
   <modelVersion>4.0.0</modelVersion>
   <groupId>zut.com.software</groupId>
   <artifactId>LogManagment</artifactId>
@@ -29,12 +34,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<version>5.1.5.RELEASE</version>
 		</dependency>
 		<!-- ============== test begin ============== -->
-		<dependency><!-- JUnitå•å…ƒæµ‹è¯•æ¡†æž¶ -->
+		<dependency><!-- JUnitµ¥Ôª²âÊÔ¿ò¼Ü -->
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 		</dependency>
-		<dependency><!-- springå¯¹æµ‹è¯•æ¡†æž¶çš„ç®€å•å°è£…åŠŸèƒ½ -->
+		<dependency><!-- spring¶Ô²âÊÔ¿ò¼ÜµÄ¼òµ¥·â×°¹¦ÄÜ -->
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
