@@ -50,6 +50,16 @@
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.5</version>
+		</dependency>
   </dependencies>
   
   <build>
@@ -76,21 +86,7 @@
 			</plugin>
 		
 		
-		<!-- 上课讲的 -->
-		<plugin>
-		        <groupId>io.github.divinespear</groupId>
-				<artifactId>jpa-schema-maven-plugin</artifactId>
-				<version>0.2.1</version>
-				<configuration>
-				<format>true</format>
-				<scriptAction>drop-and-create</scriptAction>
-				<datebaseAction>drop-and-create</datebaseAction>
-				<vandor>hibernate</vandor>
-				<packageToScan>cn.gsonya.Practice</packageToScan>
-				<jdbcDriver>com.mysql.cj.jdbc.Driver</jdbcDriver>
-		        </configuration>
-		</plugin>
-		<!-- end -->
+		
 		
 		
 	</plugins>

@@ -33,9 +33,7 @@ public class GenericManagerImpl<T extends BaseEntity,PK extends Serializable>imp
 	public T save(T entity) {
 		return this.dao.saveAndFlush(entity);
 	}
-	@Override
 	public T findById(PK id) {
-		// TODO Auto-generated method stub
 		return this.dao.getOne(id);
 	}
 
