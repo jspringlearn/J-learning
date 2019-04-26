@@ -2,11 +2,14 @@ package cn.gsonya.Practice.base.domain;
 
 import java.util.List;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
@@ -16,6 +19,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+@MappedSuperclass
+@Access(value=AccessType.FIELD)
 public class BaseTreeEntity<T extends BaseTreeEntity<T>> extends BaseEntity {
 	private static final long serialVersionUID = -5961264427451119166L;
 
