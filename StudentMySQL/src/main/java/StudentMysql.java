@@ -6,9 +6,9 @@ import java.sql.Statement;
 	
 public class StudentMysql {
 	   public static void main(String[] args)  {
-	    String url="jdbc:mysql://127.0.0.1:3306/sampledb";
+	    String url="jdbc:mysql://localhost:3306/sampledb";
 	    String username="root",password="20161121bin";
-	       Connection con = null;
+	    Connection con = null;
 	       try {
 	       	Class.forName("com.mysql.jdbc.Driver");
 	       	con=DriverManager.getConnection(url, username, password);
