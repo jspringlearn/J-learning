@@ -2,6 +2,7 @@ package cn.gsonya.Practice.admin.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+//import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -11,7 +12,10 @@ import cn.gsonya.Practice.base.domain.BaseEntity;
 @Table(name="T_ADMIN_USER")
 @Entity
 public class User extends BaseEntity {
-	private static final long serialVersionUID = -4376674977047164142L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7964741454191232829L;
 	@Column(name="EMAIL")
 	String email;
 	@ManyToOne

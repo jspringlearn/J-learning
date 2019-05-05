@@ -23,7 +23,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
 @Access(value=AccessType.FIELD)
 public class BaseEntity extends BaseDomain{
-	private static final long serialVersionUID = -6163675075289529459L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8155530087434149488L;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DATECREATED")
 	protected Date dateCreated = new Date();

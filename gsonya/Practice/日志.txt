@@ -10,4 +10,16 @@
 2019-4-23 15:00-17:00
 学习maven
 2019-4-25 19:00-21:00
-完成Practice-dao
+编写Practice-dao
+2019-4=27 14:30-16:30
+完成Practice-dao;
+实现了类的序列化；
+未解决错误：The entity has no primary key attribute defined 
+2019-4-28 14:30-16:30
+未解决
+2019-4-29 14:30-16:30
+学习spring-data-jpa实体类继承抽象类如何映射父类的属性到数据库
+2019-5-5 17:00-19:00
+将The entity has no primary key attribute defined 设置为低级警告
+https://blog.csdn.net/xqhrs232/article/details/83863671
+完成Practice-service

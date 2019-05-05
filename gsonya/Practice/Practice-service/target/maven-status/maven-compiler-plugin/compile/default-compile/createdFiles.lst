@@ -1,0 +1,4 @@
+cn\gsonya\Practice\admin\service\GroupManager.class
+cn\gsonya\Practice\admin\service\impl\GroupManagerImpl.class
+cn\gsonya\Practice\admin\service\impl\UserManagerImpl.class
+cn\gsonya\Practice\admin\service\UserManager.class
