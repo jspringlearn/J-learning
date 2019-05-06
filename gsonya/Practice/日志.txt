@@ -23,3 +23,9 @@
 将The entity has no primary key attribute defined 设置为低级警告
 https://blog.csdn.net/xqhrs232/article/details/83863671
 完成Practice-service
+2019-5-6 15:00-17:00
+创建Practice-web
+创建maven web项目  https://www.cnblogs.com/codejackanapes/p/5461940.html
+错误：The superclass "javax.servlet.http.HttpServlet" was not found on the Java Build Path
+解决：https://blog.csdn.net/testcs_dn/article/details/36455669
+完成Practice-web

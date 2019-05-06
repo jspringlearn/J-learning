@@ -8,6 +8,7 @@
   	<module>Practice-base</module>
   	<module>Practice-dao</module>
   	<module>Practice-service</module>
+  	<module>Practice-web</module>
   </modules>
   
   <properties>

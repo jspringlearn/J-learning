@@ -1,7 +1,5 @@
 package cn.gsonya.Practice.admin.dao;
 
-import static org.junit.Assert.*;
-
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
