@@ -22,7 +22,11 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @MappedSuperclass
 @Access(value=AccessType.FIELD)
 public class BaseTreeEntity<T extends BaseTreeEntity<T>> extends BaseEntity {
-	private static final long serialVersionUID = -5961264427451119166L;
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1612239218953614412L;
 
 	@JsonManagedReference("parent-children")
 	@OneToMany(mappedBy = "parent", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)

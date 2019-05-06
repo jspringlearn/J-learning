@@ -7,11 +7,6 @@
   </parent>
   <artifactId>Practice-dao</artifactId>
   <dependencies>
-	<dependency>
-		<groupId>cn.gsonya.Practice</groupId>
-		<artifactId>Practice-base</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</dependency>
 	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 	<dependency>
 	    <groupId>org.hibernate</groupId>
@@ -30,6 +25,11 @@
 		<artifactId>mysql-connector-java</artifactId>
 		<version>8.0.15</version>
 	</dependency>
+	<dependency>
+		<groupId>cn.gsonya.Practice</groupId>
+		<artifactId>Practice-base</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
   </dependencies>
   <build>
 		<plugins>
@@ -45,9 +45,9 @@
 					<vendor>hibernate</vendor>
 					<packageToScan>cn.gsonya.Practice</packageToScan>
 					<jdbcDriver>com.mysql.cj.jdbc.Driver</jdbcDriver>
-					<jdbcUrl>jdbc:mysql://202.196.37.168:3306/test</jdbcUrl>
+					<jdbcUrl>jdbc:mysql://202.196.37.168:3306/sun</jdbcUrl>
 					<jdbcUser>student</jdbcUser>
-					<jdbcPassword>19980107</jdbcPassword>
+					<jdbcPassword>Student_123456</jdbcPassword>
 					<hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
 					<properties>
 						<hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>

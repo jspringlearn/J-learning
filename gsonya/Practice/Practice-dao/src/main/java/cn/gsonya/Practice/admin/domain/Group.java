@@ -15,9 +15,12 @@ import cn.gsonya.Practice.base.domain.BaseTreeEntity;
 
 @Table(name="T_ADMIN_GROUP")
 @Entity
-@NamedQueries({ @NamedQuery(name = "Group.getRoot", query = "select g from Group g where g.parent is null") })
+//@NamedQueries({ @NamedQuery(name = "Group.getRoot", query="select g from Group g where g.parent is null") })
 public class Group extends BaseTreeEntity<Group> {
-	private static final long serialVersionUID=-1751952224371998469L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3689937331799125607L;
 	@Column(name="NAME")
 	String name;
 	@OneToMany(mappedBy="group",cascade=CascadeType.REMOVE,fetch=FetchType.EAGER)

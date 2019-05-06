@@ -9,7 +9,10 @@ import cn.gsonya.Practice.base.domain.BaseEntity;
 @Entity
 @Table(name="T_DEVICE")
 public class Device extends BaseEntity {
-	private static final long serialVersionUID = 2950256638725713722L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5240862568930604781L;
 	@Column(name="LOCATION")
 	String location;
 	@Column(name="PRICE")

@@ -9,7 +9,10 @@ import cn.gsonya.Practice.base.domain.BaseEntity;
 @Table(name="T_ADMIN_ROLE")
 @Entity
 public class Role extends BaseEntity {
-	private static final long serialVersionUID=1L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Column
 	String name;
 	public String getName() {

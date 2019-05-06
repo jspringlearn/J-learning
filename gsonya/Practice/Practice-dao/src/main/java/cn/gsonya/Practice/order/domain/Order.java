@@ -11,7 +11,10 @@ import cn.gsonya.Practice.base.domain.BaseEntity;
 @Entity
 @Table(name="T_ORDER")
 public class Order extends BaseEntity {
-	private static final long serialVersionUID=-31279394964769200L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4853041483089883105L;
 	@Column(name="CODE")
 	String code;
 	@Column(name="ORDER_TIME")
