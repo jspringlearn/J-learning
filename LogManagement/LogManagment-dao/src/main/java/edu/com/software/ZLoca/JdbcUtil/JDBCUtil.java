@@ -7,10 +7,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class JDBCUtil {
-	  public static  String url="jdbc:mysql://localhost:3306/test?rewriteBatchedStatements=true";
+	  public static  String url="jdbc:mysql://127.0.0.1:3306/test";
 	  public static String user="root";
 	  public static String password="20161121bin";
-	  public static String Drivername="com.mysql.jdbc.Driver";
+	  public static String Drivername="com.mysql.cj.jdbc.Driver";
 	  static {
 		  try {
 			Class.forName(JDBCUtil.Drivername);
