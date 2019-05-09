@@ -20,12 +20,12 @@ public class UserDaoImpl implements IUserDao{
 		PreparedStatement ps=null;
 		try {
 			 conn = JDBCUtil.getconn();
-		String sql="insert into user(Name,Address,Phone) values(?,?,?)";
-			ps = conn.prepareStatement(sql);
-			ps.setString(1,user.getName());
-		    ps.setString(2,user.getAddress());
-		    ps.setString(3,user.getPhone());
-		    ps.executeUpdate(sql);
+		     String sql="insert into user(Name,Address,Phone) values(?,?,?)";
+			 ps = conn.prepareStatement(sql);
+			 ps.setString(1,user.getName());
+		     ps.setString(2,user.getAddress());
+		     ps.setString(3,user.getPhone());
+		     ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
@@ -34,15 +34,15 @@ public class UserDaoImpl implements IUserDao{
 	}
 
 	@Override
-	public void delete(String id) {
+	public void delete(String name) {
 		Connection conn=null;
 		PreparedStatement ps=null;
 	     try {
 	    	 conn=JDBCUtil.getconn();
-	    String sql="delete from user where Id=?";
+	    String sql="delete from user where Name=?";
 	    ps=conn.prepareStatement(sql);
-	    ps.setString(1,id);
-	     ps.executeUpdate(sql);    	 
+	    ps.setString(1,name);
+	     ps.executeUpdate();    	 
 	     }catch(Exception e) {
 	    	 e.printStackTrace();
 	     }finally {
@@ -51,18 +51,18 @@ public class UserDaoImpl implements IUserDao{
 	}
 
 	@Override
-	public void update(String id, User user) {
+	public void update(int id, User user) {
 		Connection conn=null;
 		PreparedStatement ps=null;
 	     try {
 	    	 conn=JDBCUtil.getconn();
 	  
-	    String sql="update  user set name=?,?,? where Id='"+id+"'";
+	    String sql="update user set Name=?,Address=?,Phone=? where id='"+id+"'";
 	      ps=conn.prepareStatement(sql);
 	      ps.setString(1, user.getName());
 	      ps.setString(2, user.getAddress());
 	      ps.setString(3, user.getPhone());
-	     ps.executeUpdate(sql);
+	     ps.executeUpdate();
 	    	 
 	     }catch(Exception e) {
 	    	 e.printStackTrace();
@@ -74,20 +74,20 @@ public class UserDaoImpl implements IUserDao{
 	}
 
 	@Override
-	public User get(String Id) {
+	public User get(String name) {
 		Connection conn=null;
 		Statement st=null;
 		ResultSet rs=null;
 	     try {
 	    	 conn=JDBCUtil.getconn();
 	    st=conn.createStatement();
-	    String sql="select * from student where id='"+Id+"'";
+	    String sql="select * from user where Name='"+name+"'";
 	    rs= st.executeQuery(sql);
 	     if(rs.next()) {
 	    	 User user=new User();
-	    	 user.setName(rs.getString("name"));
-	    	 user.setAddress(rs.getString("address"));
-	    	 user.setPhone(rs.getString("phone"));
+	    	 user.setName(rs.getString("Name"));
+	    	 user.setAddress(rs.getString("Address"));
+	    	 user.setPhone(rs.getString("Phone"));
 	    	 return user;
 	     } 
 	     }catch(Exception e) {
@@ -112,9 +112,9 @@ public class UserDaoImpl implements IUserDao{
 	    List<User> list=new ArrayList<User>();
 	     while(rs.next()) {
 	    	User user=new User();
-	    	user.setName(rs.getString("name"));
-	    	user.setAddress(rs.getString("address"));
-	    	user.setPhone(rs.getString("phone"));
+	    	user.setName(rs.getString("Name"));
+	    	user.setAddress(rs.getString("Address"));
+	    	user.setPhone(rs.getString("Phone"));
 	    	 list.add(user);
 	     } 
 	     return list;

@@ -1,6 +1,7 @@
 package edu.com.software.ZLoca.domain;
 
 public class User {
+	
 	private String name;
 	private String Address;
 	private String Phone;
@@ -22,5 +23,8 @@ public class User {
 	public void setPhone(String phone) {
 		Phone = phone;
 	}
-
+	@Override
+    public String toString() {
+    	return "User [姓名=" + name + ", 住址=" + Address + ", 电话=" + Phone + "]";
+    }
 }

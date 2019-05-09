@@ -6,11 +6,11 @@ import edu.com.software.ZLoca.domain.User;
 	
 public  interface IUserDao {
 
-		 void save(User stu) ;
-		 void delete(String id);
-		 void update(String id,User stu);
+		 void save(User user) ;
+		 void delete(String name);
+		 void update(int id,User user);
 		 
-		 User get(String Id);
+		 User get(String Name);
 		 List<User> getAll();
 
 }
