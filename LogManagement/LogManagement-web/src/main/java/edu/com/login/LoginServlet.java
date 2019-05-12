@@ -36,10 +36,10 @@ public class LoginServlet extends HttpServlet {
 		}
 		//检查用户名密码是否正确
 		if(stu!=null) {
-			response.getWriter().write("Login Success！");
+			response.getWriter().write("Login Success!");
 		}else
 		{
-			response.getWriter().write("Login failed！");
+			response.getWriter().write("Login failed!");
 		}
 	}
 
