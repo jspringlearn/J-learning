@@ -1,0 +1,29 @@
+package com.smart.web;
+
+
+
+import java.net.URL;
+
+import org.slf4j.impl.StaticLoggerBinder;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@EnableAutoConfiguration
+public class BdsDaemo {
+	@RequestMapping("/")
+	public String index() {
+		return("欢迎观光中原工学院");
+	}
+
+	public static void main(String[] args)throws Exception {
+		URL urlOfClass = StaticLoggerBinder.class.getClassLoader().getResource("org/slf4j/spi/StaticLoggerBinder.class");//InsertProgarm是该语句所在的类
+        System.out.println(urlOfClass);
+		
+		SpringApplication.run(BdsDaemo.class, args);
+
+	}
+
+}
