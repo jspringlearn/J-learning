@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="chapter3"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="chapter3"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.wizards.MavenProjectSelectionDialog">
+		<item value="480" key="width"/>
+		<item value="807" key="x"/>
+		<item value="216" key="y"/>
+		<item value="548" key="height"/>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\Java\workspace\LogManagement"/>
+			<item value="C:\Users\dell\Desktop\ming616-java_example-master\java_example"/>
+			<item value="D:\Java\workspace\JExe\month\First"/>
+			<item value="C:\Users\dell\Desktop\funda-master\src\test\java\com\qchery\funda"/>
+			<item value="C:\Users\dell\Desktop\funda-master\src"/>
+			<item value="D:\Java\新建文件夹\EG"/>
+			<item value="D:\Java\workspace\EG"/>
+			<item value="D:\xiaoming\sun"/>
+			<item value="D:\Java\workspace\EG\service-web"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+			<item value="chapter3"/>
+			<item value="delltell-base"/>
+			<item value="delltell-dao"/>
+			<item value="delltell-web"/>
+			<item value="delltell-service"/>
+			<item value="LogManagement-web"/>
+			<item value="LogManagement-service"/>
+			<item value="zut.edu.com.spring"/>
+			<item value="ZExe-web"/>
+			<item value="service-web"/>
+			<item value="service"/>
+			<item value="edu.zut.cs.software"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="D:\Java\workspace\LogManagement"/>
+			<item value="D:\Java\workspace\JExe"/>
+			<item value="D:\Java\workspace\JSpring"/>
+			<item value="D:\Java\workspace\ZExe"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="org.chapter3"/>
+		</list>
+		<list key="groupId">
+			<item value="chapter3"/>
+		</list>
+		<list key="artifactId">
+			<item value="chapter3"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>
