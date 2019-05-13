@@ -6,9 +6,10 @@
 </head>
 <body>
 <h1>用户注册</h1>
-   <img src="/LogManagement-web/CheakCodeServlet"><br/>
-  <input type="text" placeholder="请输入验证码" ><br/><br/>
+<form action="/LogManagement-web/RegistServlet">
+   <img src="/LogManagement-web/CheakCodeServlet" onclick="change(this)"><br/>
+  <input type="text" placeholder="请输入验证码" name="code"><br/><br/>
   <input type="submit" value="注册">
-
+</form>
 </body>
 </html>
