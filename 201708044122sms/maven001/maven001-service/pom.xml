@@ -7,9 +7,15 @@
     <artifactId>maven001</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>cn.song.sarah</groupId>
+  
+  
+  
+  
   <artifactId>maven001-service</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  
+  
+  
+  
   <name>maven001-service</name>
   <url>http://maven.apache.org</url>
   <properties>
