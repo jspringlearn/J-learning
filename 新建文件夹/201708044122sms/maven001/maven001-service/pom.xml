@@ -9,6 +9,17 @@
   </parent>
   
   
+  <profiles>
+    <profile>
+        <modules>
+            <module>../generator</module>
+            <module>../admin</module>       
+        </modules>
+    </profile>
+  </profiles>
+  
+  
+  
   
   
   <artifactId>maven001-service</artifactId>
