@@ -8,7 +8,8 @@ public class ManagerimplTest {
 
 	@Test
 	public void test() {
-		System.out.println("yangyb");
+
+		System.out.println(" %");
 
 	}
 
