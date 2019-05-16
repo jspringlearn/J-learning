@@ -7,36 +7,11 @@
   </parent>
   <artifactId>logistics-dao</artifactId>
   <dependencies>
-		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
 		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.1-api</artifactId>
-			<version>1.0.2.Final</version>
+			<groupId>zut.com.software.bean</groupId>
+			<artifactId>logistics-base</artifactId>
+			<version>0.0.1-SNAPSHOT</version>			
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.8.1</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-annotations</artifactId>
-			<version>2.9.8</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-jpa</artifactId>
-			<version>2.1.6.RELEASE</version>
-		</dependency>
-
-
-
-
-
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -56,7 +31,7 @@
 			<version>8.0.15</version>
 		</dependency>
 	</dependencies>
-
+	
 	<build>
 		<plugins>
 			<!-- To use the plugin goals in your POM or parent POM -->
@@ -71,16 +46,21 @@
 					<vendor>hibernate</vendor>
 					<packageToScan>edu.zut.cs.software</packageToScan>
 					<jdbcDriver>com.mysql.cj.jdbc.Driver</jdbcDriver>
-					<jdbcUrl>jdbc:mysql://localhost:3306/test</jdbcUrl>
-					<jdbcUser>root</jdbcUser>
-					<jdbcPassword>201708044230</jdbcPassword>
+					<jdbcUrl>jdbc:mysql://202.196.37.168:3306/sun</jdbcUrl>
+					<jdbcUser>student</jdbcUser>
+					<jdbcPassword>Student_123456</jdbcPassword>
 					<hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
 					<properties>
 						<hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
 					</properties>
 				</configuration>
 				<dependencies>
-
+					<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
+					<dependency>
+						<groupId>org.hibernate.javax.persistence</groupId>
+						<artifactId>hibernate-jpa-2.1-api</artifactId>
+						<version>1.0.2.Final</version>
+					</dependency>
 					<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 					<dependency>
 						<groupId>org.hibernate</groupId>
