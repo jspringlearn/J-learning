@@ -8,11 +8,8 @@
 	<modules>
 		<module>maven001-service</module>
 		<module>maven001-web</module>
-		
-		<module>m001-service</module>
-		<module>m001-web</module>
-    <module>maven001-dao</module>
-    <module>maven001-base</module>
+        <module>maven001-dao</module>
+        <module>maven001-base</module>
   </modules>
 
 

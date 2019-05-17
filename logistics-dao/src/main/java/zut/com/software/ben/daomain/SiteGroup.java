@@ -38,7 +38,7 @@ public class SiteGroup extends BaseEntity{
 	     * 延迟加载：fetch = FetchType.LAZY
 	     * 映射：mappedBy = "sitegroup"
 	     */
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "sitegroup")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "group")
 	public List<Site> getSites() {
 		return sites;
 	}

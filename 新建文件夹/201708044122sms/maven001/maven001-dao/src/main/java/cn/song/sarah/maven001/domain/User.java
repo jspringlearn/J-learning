@@ -3,7 +3,8 @@ package cn.song.sarah.maven001.domain;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Table(name = "t3")
+//@Table(name = "t3")
+@Table(name = "T_ADMIN_USER")
 @Entity
 
 
@@ -11,8 +12,6 @@ public class User {
 	private String kinds;   //汽车种类
 	private String address;   //地址
 	private String volume;    //容量
-	
-	
 	
 	
 	

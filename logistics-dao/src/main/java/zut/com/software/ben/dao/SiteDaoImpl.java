@@ -25,10 +25,11 @@ public class SiteDaoImpl extends BaseJDBCDao implements SiteDao {
 	//添加Site
 	@Override
 	public void addSite(Site site) {
-		String sql="insert into site(site_id,name,info,group_id) "
-				+ "values(?,?,?,?)";
+		String sql="insert into site(site_id,order_id,name,info,group_id) "
+				+ "values(?,?,?,?,?)";
 		String[] params= {null,
 				site.getName(),
+				site.getOrderId(),
 				site.getInfo(),
 				String.valueOf(site.getGroup())};
 		int flag=0;
@@ -43,9 +44,9 @@ public class SiteDaoImpl extends BaseJDBCDao implements SiteDao {
 	}
     //删除Site
 	@Override
-	public void deleteSite(String name) {
-		String sql="delete from site where name=?";
-		String[] params= {name};
+	public void deleteSite(String orderId) {
+		String sql="delete from site where order_id=?";
+		String[] params= {orderId};
 		int flag=0;
 		flag=this.exeUpd(sql, params);
 		if(flag!=0) {
@@ -57,27 +58,28 @@ public class SiteDaoImpl extends BaseJDBCDao implements SiteDao {
 	}
 	//修改信息
 	public void upd(Site site) {
-		String sql="update site set name=?,info=?,group_id=? where name=?";
+		String sql="update site set name=?,info=?,group_id=? where order_id=?";
 		String[] params= {
 				site.getName(),
 				site.getInfo(),
-				String.valueOf(site.getGroup())};
+				String.valueOf(site.getGroup()),
+				site.getOrderId()};
 		int flag=0;
 		flag=this.exeUpd(sql, params);
 		if(flag!=0) {
-			System.out.println("添加成功!");
+			System.out.println("修改成功!");
 		}else {
-			System.out.println("添加失败!");
+			System.out.println("修改失败!");
 		}
 	}
 	//单个查找
-	public Site findone(String name){
+	public Site findone(String orderId){
 		Site site=null;
 		
 		try {
 			conn=this.getConn();
-			ps=conn.prepareStatement("select * from site where name=?");
-			ps.setString(1, name);
+			ps=conn.prepareStatement("select * from site where order_id=?");
+			ps.setString(1, orderId);
 			rs=ps.executeQuery();
 			site=new Site();
 			site.setSiteId(rs.getInt("site_id"));
@@ -94,6 +96,24 @@ public class SiteDaoImpl extends BaseJDBCDao implements SiteDao {
 	public List findAll() {
 		List list=new ArrayList();
 		
+		try {
+			conn=this.getConn();
+			ps=conn.prepareStatement("select * from site");
+			rs=ps.executeQuery();
+			while(rs.next()) {
+				Site site=new Site();
+				site.setSiteId(rs.getInt("site_id"));
+				site.setName(rs.getString("name"));
+				site.setInfo(rs.getString("info"));
+				site.setOrderId(rs.getString("order_id"));
+				list.add(site);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			this.closeAll(rs, ps, conn);
+		}
 		
 		return list;
 	}

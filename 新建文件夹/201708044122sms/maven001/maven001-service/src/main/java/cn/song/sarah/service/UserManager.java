@@ -2,7 +2,7 @@ package cn.song.sarah.service;
 
 import java.util.List;
 
-public interface UserManager {
+public interface UserManager<User> {
 	
 	String sayHello(String name);
 
