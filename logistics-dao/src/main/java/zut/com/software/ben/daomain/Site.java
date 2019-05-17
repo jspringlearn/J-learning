@@ -6,10 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import zut.com.sofware.ben.Group;
 import zut.com.sofware.ben.domain.BaseEntity;
 
 
@@ -27,16 +27,16 @@ public class Site extends BaseEntity {
 	@GeneratedValue
 	@Column(name="site_id",unique=true,nullable=false)
 	private int siteId;
-//	@Column(name="order_id",unique=true)
-//	private String orderId;
+	@Column(name="order_id")
+	private String orderId;
 	@Column(name="name")
 	private String name;
 	@Column(name="info")
 	private String info;
 	
 	@ManyToOne(fetch = FetchType.LAZY,cascade=CascadeType.ALL)
-	@Column(name="group_id")
-	private Group group;
+	@JoinColumn(name="group_id")
+	private SiteGroup group;
 	
 	
 	public int getSiteId() {
@@ -46,12 +46,12 @@ public class Site extends BaseEntity {
 		this.siteId = siteId;
 	}
 	
-//	public String getOrderId() {
-//		return orderId;
-//	}
-//	public void setOrderId(String orderId) {
-//		this.orderId = orderId;
-//	}
+	public String getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
 	public String getName() {
 		return name;
 	}
@@ -64,10 +64,10 @@ public class Site extends BaseEntity {
 	public void setInfo(String info) {
 		this.info = info;
 	}
-	public Group getGroup() {
+	public SiteGroup getGroup() {
 		return group;
 	}
-	public void setGroup(Group group) {
+	public void setGroup(SiteGroup group) {
 		this.group = group;
 	}
 	public static long getSerialversionuid() {
