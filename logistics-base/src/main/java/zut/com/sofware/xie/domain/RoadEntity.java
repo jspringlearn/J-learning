@@ -1,12 +1,15 @@
 package zut.com.sofware.xie.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -25,11 +28,11 @@ public class RoadEntity extends BaseDomain {
 	 * 
 	 */
 	private static final long serialVersionUID = -6624909947516594776L;
-	/* Starting time of vehicle */
 	@Id
 	@Column(name = "ROAD_ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long roadID;
+	/* Starting time of vehicle */
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "BEGIN_TIME")
 	private Date beginTime;
@@ -45,6 +48,9 @@ public class RoadEntity extends BaseDomain {
 	@OneToOne
 	@Column(name="SSITE_ID")
 	private int sSiteID;
+	@ManyToOne
+	@JoinColumn(name="ORDER_ID")
+	private List<Integer> orderID;
 	/* Place of arriva */
 	@OneToOne
 	@Column(name="ESITE_ID")
@@ -52,9 +58,20 @@ public class RoadEntity extends BaseDomain {
 	/* Road condition */
 	@Column(name="IS_CLEAR")
 	boolean isClear;
+	/*orderID*/
+
+	
 	
 	public Long getRoadID() {
 		return roadID;
+	}
+
+	public List<Integer> getOrderID() {
+		return orderID;
+	}
+
+	public void setOrderID(List<Integer> orderID) {
+		this.orderID = orderID;
 	}
 
 	public void setRoadID(Long roadID) {
