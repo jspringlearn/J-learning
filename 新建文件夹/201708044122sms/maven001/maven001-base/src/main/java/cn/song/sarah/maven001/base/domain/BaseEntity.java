@@ -30,9 +30,6 @@ public class BaseEntity extends BaseDomain {
 	 */
 	private static final long serialVersionUID = -6359645556309757733L;
 
-	/**
-	 * 
-	 */
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DATECREATED")
 	protected Date dateCreated = new Date();
