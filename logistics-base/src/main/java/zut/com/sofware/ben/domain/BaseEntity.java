@@ -25,9 +25,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class BaseEntity extends BaseDomain {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3995970461753673009L;
+
+	/**
 	 *
 	 */
-	private static final long serialVersionUID = -6163675075289529459L;
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DATECREATED")
 	protected Date dateCreated = new Date();

@@ -13,18 +13,20 @@ import javax.persistence.Table;
 import zut.com.sofware.ben.domain.BaseEntity;
 
 
-@Entity
+
 @Table(name="site")
 public class Site extends BaseEntity {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 2538649004355201367L;
+	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
 	
 	
-	@Id
-	@GeneratedValue
+
 	@Column(name="site_id",unique=true,nullable=false)
 	private int siteId;
 	@Column(name="order_id")

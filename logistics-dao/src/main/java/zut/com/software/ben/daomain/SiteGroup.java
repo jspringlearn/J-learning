@@ -14,8 +14,8 @@ import javax.persistence.Table;
 import zut.com.sofware.ben.domain.BaseEntity;
 
 
-@Entity
-@Table(name="sitegroup",catalog="test")
+
+@Table(name="sitegroup")
 public class SiteGroup extends BaseEntity{
 	
 	/**
@@ -24,8 +24,6 @@ public class SiteGroup extends BaseEntity{
 	private static final long serialVersionUID = -3769793439143945339L;
 	
 	
-	@Id
-	@GeneratedValue
 	@Column(name="group_id",unique=true)
 	private String groupId;
 	@Column(name="group_name")

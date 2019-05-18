@@ -10,5 +10,5 @@
 
 	<!-- Activates scanning of @Repository -->
 	<jpa:repositories
-		base-package="zut.com.software" />
+		base-package="zut.com.software.**" />
 </beans>
