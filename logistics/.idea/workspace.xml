@@ -40,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/java/com/stu/software/admin/dao/UserDao.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/dao/GenericDaoTestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+            <state relative-caret-position="193">
+              <caret line="21" column="107" selection-start-line="21" selection-start-column="107" selection-end-line="21" selection-end-column="107" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,10 +53,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/java/com/stu/software/admin/domain/User.java">
+        <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericManagerTestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+            <state relative-caret-position="72">
+              <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,10 +65,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/domain/BaseEntity.java">
+        <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericTreeManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+            <state relative-caret-position="234">
+              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,33 +77,67 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/resources/META-INF/persistence.xml">
+        <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericTreeManagerTestCase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/impl/GenericManagerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="538">
+              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/impl/GenericTreeManagerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logistics_base/src/main/resources/log4j2.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/impl/package-info.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/resources/applicationContext-dao.xml">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/web/spring/controller/package-info.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="90">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/domain/BaseTreeEntity.java">
+        <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/BaseAbstractTestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="306">
+              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,17 +150,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package-info" />
         <option value="Tag Library Descriptor" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/dao/GenericDao.java" />
         <option value="$PROJECT_DIR$/logistics_base/src/test/java/com/stu/software/AppTest.java" />
         <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/dao/package-info.java" />
         <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/dao/GenericTreeDao.java" />
@@ -138,14 +171,8 @@
         <option value="$PROJECT_DIR$/logistics_base/src/main/resources/log4j2.xml" />
         <option value="$PROJECT_DIR$/logistics_dao/src/main/resources/log4j2.xml" />
         <option value="$PROJECT_DIR$/logistics_dao/src/test/java/com/stu/software/admin/dao/UserDaoTest.java" />
-        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericManager.java" />
-        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericManagerTestCase.java" />
-        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericTreeManager.java" />
-        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/impl/GenericManagerImpl.java" />
-        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/impl/GenericTreeManagerImpl.java" />
         <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/impl/package-info.java" />
         <option value="$PROJECT_DIR$/logistics_web/pom.xml" />
-        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericTreeManagerTestCase.java" />
         <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/BaseAbstractTestCase.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/logistics_service/pom.xml" />
@@ -177,6 +204,13 @@
         <option value="$PROJECT_DIR$/logistics_dao/src/main/resources/applicationContextTest-resources.xml" />
         <option value="$PROJECT_DIR$/logistics_dao/src/test/java/com/stu/software/Store/StoreDaotest.java" />
         <option value="$PROJECT_DIR$/logistics_dao/src/main/java/com/stu/software/admin/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/impl/GenericManagerImpl.java" />
+        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/impl/GenericTreeManagerImpl.java" />
+        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericTreeManager.java" />
+        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericManagerTestCase.java" />
+        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericManager.java" />
+        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericTreeManagerTestCase.java" />
+        <option value="$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/controller/package-info.java" />
       </list>
     </option>
   </component>
@@ -184,7 +218,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\JAVA\apache-maven-3.6.0\repo" />
-        <option name="mavenHome" value="D:/JAVA/apache-maven-3.6.0" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.0" />
         <option name="userSettingsFile" value="D:\JAVA\apache-maven-3.6.0\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -209,24 +243,137 @@
     <option name="jreName" value="1.8" />
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-57" />
-    <option name="y" value="51" />
-    <option name="width" value="1694" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="342" />
+    <option name="y" value="67" />
+    <option name="width" value="1357" />
     <option name="height" value="833" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <flattenPackages ProjectPane="false" />
       <showMembers ProjectPane="false" />
-      <hideEmptyPackages ProjectPane="false" />
+      <hideEmptyPackages ProjectPane="true" />
       <abbreviatePackageNames ProjectPane="false" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics_base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics_base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics_base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics_base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics_base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="software" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics_base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="software" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics_base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="software" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics_base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="software" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics_dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Logistics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logistics" type="462c0819:PsiDirectoryNode" />
+              <item name="logistics_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="software" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -237,7 +384,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558169062935" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558174340278" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -249,21 +396,21 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JAVA\IDEA\logistics\logistics_dao\src\main\resources" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.stu.software.admin" />
       <recent name="com.stu.software" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\JAVA\IDEA\logistics\logistics_dao\src\test\java\com\stu\software\admin\dao" />
-      <recent name="D:\JAVA\IDEA\logistics\logistics_dao\src\test\java\com\stu\software" />
-      <recent name="D:\JAVA\IDEA\logistics\logistics_dao\src\main\resources\META-INF" />
-      <recent name="D:\JAVA\IDEA\logistics\logistics_dao\src\main\resources" />
-      <recent name="D:\JAVA\IDEA\logistics\logistics_web\src\main" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.stu.software" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JAVA\IDEA\logistics\logistics_base\src\main\java\com\stu\software" />
+      <recent name="D:\JAVA\IDEA\logistics\logistics_dao\src\test\java\com\stu\software\admin\dao" />
+      <recent name="D:\JAVA\IDEA\logistics\logistics_dao\src\test\java\com\stu\software" />
+      <recent name="D:\JAVA\IDEA\logistics\logistics_dao\src\main\resources\META-INF" />
       <recent name="D:\JAVA\IDEA\logistics\logistics_dao\src\main\resources" />
     </key>
   </component>
@@ -380,6 +527,8 @@
       <workItem from="1558007689070" duration="34855000" />
       <workItem from="1558152709402" duration="14215000" />
       <workItem from="1558168652026" duration="412000" />
+      <workItem from="1558173090934" duration="90000" />
+      <workItem from="1558173327674" duration="965000" />
     </task>
     <servers />
   </component>
@@ -416,13 +565,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57911000" />
+    <option name="totallyTimeSpent" value="58966000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-45" y="41" width="1355" height="666" extended-state="0" />
+    <frame x="274" y="54" width="1085" height="666" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49809885" visible="true" weight="0.36622977" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49809885" visible="true" weight="0.4070107" />
       <window_info id="Structure" order="1" sideWeight="0.50190115" side_tool="true" weight="0.26595744" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -439,7 +588,7 @@
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49865952" visible="true" weight="0.7808219" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49865952" visible="true" weight="0.15655577" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013405" side_tool="true" weight="0.6149341" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4985451" weight="0.238653" />
@@ -466,119 +615,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/logistics_service/src/main/java/com/stu/software/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/impl/package-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericTreeManagerTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/apache-maven-3.6.0/repo/org/springframework/spring-test/5.1.5.RELEASE/spring-test-5.1.5.RELEASE.jar!/org/springframework/test/context/support/AbstractGenericContextLoader.class" />
-    <entry file="file://$PROJECT_DIR$/logistics_web/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_dao/logistics_dao.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/java/com/stu/software/Goods/dao/KindsDao.java" />
-    <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/java/com/stu/software/Goods/domain/Kinds.java" />
-    <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/java/com/stu/software/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/domain/package-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/domain/BaseDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/BaseAbstractTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/apache-maven-3.6.0/repo/org/springframework/spring-test/5.1.5.RELEASE/spring-test-5.1.5.RELEASE.jar!/org/springframework/test/context/junit4/AbstractTransactionalJUnit4SpringContextTests.class" />
-    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/dao/GenericTreeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/dao/GenericDaoTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="21" column="107" selection-start-line="21" selection-start-column="107" selection-end-line="21" selection-end-column="107" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logistics_base/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1070">
@@ -661,23 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_dao/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="76" column="44" selection-start-line="76" selection-start-column="44" selection-end-line="76" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/resources/applicationContextTest-resources.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding>
-            <element signature="e#1135#1148#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logistics_dao/src/test/java/com/stu/software/admin/RoleDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -730,30 +750,13 @@
     <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/java/com/stu/software/store/dao/StoreDao.java" />
     <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/java/com/stu/software/goods/dao/GoodsDao.java" />
     <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/java/com/stu/software/goods/domain/Goods.java" />
-    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/resources/log4j2.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/resources/applicationContext-dao.xml">
+    <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/java/com/stu/software/admin/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/domain/BaseTreeEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="144">
+          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -767,22 +770,193 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/resources/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/package-info.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_dao/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="76" column="44" selection-start-line="76" selection-start-column="44" selection-end-line="76" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/resources/applicationContextTest-resources.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/resources/applicationContext-dao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="11" selection-start-line="11" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/domain/BaseDomain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/domain/BaseEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+        <state relative-caret-position="126">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/domain/BaseTreeEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistics_dao/src/main/java/com/stu/software/admin/dao/UserDao.java">
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/dao/GenericTreeDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+        <state relative-caret-position="306">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/dao/GenericDaoTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="21" column="107" selection-start-line="21" selection-start-column="107" selection-end-line="21" selection-end-column="107" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericManagerTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericTreeManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/GenericTreeManagerTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/impl/GenericManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/impl/GenericTreeManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/controller/GenericController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/controller/package-info.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/BaseAbstractTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/web/spring/package-info.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/service/impl/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistics_base/src/main/java/com/stu/software/web/spring/controller/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -841,7 +1015,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>logistics_web</last-edited>
+          <last-edited>Spring|logistics_dao</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
