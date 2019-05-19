@@ -1,0 +1,7 @@
+com\stu\software\admin\service\impl\RoleManagerImpl.class
+com\stu\software\admin\service\RoleManager.class
+com\stu\software\admin\service\impl\GroupManagerImpl.class
+com\stu\software\admin\service\UserManager.class
+com\stu\software\admin\service\impl\UserManagerImpl.class
+com\stu\software\App.class
+com\stu\software\admin\service\GroupManager.class

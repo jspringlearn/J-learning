@@ -1,0 +1,15 @@
+com\stu\software\goods\dao\GoodsDao.class
+com\stu\software\admin\dao\GroupDao.class
+com\stu\software\admin\domain\User.class
+com\stu\software\admin\dao\UserDao.class
+com\stu\software\admin\domain\Role.class
+com\stu\software\goods\domain\Goods.class
+com\stu\software\admin\dao\RoleDao.class
+com\stu\software\Employee\dao\StaffDao.class
+com\stu\software\Employee\domain\Boss.class
+com\stu\software\admin\domain\Group.class
+com\stu\software\Employee\domain\Staff.class
+com\stu\software\store\dao\StoreDao.class
+com\stu\software\store\domain\Store.class
+com\stu\software\App.class
+com\stu\software\Employee\dao\BossDao.class
