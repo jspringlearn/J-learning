@@ -24,24 +24,24 @@ public class Garage extends BaseTreeEntity<Garage> {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@Column(name = "ID")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	Long id;
+//	@Id
+//	@Column(name = "ID")
+//	@GeneratedValue(strategy = GenerationType.AUTO)
+//	Long id;
 	@Column(name = "GARAGE_PLACE")
 	String garage_place;
 	@Column(name = "GARAGE_V")
 	String garage_v;
-	@OneToMany(mappedBy="Garage",cascade=CascadeType.REMOVE,fetch=FetchType.EAGER)
-	Set<Car>cars;
+	@OneToMany(mappedBy="garage",cascade=CascadeType.REMOVE,fetch=FetchType.EAGER)
+	Set<Car> cars;
 	
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+//	public Long getId() {
+//		return id;
+//	}
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
 	public String getGarage_place() {
 		return garage_place;
 	}

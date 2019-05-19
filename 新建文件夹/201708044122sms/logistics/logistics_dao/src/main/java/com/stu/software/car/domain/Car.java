@@ -9,10 +9,11 @@ import com.stu.software.domain.BaseEntity;
 public class Car extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
-	    @Id
-	    @Column(name = "ID")
-	    @GeneratedValue(strategy = GenerationType.AUTO)
-	    Long id;
+//	    @Id
+//	    @Column(name = "ID")
+//	    @GeneratedValue(strategy = GenerationType.AUTO)
+//	    Long id;
+	//BaseEntity里有这个主键ID这个可以不用写
 		@Column(name="CAR_NUMBER")
 	    String car_number;
 	    @Column(name="CAR_VOLUME")
@@ -21,16 +22,21 @@ public class Car extends BaseEntity {
 	    String car_owner;
 	    @Column(name="CAR_STATUS")
 	    String car_status;
-	    
+	    /**
+	     * @ManyToOne
+	     *  @JoinColumn 引入外键  
+	     *     */
+	    @ManyToOne
+	    @JoinColumn(name = "GARAGE_PLACE")
 	    Garage garage ;
 	    
-		public Long getId() {
-			return id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
+//		public Long getId() {
+//			return id;
+//		}
+//
+//		public void setId(Long id) {
+//			this.id = id;
+//		}
 
 		public String getCar_number() {
 			return car_number;
