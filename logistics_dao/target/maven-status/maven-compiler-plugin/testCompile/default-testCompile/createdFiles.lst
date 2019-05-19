@@ -1,0 +1,10 @@
+com\stu\software\admin\UserDaoTest.class
+com\stu\software\goods\GoodsDaotest.class
+com\stu\software\AppTest.class
+com\stu\software\place\dao\SiteGroupDaoTest.class
+com\stu\software\admin\RoleDaoTest.class
+com\stu\software\Employee\dao\StaffDaoTest.class
+com\stu\software\admin\GroupDaoTest.class
+com\stu\software\Employee\dao\BossDaoTest.class
+com\stu\software\place\dao\SiteDaoTest.class
+com\stu\software\store\StoreDaotest.class

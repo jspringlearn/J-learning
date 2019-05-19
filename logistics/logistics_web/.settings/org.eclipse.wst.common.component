@@ -2,8 +2,11 @@
     <wb-module deploy-name="logistics_web">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+<<<<<<< HEAD
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+=======
+>>>>>>> a64bec515552c83480c85c0ba68ef1bfa1806a47
         <property name="context-root" value="logistics_web"/>
         <property name="java-output-path" value="/logistics_web/target/classes"/>
     </wb-module>
