@@ -1,0 +1,5 @@
+cn\song\sarah\maven001\domain\User.class
+cn\song\sarah\maven001\dao\MySQLDemo.class
+cn\song\sarah\maven001\dao\MysqlJdbc.class
+cn\song\sarah\maven001\admin\App.class
+cn\song\sarah\maven001\device\domain\Device.class
