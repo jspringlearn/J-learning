@@ -74,11 +74,11 @@
                     <vendor>hibernate</vendor>
                     <packageToScan>com.stu.software</packageToScan>
                     <jdbcDriver>com.mysql.cj.jdbc.Driver</jdbcDriver>
-                    <jdbcUrl>jdbc:mysql://202.196.37.168:3306/logistics</jdbcUrl>
+                    <jdbcUrl>jdbc:mysql://202.196.37.168:3306/JLearing</jdbcUrl>
                     <jdbcUser>student</jdbcUser>
                     <jdbcPassword>Student_123456</jdbcPassword>
                     <!--这里注释掉了-->
-                    <!--<hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>-->
+                    <hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
                     <properties>
                         <hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
                     </properties>
