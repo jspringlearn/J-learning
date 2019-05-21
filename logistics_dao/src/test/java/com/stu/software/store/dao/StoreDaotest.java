@@ -1,7 +1,8 @@
 package com.stu.software.store.dao;
 
 import com.stu.software.dao.GenericTreeDaoTestCase;
-import com.stu.software.store.domain.Store;
+import com.stu.software.goods.dao.StoreDao;
+import com.stu.software.goods.domain.Store;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
