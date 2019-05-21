@@ -1,0 +1,14 @@
+com\stu\software\goods\dao\StoreDaotest.class
+com\stu\software\order\dao\OrderDaoTest.class
+com\stu\software\car\CarDaoTest.class
+com\stu\software\admin\dao\RoleDaoTest.class
+com\stu\software\car\GarageDaoTest.class
+com\stu\software\admin\dao\UserDaoTest.class
+com\stu\software\AppTest.class
+com\stu\software\road\dao\RMapDaoTest.class
+com\stu\software\road\dao\CircuitDaoTest.class
+com\stu\software\Employee\dao\StaffDaoTest.class
+com\stu\software\admin\dao\GroupDaoTest.class
+com\stu\software\Employee\dao\BossDaoTest.class
+com\stu\software\goods\dao\GoodsDaotest.class
+com\stu\software\store\dao\StoreDaotest.class

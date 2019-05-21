@@ -1,0 +1,15 @@
+# Created on 2019-05-21T22:19:30.925
+WARNING: An illegal reflective access operation has occurred
+
+# Created on 2019-05-21T22:19:30.925
+WARNING: Illegal reflective access by org.apache.commons.lang3.builder.HashCodeBuilder (file:/D:/Java/repo/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar) to field java.lang.Long.value
+
+# Created on 2019-05-21T22:19:30.925
+WARNING: Please consider reporting this to the maintainers of org.apache.commons.lang3.builder.HashCodeBuilder
+
+# Created on 2019-05-21T22:19:30.925
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+
+# Created on 2019-05-21T22:19:30.925
+WARNING: All illegal access operations will be denied in a future release
+
