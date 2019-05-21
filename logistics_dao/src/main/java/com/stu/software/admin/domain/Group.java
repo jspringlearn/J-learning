@@ -1,9 +1,7 @@
 package com.stu.software.admin.domain;
 
 
-import com.stu.software.goods.domain.Goods;
 import com.stu.software.domain.BaseTreeEntity;
-
 import javax.persistence.*;
 import java.util.Set;
 
@@ -27,8 +25,8 @@ public class Group extends BaseTreeEntity<Group> {
 	@Column(name = "NAME")
 	String name;
 
-	@OneToMany(mappedBy = "store", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-	Set<Goods> goods;
+	@OneToMany(mappedBy = "group", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+	Set<User> users;
 
 	public String getName() {
 		return name;

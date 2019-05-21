@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.stu.software.admin.dao.GroupDaoTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.572 s - in com.stu.software.admin.dao.GroupDaoTest

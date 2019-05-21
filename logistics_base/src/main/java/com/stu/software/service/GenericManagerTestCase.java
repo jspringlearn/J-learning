@@ -10,9 +10,8 @@ import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
-@ContextConfiguration(locations = { //"classpath:/applicationContext-resources.xml",
-		"classpath:/applicationContext-dao.xml", "classpath:/applicationContext-service.xml"
-		,"classpath:/applicationContextTest-resources.xml"})
+@ContextConfiguration(locations = { "classpath:/applicationContextTest-resources.xml",
+		"classpath:/applicationContext-dao.xml", "classpath:/applicationContext-service.xml" })
 public abstract class GenericManagerTestCase<PK extends Serializable, T extends BaseEntity, M extends GenericManager<T, PK>>
 		extends BaseAbstractTestCase {
 	protected T entity;

@@ -8,6 +8,7 @@ import com.stu.software.service.impl.GenericTreeManagerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.transaction.Transactional;
 
 /**
@@ -19,7 +20,6 @@ import javax.transaction.Transactional;
 public class GroupManagerImpl extends GenericTreeManagerImpl<Group, Long> implements GroupManager {
 
 	GroupDao groupDao;
-
 	@Autowired
 	public void setGroupDao(GroupDao groupDao) {
 		this.groupDao = groupDao;

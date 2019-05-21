@@ -1,11 +1,11 @@
 com\stu\software\admin\service\impl\RoleManagerImpl.class
-com\stu\software\admin\service\RoleManager.class
-com\stu\software\admin\service\StaffManager.class
 com\stu\software\admin\service\impl\GroupManagerImpl.class
-com\stu\software\admin\service\UserManager.class
-com\stu\software\admin\service\impl\StaffManagerImpl.class
-com\stu\software\admin\service\BossManager.class
-com\stu\software\admin\service\impl\BossManagerImpl.class
+com\stu\software\goods\service\StoreManager.class
 com\stu\software\admin\service\impl\UserManagerImpl.class
+com\stu\software\goods\service\GoodsManager.class
+com\stu\software\goods\service\impl\StoreManagerlmpl.class
+com\stu\software\admin\service\RoleManager.class
+com\stu\software\admin\service\UserManager.class
 com\stu\software\App.class
+com\stu\software\goods\service\impl\GoodsManagerlmpl.class
 com\stu\software\admin\service\GroupManager.class

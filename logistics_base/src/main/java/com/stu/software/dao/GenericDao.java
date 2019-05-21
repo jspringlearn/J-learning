@@ -21,7 +21,7 @@ import java.io.Serializable;
  *            the primary key for that type，Entity Id
  * @author <a href="mailto:ming616@gmail.com">Liu Xiaoming</a>
  */
-@NoRepositoryBean
+@NoRepositoryBean   //注解为 一个公共接口  JpaRepository
 public interface GenericDao<T extends BaseEntity, PK extends Serializable>
 		extends JpaRepository<T, PK>, JpaSpecificationExecutor<T> {
 }

@@ -1,7 +1,6 @@
 package com.stu.software.goods.domain;
 
 import com.stu.software.domain.BaseEntity;
-import com.stu.software.store.domain.Store;
 
 import javax.persistence.*;
 
@@ -32,6 +31,14 @@ public class Goods extends BaseEntity {
 
     @Column(name="GOODS_NUMBER")
     String number;
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
 
     public String getNumber() {
         return number;

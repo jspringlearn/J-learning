@@ -20,7 +20,7 @@ import java.util.List;
  *            the primary key for that type，实体类Id
  * @author <a href="mailto:ming616@gmail.com">Liu Xiaoming</a>
  */
-@NoRepositoryBean
+@NoRepositoryBean  //该注解、、？？
 public abstract interface GenericTreeDao<T extends BaseTreeEntity<T>, PK extends Serializable>
 		extends GenericDao<T, PK> {
 	List<T> getRoot();

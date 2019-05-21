@@ -24,6 +24,8 @@ public class Boss extends BaseTreeEntity<Boss> {
     String boss_age;
     @Column(name="BOSS_TEL")
     String boss_tel;
+
+
     @OneToMany(mappedBy="boss",cascade=CascadeType.REMOVE,fetch=FetchType.EAGER)
     Set<Staff>staffs;
     public Long getId() {
