@@ -1,12 +1,11 @@
 package com.stu.software;
 
 import com.stu.software.Employee.domain.Boss;
-import com.stu.software.admin.service.BossManager;
+import com.stu.software.employee.service.BossManager;
 import com.stu.software.service.GenericTreeManagerTestCase;
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.Commit;
 
 import java.util.List;
 

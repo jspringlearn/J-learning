@@ -2,7 +2,16 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
+<<<<<<< HEAD
       <configuration />
+=======
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/applicationContext-dao.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/applicationContextTest-resources.xml</file>
+        </fileset>
+      </configuration>
+>>>>>>> 83b7dd78d3e06f9a0d2682e4a28ddd65b3110ece
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
