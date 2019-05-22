@@ -2,10 +2,14 @@ com\stu\software\goods\domain\Store.class
 com\stu\software\admin\dao\GroupDao.class
 com\stu\software\admin\domain\User.class
 com\stu\software\goods\dao\StoreDao.class
+com\stu\software\road\dao\RMapDao.class
+com\stu\software\road\domain\Circuit.class
 com\stu\software\order\domain\Order.class
 com\stu\software\car\dao\CarDao.class
 com\stu\software\Employee\dao\StaffDao.class
 com\stu\software\Employee\domain\Boss.class
+com\stu\software\road\dao\RMapDaoTest.class
+com\stu\software\road\dao\CircuitDaoTest.class
 com\stu\software\car\domain\Garage.class
 com\stu\software\car\dao\GarageDao.class
 com\stu\software\goods\dao\GoodsDao.class
@@ -17,5 +21,7 @@ com\stu\software\admin\dao\RoleDao.class
 com\stu\software\order\dao\OrderDao.class
 com\stu\software\admin\domain\Group.class
 com\stu\software\Employee\domain\Staff.class
+com\stu\software\road\dao\CircuitDao.class
+com\stu\software\road\domain\RMap.class
 com\stu\software\App.class
 com\stu\software\Employee\dao\BossDao.class

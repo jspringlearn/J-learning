@@ -1,6 +1,8 @@
 com\stu\software\goods\service\GoodsManagerTest.class
-com\stu\software\goods\service\GoodsEntityGenerate.class
 com\stu\software\AppTest.class
-com\stu\software\goods\service\StoreManagerTest.class
+com\stu\software\BossManagerTest.class
 com\stu\software\admin\service\UserManagerTest.class
 com\stu\software\admin\service\AdminEntityGenerator.class
+com\stu\software\StaffManagerTest.class
+com\stu\software\goods\service\GoodsEntityGenerate.class
+com\stu\software\goods\service\StoreManagerTest.class
