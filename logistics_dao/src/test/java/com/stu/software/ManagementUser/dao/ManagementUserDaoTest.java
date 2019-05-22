@@ -16,7 +16,7 @@ public class ManagementUserDaoTest extends GenericDaoTestCase<Long, ManagementUs
 	private static final Logger logger = LogManager.getLogger(ManagementUserDaoTest.class.getName());
 	@Autowired
 	ManagementUserDao managementUserDao;
-	
+
 	@Test
 	public void testFindAll() {
 		List<ManagementUser> result = this.managementUserDao.findAll();
