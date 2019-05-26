@@ -2,51 +2,19 @@ package com.stu.software.place.service.impl;
 
 import java.util.List;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+import com.stu.software.place.dao.SiteDao;
 import com.stu.software.place.domain.Site;
 import com.stu.software.place.service.SiteManager;
 import com.stu.software.service.impl.GenericManagerImpl;
 
+@Component
 public class SiteManagerImpl extends GenericManagerImpl<Site, Long> implements SiteManager {
 
-	@Override
-	public void delete(Long id) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public List<Site> findAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Page<Site> findAll(Pageable page) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Site findById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Site> save(Iterable<Site> entities) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Site save(Site entity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	SiteDao siteDao;
 	@Override
 	public List<Site> findBySite(String SiteId) {
 		// TODO Auto-generated method stub
@@ -64,5 +32,13 @@ public class SiteManagerImpl extends GenericManagerImpl<Site, Long> implements S
 		// TODO Auto-generated method stub
 		return null;
 	}
+    
+	@Autowired
+	public void setSiteDao(SiteDao siteDao) {
+		this.siteDao=siteDao;
+		this.dao=this.siteDao;
+		
+	}
+
 
 }

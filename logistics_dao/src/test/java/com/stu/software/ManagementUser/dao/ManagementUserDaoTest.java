@@ -1,4 +1,4 @@
-package com.stu.software.ManagementUser;
+package com.stu.software.ManagementUser.dao;
 
 import java.util.List;
 
