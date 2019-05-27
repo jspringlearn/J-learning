@@ -60,6 +60,14 @@ public class Garage extends BaseTreeEntity<Garage> {
 	public void setCars(Set<Car> cars) {
 		this.cars = cars;
 	}
+	public void setName(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setGarageName(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
 
