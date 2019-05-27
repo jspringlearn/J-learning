@@ -77,5 +77,20 @@ public class Car extends BaseEntity {
 		public void setGarage(Garage garage) {
 			this.garage = garage;
 		}
+
+		public void setName(String string) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public void setGroup(Garage s) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public void setInfo(String string) {
+			// TODO Auto-generated method stub
+			
+		}
 		
 }
