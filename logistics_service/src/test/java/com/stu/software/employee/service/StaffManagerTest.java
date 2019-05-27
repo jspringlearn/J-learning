@@ -1,7 +1,6 @@
-package com.stu.software;
+package com.stu.software.employee.service;
 
 import com.stu.software.Employee.domain.Staff;
-import com.stu.software.employee.service.StaffManager;
 import com.stu.software.service.GenericManagerTestCase;
 import junit.framework.TestCase;
 import org.apache.logging.log4j.LogManager;

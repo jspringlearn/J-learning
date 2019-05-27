@@ -1,4 +1,4 @@
-package com.stu.software;
+package com.stu.software.employee.service;
 
 import com.stu.software.Employee.domain.Boss;
 import com.stu.software.employee.service.BossManager;
