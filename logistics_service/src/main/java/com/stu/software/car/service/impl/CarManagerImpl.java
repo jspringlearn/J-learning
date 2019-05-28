@@ -15,6 +15,12 @@ import com.stu.software.service.impl.GenericManagerImpl;
 public class CarManagerImpl extends GenericManagerImpl<Car, Long> implements CarManager {
 	private static final Logger logger = LogManager.getLogger(CarManagerImpl.class.getName());
 
+	@Override
+	public List<Car> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 }
