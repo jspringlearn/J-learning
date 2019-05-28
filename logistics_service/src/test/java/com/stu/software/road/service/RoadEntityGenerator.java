@@ -34,8 +34,8 @@ public class RoadEntityGenerator extends GenericGenerator {
 	public void gen_circuit(RMap r) {
 		for(int i=0;i<10;i++) {
 			Circuit c=new Circuit();
-			c.setASiteID(i);
-			c.setBSiteID(i+10);
+			c.setaSite(i+"");
+			c.setbSite(i+10+"");
 			c.setDistance(i+i*2+0.2564*i);
 			c.setRMap(r);
 			this.circuitManager.save(c);

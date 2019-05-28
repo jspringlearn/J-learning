@@ -1,9 +1,7 @@
 package com.stu.software.road.service.impl;
 
-import java.util.Date;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers;
@@ -21,7 +19,7 @@ class CircuitManagerImpl extends GenericManagerImpl<Circuit, Long> implements Ci
 
 
 	@Override
-	public Circuit findById(Long id) {
+	public Circuit findByID(Long id) {
 		// TODO Auto-generated method stub
 		Circuit q =new Circuit();
 		q.setDateCreated(null);
@@ -35,53 +33,23 @@ class CircuitManagerImpl extends GenericManagerImpl<Circuit, Long> implements Ci
 		Circuit result =(Circuit) dao.findAll(ex);
 		return result;
 	}
-	@Override
-	public List<Circuit> findAllBySite(int site) {
-		// TODO Auto-generated method stub
-		Circuit q=new Circuit();
-		q.setDateCreated(null);
-		q.setDateModified(null);
-		q.setASiteID(site);
-		ExampleMatcher matcher=ExampleMatcher.matching()
-				.withStringMatcher(StringMatcher.CONTAINING)
-				.withIgnoreCase(true)
-				.withMatcher("site", GenericPropertyMatchers.startsWith());
-		Example<Circuit> ex=Example.of(q,matcher);
-		List<Circuit> result =dao.findAll(ex);
-		return result;
-	}
+
+
 
 	@Override
-	public double findDistance(Long id) {
-		// TODO Auto-generated method stub
-		Circuit q=new Circuit();
-		q.setDateCreated(null);
-		q.setDateModified(null);
-		q.setId(id);
-		ExampleMatcher matcher=ExampleMatcher.matching()
-				.withStringMatcher(StringMatcher.CONTAINING)
-				.withIgnoreCase(true)
-				.withMatcher("id", GenericPropertyMatchers.startsWith());
-		Example<Circuit> ex=Example.of(q,matcher);
-		Circuit temp=(Circuit) dao.findAll(ex);
-		double result=temp.getDistance();
-		return result;
-	}
-
-	@Override
-	public Circuit getsection(int aSite, int bSite) {
+	public Circuit findBySection(String aSite, String bSite) {
 		// TODO Auto-generated method stub
 		Circuit q1=new Circuit();
 		q1.setDateCreated(null);
 		q1.setDateModified(null);
-		q1.setASiteID(aSite);
-		q1.setBSiteID(bSite);
+		q1.setaSite(aSite);
+		q1.setbSite(bSite);
 		
 		Circuit q2=new Circuit();
 		q2.setDateCreated(null);
 		q2.setDateModified(null);
-		q2.setASiteID(bSite);
-		q2.setBSiteID(aSite);
+		q2.setaSite(bSite);
+		q2.setbSite(aSite);
 		
 		
 		ExampleMatcher matcher=ExampleMatcher.matching()
@@ -96,53 +64,5 @@ class CircuitManagerImpl extends GenericManagerImpl<Circuit, Long> implements Ci
 		Circuit result=temp.get(0);
 		return result;
 	}
-
-	@Override
-	public double getMoneyForRoad(Long id,int mod) {
-		// TODO Auto-generated method stub
-		double temp=findDistance(id);
-		double result=temp*mod;
-		return result;
-	}
-
-	@Override
-	public Date getBeginTime(Long id) {
-		// TODO Auto-generated method stub
-		Circuit q=new Circuit();
-		q.setDateCreated(null);
-		q.setDateModified(null);
-		q.setId(id);
-		ExampleMatcher matcher=ExampleMatcher.matching()
-				.withStringMatcher(StringMatcher.CONTAINING)
-				.withIgnoreCase(true)
-				.withMatcher("id", GenericPropertyMatchers.startsWith());
-		Example<Circuit> ex=Example.of(q,matcher);
-		Circuit temp=(Circuit) dao.findAll(ex);
-		Date result=temp.getBeginTime();
-		return result;
-	}
-
-	@Override
-	public Date getEndTime(Long id) {
-		// TODO Auto-generated method stub
-		Circuit q=new Circuit();
-		q.setDateCreated(null);
-		q.setDateModified(null);
-		q.setId(id);
-		ExampleMatcher matcher=ExampleMatcher.matching()
-				.withStringMatcher(StringMatcher.CONTAINING)
-				.withIgnoreCase(true)
-				.withMatcher("id", GenericPropertyMatchers.startsWith());
-		Example<Circuit> ex=Example.of(q,matcher);
-		Circuit temp=(Circuit) dao.findAll(ex);
-		Date result=temp.getEndTime();
-		return result;
-	}
-
-	   @Autowired
-	    public void setCircuitDao(CircuitDao circuitDao) {
-	         this.circuitDao= circuitDao;
-	        this.dao = this.circuitDao;
-	    }
 
 }

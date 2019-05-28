@@ -21,55 +21,44 @@ public class Circuit extends BaseEntity {
 	 */
 	private static final long serialVersionUID = 714545038097292623L;
 
-
-
-	/* Starting time of vehicle */
-	@Column(name = "BEGIN_TIME")
-	private Date beginTime;
-	/* Estimated time of vehicle */
-	@Column(name = "END_TIME")
-	private Date endTime;
-	/*ID of location a*/
-	@Column(name="ASITEID")
-	private int ASiteID;
-	/*ID of location b*/
-	@Column(name="BSITEID")
-	private int BSiteID;
-	/*Distance between two places*/
+	/*Two places Distance*/
 	@Column(name="DISTANCE")
 	private double distance;
+	/*Elapsed time*/
+	@Column(name="ELAPTIME")
+	private double elapTime;
+	/*Names of the two places*/
+	@Column(name="ASITE")
+	private String aSite;
+	@Column(name="BSITE")
+	private String bSite;
+	/*Subordinate line*/
 	@ManyToOne
 	@JoinColumn(name = "GROUP_ID")
 	RMap rmap;
-	public Date getBeginTime() {
-		return beginTime;
-	}
-	public void setBeginTime(Date beginTime) {
-		this.beginTime = beginTime;
-	}
-	public Date getEndTime() {
-		return endTime;
-	}
-	public void setEndTime(Date endTime) {
-		this.endTime = endTime;
-	}
-	public int getASiteID() {
-		return ASiteID;
-	}
-	public void setASiteID(int aSiteID) {
-		ASiteID = aSiteID;
-	}
-	public int getBSiteID() {
-		return BSiteID;
-	}
-	public void setBSiteID(int bSiteID) {
-		BSiteID = bSiteID;
-	}
 	public double getDistance() {
 		return distance;
 	}
 	public void setDistance(double distance) {
 		this.distance = distance;
+	}
+	public double getElapTime() {
+		return elapTime;
+	}
+	public void setElapTime(double elapTime) {
+		this.elapTime = elapTime;
+	}
+	public String getaSite() {
+		return aSite;
+	}
+	public void setaSite(String aSite) {
+		this.aSite = aSite;
+	}
+	public String getbSite() {
+		return bSite;
+	}
+	public void setbSite(String bSite) {
+		this.bSite = bSite;
 	}
 	public RMap getRMap() {
 		return rmap;
