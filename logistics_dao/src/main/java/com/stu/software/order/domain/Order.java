@@ -6,13 +6,15 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import com.stu.software.domain.BaseEntity;
 import com.stu.software.domain.BaseTreeEntity;
 
 
 @Table(name = "T_ORDER")
 @Entity
-@NamedQueries({ @NamedQuery(name = "Order.getRoot", query="select g from Order g  where g.parent is null") })
-public class Order extends BaseTreeEntity<Order> {
+//@NamedQueries({ @NamedQuery(name = "Order.getRoot", query="select g from Order g  where g.parent is null") })
+//public class Order extends BaseTreeEntity<Order> {
+public class Order extends BaseEntity {
 
 
 	

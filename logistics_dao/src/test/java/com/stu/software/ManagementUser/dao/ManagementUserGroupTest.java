@@ -2,10 +2,12 @@ package com.stu.software.ManagementUser.dao;
 
 import com.stu.software.ManagementUser.domain.ManagementUserGroup;
 import com.stu.software.dao.GenericDaoTestCase;
+import com.stu.software.dao.GenericTreeDaoTestCase;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class ManagementUserGroupTest extends GenericDaoTestCase<Long, ManagementUserGroup,ManagementUserDaoGroupDao > {
+public class ManagementUserGroupTest extends GenericTreeDaoTestCase<Long, ManagementUserGroup,ManagementUserDaoGroupDao > {
 
     @Autowired
     ManagementUserDaoGroupDao managementUserDaoGroupDao;

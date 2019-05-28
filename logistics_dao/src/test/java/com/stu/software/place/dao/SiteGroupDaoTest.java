@@ -8,10 +8,11 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.stu.software.dao.GenericDaoTestCase;
+import com.stu.software.dao.GenericTreeDaoTestCase;
 import com.stu.software.place.domain.SiteGroup;
 
 
-public class SiteGroupDaoTest  extends GenericDaoTestCase<Long, SiteGroup, SiteGroupDao>{
+public class SiteGroupDaoTest  extends GenericTreeDaoTestCase<Long, SiteGroup, SiteGroupDao>{
 
 	  private static final Logger logger = LogManager.getLogger(SiteGroupDaoTest.class.getName());
 

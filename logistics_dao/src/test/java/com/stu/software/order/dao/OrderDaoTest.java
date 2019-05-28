@@ -8,11 +8,12 @@ import java.util.List;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.stu.software.dao.GenericDaoTestCase;
 import com.stu.software.dao.GenericTreeDaoTestCase;
 import com.stu.software.order.dao.OrderDao;
 import com.stu.software.order.domain.Order;
 
-public class OrderDaoTest extends GenericTreeDaoTestCase<Long, Order, OrderDao> {
+public class OrderDaoTest extends GenericDaoTestCase<Long, Order, OrderDao> {
 
 	
 	OrderDao orderDao;
@@ -30,16 +31,16 @@ public class OrderDaoTest extends GenericTreeDaoTestCase<Long, Order, OrderDao> 
 	            for(int j=0;j<10;j++) {
 	                Order g=new Order();
 	                g.setOrderID("order_"+i+"_"+j);
-	                g.setParent(order);
+//	                g.setParent(order);
 	     
 	            }
 	            this.orderDao.save(order);
 	        }
-	        List<Order> roots=this.orderDao.getRoot();
-	        assertEquals(root_size,roots.size());
+//	        List<Order> roots=this.orderDao.getRoot();
+//	        assertEquals(root_size,roots.size());
 
-	        if (logger.isInfoEnabled()) {
-	            logger.info("testGetRoot() - List<Boss> roots={}", roots); //$NON-NLS-1$
-	        }
+//	        if (logger.isInfoEnabled()) {
+//	            logger.info("testGetRoot() - List<Boss> roots={}", roots); //$NON-NLS-1$
+	        
 	    }
 }
