@@ -1,43 +1,29 @@
 package com.stu.software.feedback.dao;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.List;
 
+import com.stu.software.feedback.domain.Comment;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.stu.software.dao.GenericTreeDaoTestCase;
-import com.stu.software.feedback.domain.Comment;
+import com.stu.software.dao.GenericDaoTestCase;
 
+public class CommentDaoTest extends GenericDaoTestCase<Long, Comment, CommentDao> {
 
-public class CommentDaoTest extends GenericTreeDaoTestCase<Long,Comment,CommentDao> {
-	 
-	CommentDao commentDao;
-	@Autowired
-	public void setCommentDao(CommentDao commentDao){
-        this.commentDao=commentDao;
-        this.dao=this.commentDao;
-    }
-	@Test
-    public void testGetRoot(){
-        int root_size=10;
-        for(int i=0;i<root_size;i++){
-            Comment comment=new Comment();
-            comment.setCommentSubstance("comment_"+i);
-            for(int j=0;j<10;j++) {
-                Comment g=new Comment();
-                g.setCommentSubstance("comment_"+i+"_"+j);
-                g.setParent(comment);
-            }
-            this.commentDao.save(comment);
-        }
-        List<Comment> roots=this.commentDao.getRoot();
-        assertEquals(root_size,roots.size());
+    private static final Logger logger = LogManager.getLogger(CommentDaoTest.class.getName());
 
+    @Autowired
+    CommentDao commentDao;
+
+    @Test
+    public void testFindAll() {
+        List<Comment> result = this.commentDao.findAll();
         if (logger.isInfoEnabled()) {
-            logger.info("testGetRoot() - List<Comment> roots={}", roots); //$NON-NLS-1$
+            logger.info("testFindAll() - List<User> result={}", result); //$NON-NLS-1$
         }
+
     }
-	
+
 }
