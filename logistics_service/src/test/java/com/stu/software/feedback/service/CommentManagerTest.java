@@ -19,26 +19,18 @@ import com.stu.software.feedback.domain.Comment;
 import com.stu.software.service.GenericManagerTestCase;
 
 
-
 public class CommentManagerTest extends GenericManagerTestCase<Long, Comment, CommentManager> {
 
 
     private static final Logger logger = LogManager.getLogger(CommentManagerTest.class.getName());
 
-
-
     CommentManager commentManager;
-
-
 
     public CommentManagerTest() {
 
         super(Comment.class);
 
     }
-
-
-
     @Autowired
 
     public void setCommentManager(CommentManager commentManager) {
@@ -48,9 +40,6 @@ public class CommentManagerTest extends GenericManagerTestCase<Long, Comment, Co
         this.manager  = this.commentManager;
 
     }
-
-
-
     @Test
 
     public void testSave() {
@@ -64,7 +53,6 @@ public class CommentManagerTest extends GenericManagerTestCase<Long, Comment, Co
             Comment comment = new Comment();
 
             commentList.add(comment);
-
 
 
         }

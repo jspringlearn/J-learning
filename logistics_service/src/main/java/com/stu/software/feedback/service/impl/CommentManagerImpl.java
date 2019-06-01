@@ -1,53 +1,42 @@
 package com.stu.software.feedback.service.impl;
 
-
-
 import javax.transaction.Transactional;
 
-
-
-import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.stereotype.Service;
-
-
-
 import com.stu.software.feedback.dao.CommentDao;
-
 import com.stu.software.feedback.domain.Comment;
-
 import com.stu.software.feedback.service.CommentManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import com.stu.software.service.impl.GenericTreeManagerImpl;
+import com.stu.software.service.impl.GenericManagerImpl;
 
 
-
-@Service("commentManager")
-
+@Component
 @Transactional
 
-
-
-public class CommentManagerImpl extends GenericTreeManagerImpl<Comment, Long> implements CommentManager {
+public class CommentManagerImpl extends GenericManagerImpl<Comment, Long> implements CommentManager {
 
 
 
     CommentDao commentDao;
 
+    @Override
+    public Comment findbyCommentID(String commentID) {
+        return null;
+    }
 
 
     @Autowired
 
-    public void setCommentDao(CommentDao commentDao) {
+        public void setCommentDao (CommentDao commentDao){
 
-        this.commentDao = commentDao;
+            this.commentDao = commentDao;
 
-        this.treeDao=this.commentDao;
+            this.dao = this.commentDao;
 
-        this.dao=this.treeDao;
+        }
 
     }
 
 
 
-}
