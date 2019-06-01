@@ -35,7 +35,27 @@ public class SiteGroupManagerImpl extends GenericTreeManagerImpl<SiteGroup, Long
 		this.dao=this.treeDao;
 		
 	}
-	
+	@Override
+	public void savesiteGroup() {
+		// TODO Auto-generated method stub
+		for (int i = 1; i <= 2; i++) {
+			SiteGroup group = new SiteGroup();
+			group.setGroupName("SiteGroup_" + i);
+			this.siteGroupDao.save(group);
+		}
+		System.out.println("save succeed");
+		
+	}
+
+	@Override
+	public List<SiteGroup> findallsiteGroup() {
+		// TODO Auto-generated method stub
+		List<SiteGroup> all = this.siteGroupDao.findAll();
+		for(Object o:all) {
+			o.toString();
+		}
+		return null;
+	}
 
 
 

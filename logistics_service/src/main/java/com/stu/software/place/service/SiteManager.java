@@ -30,6 +30,9 @@ public interface SiteManager extends GenericManager<Site, Long> {
      * @return
      */
 	List<Site> findBySiteInfo(String SiteInfo);
+	void savesite();
 	
+	List<Site> findallsite();
+
 
 }

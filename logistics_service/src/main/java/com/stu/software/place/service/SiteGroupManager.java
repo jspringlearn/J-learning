@@ -9,5 +9,9 @@ import com.stu.software.service.GenericTreeManager;
 public interface SiteGroupManager extends GenericTreeManager<SiteGroup, Long> {
 	
 	List<SiteGroup> findBySiteGroupName(String SiteGroupName);
+	//
+	void savesiteGroup();
+	//
+	List<SiteGroup> findallsiteGroup();
 
 }

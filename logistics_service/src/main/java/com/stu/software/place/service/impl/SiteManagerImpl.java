@@ -39,6 +39,27 @@ public class SiteManagerImpl extends GenericManagerImpl<Site, Long> implements S
 		this.dao=this.siteDao;
 		
 	}
+	@Override
+	public void savesite() {
+		// TODO Auto-generated method stub
+		int n=2;
+        for(int i = 1; i <= n; i++) {
+            Site site = new Site();
+            site.setName("site_" + i);
+            this.siteDao.save(site);
+        }
+		
+	}
+
+	@Override
+	public List<Site> findallsite() {
+		// TODO Auto-generated method stub
+		List<Site> all = this.siteDao.findAll();
+		for(Object o:all) {
+			o.toString();
+		}
+		return null;
+	}
 
 
 }
