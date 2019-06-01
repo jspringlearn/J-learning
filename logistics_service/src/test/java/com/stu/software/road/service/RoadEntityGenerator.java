@@ -17,13 +17,13 @@ public class RoadEntityGenerator extends GenericGenerator {
 
 	@Test
 	public void gen_RMap() {
-		for(int i=0;i<10;i++) {
+		for(int i=0;i<4;i++) {
 			RMap r=new RMap();
-			r.setCircuitName("circuit_"+i);
+			r.setCircuitName("rmap_"+i);
 			this.rMapManager.save(r);
-			for(int j=0;j<10;j++) {
+			for(int j=0;j<4;j++) {
 				RMap rMap=new RMap();
-				rMap.setCircuitName("circuit_"+i+"_"+j);
+				rMap.setCircuitName("rmap_"+i+"_"+j);
 				rMap.setParent(r);
 				r=this.rMapManager.save(rMap);
 				this.gen_circuit(rMap);
@@ -34,8 +34,8 @@ public class RoadEntityGenerator extends GenericGenerator {
 	public void gen_circuit(RMap r) {
 		for(int i=0;i<10;i++) {
 			Circuit c=new Circuit();
-			c.setaSite(i+"");
-			c.setbSite(i+10+"");
+			c.setaSite("a"+i);
+			c.setbSite("b"+10+i);
 			c.setDistance(i+i*2+0.2564*i);
 			c.setRMap(r);
 			this.circuitManager.save(c);

@@ -2,17 +2,21 @@ package com.stu.software.road.service.impl;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers;
 import org.springframework.data.domain.ExampleMatcher.StringMatcher;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import com.stu.software.road.dao.CircuitDao;
 import com.stu.software.road.domain.Circuit;
 import com.stu.software.road.service.CircuitManager;
 import com.stu.software.service.impl.GenericManagerImpl;
-@Service
+@Component
+@Transactional
 class CircuitManagerImpl extends GenericManagerImpl<Circuit, Long> implements CircuitManager {
 
 	CircuitDao circuitDao;
@@ -65,4 +69,10 @@ class CircuitManagerImpl extends GenericManagerImpl<Circuit, Long> implements Ci
 		return result;
 	}
 
+	@Autowired
+	public void setCircuitDao(CircuitDao circuitDao)
+	{
+		this.circuitDao=circuitDao;
+		this.dao=this.circuitDao;
+	}
 }
