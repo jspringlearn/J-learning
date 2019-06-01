@@ -1,12 +1,13 @@
 package com.stu.software.road.service;
 
-import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.stu.software.road.domain.RMap;
 import com.stu.software.service.GenericTreeManagerTestCase;
@@ -16,12 +17,13 @@ public class RMapManagerTest extends GenericTreeManagerTestCase<Long, RMap, RMap
 
 	private static final Logger logger = LogManager.getLogger(RMapManagerTest.class.getName());
 
+	
 	RMapManager rMapManager;
 	
 	public RMapManagerTest() {
 		super(RMap.class);
 	}
-
+	@Autowired
 	public void setRMapManager(RMapManager rMapManager) {
 		this.rMapManager=rMapManager;
 		this.manager=this.rMapManager;
@@ -32,8 +34,14 @@ public class RMapManagerTest extends GenericTreeManagerTestCase<Long, RMap, RMap
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testSave() {
+		logger.debug("This is a test method for AOP");
+		List<RMap> rmList=new ArrayList<RMap>();
+		for(int i=0;i<4;i++) {
+			RMap rMap=new RMap();
+			rmList.add(rMap);
+		}
+		this.rMapManager.save(rmList);
 	}
 
 }

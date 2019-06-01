@@ -15,7 +15,7 @@ import com.stu.software.domain.BaseTreeEntity;
 
 @Table(name = "T_ROAD_MAP")
 @Entity
-@NamedQueries({ @NamedQuery(name = "RMap.getRoot", query = "select g from Group g where g.parent is null") })
+@NamedQueries({ @NamedQuery(name = "RMap.getRoot", query = "select g from RMap g where g.parent is null") })
 public class RMap extends BaseTreeEntity<RMap> {
 
    /**

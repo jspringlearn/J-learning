@@ -2,6 +2,8 @@ package com.stu.software.road.dao;
 
 
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -36,6 +38,7 @@ public class RMapDaoTest extends GenericTreeDaoTestCase<Long, RMap, RMapDao> {
 			this.rMapDao.save(rMap);
 		}
 		List<RMap> roots =this.rMapDao.getRoot();
+		assertEquals(size, roots.size());
 		if(logger.isInfoEnabled()) {
 			logger.info("testGetRoot() - List<RMap> roots=" + roots);
 		}

@@ -1,6 +1,8 @@
 package com.stu.software.road.service;
 
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,11 +19,14 @@ public class CircuitManagerTest extends GenericManagerTestCase<Long, Circuit, Ci
 
 	private static final Logger logger = LogManager.getLogger(CircuitManagerTest.class.getName());
 
-	CircuitManager circuitManager;
+	
 
 	public CircuitManagerTest() {
 		super(Circuit.class);
 	}
+	CircuitManager circuitManager;
+	
+	
 	@Autowired
 	public void setCircuitManager(CircuitManager circuitManager) {
 		this.circuitManager=circuitManager;
