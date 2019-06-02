@@ -8,19 +8,19 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.stu.software.goods.domain.Goods;
 import com.stu.software.place.domain.Site;
 import com.stu.software.service.GenericManagerTestCase;
 
 public class SiteManagerTest extends GenericManagerTestCase<Long, Site, SiteManager> {
 
-	private static final Logger logger = LogManager.getLogger(SiteManagerTest.class.getName());
+private static final Logger logger = LogManager.getLogger(SiteManagerTest.class.getName());
 
 	
-	public SiteManagerTest(Class<Site> persistentClass) {
-		super(persistentClass);
-	}
+	
 	SiteManager siteManager;
+	public SiteManagerTest() {
+		super(Site.class);
+	}
 
 
 
@@ -35,6 +35,7 @@ public class SiteManagerTest extends GenericManagerTestCase<Long, Site, SiteMana
 	        List<Site> siteList = new ArrayList<Site>();
 	        for (int i = 0;i<10;i++) {
 	            Site site = new Site();
+	            
 	            siteList.add(site);
 
 	        }
@@ -42,3 +43,5 @@ public class SiteManagerTest extends GenericManagerTestCase<Long, Site, SiteMana
 	    }
 
 }
+
+

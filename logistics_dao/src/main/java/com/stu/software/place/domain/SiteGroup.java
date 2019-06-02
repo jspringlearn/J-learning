@@ -26,7 +26,8 @@ public class SiteGroup extends BaseTreeEntity<SiteGroup> {
 	private String groupId;
 	@Column(name="GROUP_NAME")
 	private String groupName;
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "group")
+//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "group")
+	@OneToMany(mappedBy = "group")
 	private List<Site> sites;
 	
 	/*

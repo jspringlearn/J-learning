@@ -30,7 +30,7 @@ public class Site extends BaseEntity{
 	@Column(name="SITE_INFO")
 	private String info;
 	
-	@ManyToOne(fetch = FetchType.LAZY,cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="GROUP_ID")
 	private SiteGroup group;
 	
