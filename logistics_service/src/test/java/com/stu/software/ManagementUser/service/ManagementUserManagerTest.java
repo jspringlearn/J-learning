@@ -3,6 +3,7 @@ package com.stu.software.ManagementUser.service;
 import com.stu.software.ManagementUser.domain.ManagementUser;
 import com.stu.software.place.service.SiteManagerTest;
 import com.stu.software.service.GenericManagerTestCase;
+import com.stu.software.service.GenericTreeManagerTestCase;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
@@ -19,10 +20,10 @@ import java.util.List;
  * */
 public class ManagementUserManagerTest extends GenericManagerTestCase<Long, ManagementUser,ManagementUserManage> {
 
-    private static final Logger logger = LogManager.getLogger(SiteManagerTest.class.getName());
+    private static final Logger logger = LogManager.getLogger(ManagementUserManagerTest.class.getName());
 
-    public ManagementUserManagerTest(Class<ManagementUser> persistentClass) {
-        super(persistentClass);
+    public ManagementUserManagerTest() {
+        super(ManagementUser.class);
     }
 
 
@@ -37,6 +38,16 @@ public class ManagementUserManagerTest extends GenericManagerTestCase<Long, Mana
     @Test
    public void testSave(){
        logger.debug("This is a test method for AOP");
+//        for(int i=0;i<5;i++) {
+//            ManagementUser managementUser = new ManagementUser();
+//            managementUser.setMName("MU"+i);
+//            managementUser=this.managementUserManage.save(managementUser);
+//            for(int j=0;j<5;j++){
+//                ManagementUser managementUser1 = new ManagementUser();
+//                managementUser1.setMName("MU1"+j);
+//                managementUser1.setParent(managementUser);
+//            }
+//        }
        List<ManagementUser> managementUserList=new ArrayList<ManagementUser>();
        for(int i=0;i<5;i++){
            ManagementUser managementUser=new ManagementUser();

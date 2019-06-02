@@ -16,7 +16,7 @@ public class ManagementUserEntityGenerator extends GenericGenerator {
 
     @Test
     public void gen_ManagementUserGroup(){
-        for(int i=0;i<5;i++){
+        for(int i=0;i<3;i++){
             ManagementUserGroup MUG=new ManagementUserGroup();
             MUG.setManagementName("ManagementName"+i);
             MUG.setCommonManagementName("CommonManagementName"+i);
@@ -34,7 +34,7 @@ public class ManagementUserEntityGenerator extends GenericGenerator {
         }
     }
     public void gen_ManagementUser(ManagementUserGroup managementUserGroup){
-        for(int i=0;i<5;i++){
+        for(int i=0;i<3;i++){
             ManagementUser managementUser=new ManagementUser();
             managementUser.setMName("Management"+i);
             managementUser.setMPhone("Management"+i+i+i+i+i+i);

@@ -2,12 +2,13 @@ package com.stu.software.ManagementUser.domain;
 
 
 import com.stu.software.domain.BaseEntity;
+import com.stu.software.domain.BaseTreeEntity;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="T_Management")
-public class ManagementUser extends BaseEntity {
+public class ManagementUser extends BaseTreeEntity <ManagementUser>{
 	private static final long serialVersionUID = 2956980785739215106L;
 	/**
 	 * Management_Name 管理员姓名
@@ -20,8 +21,8 @@ public class ManagementUser extends BaseEntity {
 	@Column(name="Management_MPhone")
 	 String MPhone;
 
-	@ManyToOne(fetch = FetchType.LAZY,cascade=CascadeType.ALL)
-	@JoinColumn(name="GROUP_ID")
+	@ManyToOne
+	@JoinColumn(name="ManagementUserGroup_ID")
 	 ManagementUserGroup managementUserGroup;
 
 	public ManagementUserGroup getManagementUserGroup() {

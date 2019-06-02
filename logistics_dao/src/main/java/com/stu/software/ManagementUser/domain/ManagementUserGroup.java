@@ -4,6 +4,7 @@ import com.stu.software.domain.BaseTreeEntity;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "T_ADMIN_ManagementUser")
@@ -32,14 +33,14 @@ public class ManagementUserGroup extends BaseTreeEntity<ManagementUserGroup> {
     @Column(name = "CommonManagementName")
      String CommonManagementName;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "managementUserGroup")
-     List<ManagementUser> managementUsers;
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER, mappedBy = "managementUserGroup")
+    Set<ManagementUser> managementUsers;
 
-    public void setManagementUsers(List<ManagementUser> managementUsers) {
+    public void setManagementUsers(Set<ManagementUser> managementUsers) {
         this.managementUsers = managementUsers;
     }
 
-    public List<ManagementUser> getManagementUsers() {
+    public Set<ManagementUser> getManagementUsers() {
         return managementUsers;
     }
 

@@ -5,9 +5,13 @@ import com.stu.software.ManagementUser.domain.ManagementUser;
 import com.stu.software.ManagementUser.service.ManagementUserManage;
 import com.stu.software.service.impl.GenericManagerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Component
+@Transactional
 public class ManagementUserManagerImpl extends GenericManagerImpl<ManagementUser,Long> implements ManagementUserManage {
 
 
