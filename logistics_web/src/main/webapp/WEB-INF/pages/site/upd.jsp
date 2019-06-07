@@ -2,16 +2,17 @@
 <html>
 <head>
     <title>注册</title>
-    <script src="${pageContext.request.contextPath}js/jquery-1.8.3.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
        function re() {
     	   alert("xxx");
     	   
-    	   var url='${pageContext.request.contextPath}/stu/save.do';
+    	   var url='${pageContext.request.contextPath}/site/upd.do';
     	   
+    	   var siteId=$('#siteId').val();
     	   var name=$('#name').val();
-    	   var sex=$('#sex').val();	   
-    	   var jsonObj={name:name,sex:sex};
+    	   var info=$('#info').val();	   
+    	   var jsonObj={siteId:siteId,name:name,info:info};
     	   
     	   var parameters=JSON.stringify(jsonObj);
     	   
@@ -23,7 +24,7 @@
     		   contentType:'application/json;charset=UTF-8',
     		   data:parameters,
     		   success:function(respData){
-    			   console.log(respData);
+    			   console.log("jsonp:"+respData);
     		   }
     	   })
 		
@@ -31,9 +32,10 @@
     </script>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}" method="post">
-    城市:<input type="text" name="sitename"><br>
-    信息:<input type="text" name="siteinfo"><br>
+<form action="${pageContext.request.contextPath}/site/upd.do" method="post">
+  ID:<input id="siteId" type="text" value="${site.siteId}" name="siteId"><br>
+    名称:<input id="name" type="text" value="${site.name}" name="name"><br>
+    信息:<input id="info" type="text" value="${site.info}" name="info"><br>
     <input type="button" value="提交json格式" onclick="re();">
     <input type="submit">
 </form>

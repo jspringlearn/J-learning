@@ -39,5 +39,42 @@ public class SiteBaseDao extends BaseDao {
 		}
 		return list;
 	}
+	public int upd(Site s){
+		String sql="update T_SITE set SITE_NAME=?,SITE_INFO=? where SITE_ID=?";
+		String[] params={
+			s.getName(),
+			s.getInfo(),
+			String.valueOf(s.getSiteId())
+		};
+		return this.exeUda(params, sql);
+	}
+	public int del(int id){
+		String sql="delete from T_SITE where SITE_ID=?";
+		String[] params={
+			String.valueOf(id)
+		};
+		return this.exeUda(params, sql);
+	}
+	public Site findOne(int SiteId){
+		Site s=null;
+		try {
+			conn=this.getConn();
+			ps=conn.prepareStatement("select * from T_SITE where SITE_ID=?");
+			ps.setInt(1, SiteId);
+			rs=ps.executeQuery();
+			while(rs.next()){
+				s=new Site();
+				s.setSiteId(rs.getInt("SITE_ID"));
+				s.setName(rs.getString("SITE_NAME"));
+				s.setInfo(rs.getString("SITE_INFO"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			this.closeAll(rs, ps, conn);
+		}
+		
+		return s;
+	}
 
 }

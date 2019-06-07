@@ -13,9 +13,12 @@
 			<td>简介</td>
 		</tr>
 		<c:forEach items="${siteList}" var="site">
+		<tr>
             <td>${site.name}</td>
 			<td>${site.info}
-			<a href="${pageContext.request.contextPath}/site/edit.do?id=${site.id}">修改</a></td>
+			<a href="${pageContext.request.contextPath}/site/delete.do?siteId=${site.siteId}">删除</a>
+			<a href="${pageContext.request.contextPath}/site/toupdatesite.do?siteId=${site.siteId}">修改</a></td>
+			</tr>
 		</c:forEach>
 	</table>
 </body>

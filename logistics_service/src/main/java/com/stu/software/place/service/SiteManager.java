@@ -15,6 +15,9 @@ public interface SiteManager extends GenericManager<Site, Long> {
 	
 	void savesite(String name,String info);
 	List<Site> findallsite();
+	void deleteSite(int siteId);
+	void upd(Site site);
+	Site findone(int siteId);
 
 
 }

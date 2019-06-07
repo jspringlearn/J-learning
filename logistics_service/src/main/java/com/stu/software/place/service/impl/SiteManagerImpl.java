@@ -30,12 +30,38 @@ public class SiteManagerImpl extends GenericManagerImpl<Site, Long> implements S
             site.setInfo(info);
             this.siteDao.save(site);		
 	}
-
+/**
+ * find all site 
+ */
 	@Override
 	public List<Site> findallsite() {
 		// TODO Auto-generated method stub
 		List<Site> all = SiteBaseDao.getintstan().findAll();
 		return all;
+	}
+	/**
+	 * delete Site  
+	 */
+	@Override
+	public void deleteSite(int siteId) {
+		// TODO Auto-generated method stub
+		SiteBaseDao.getintstan().del(siteId);
+	}
+	/**
+	 * update
+	 */
+	@Override
+	public void upd(Site site) {
+		// TODO Auto-generated method stub
+		SiteBaseDao.getintstan().upd(site);
+		
+	}
+	@Override
+	public Site findone(int siteId) {
+		// TODO Auto-generated method stub
+		Site s=SiteBaseDao.getintstan().findOne(siteId);
+		System.out.println(s);
+		return s;
 	}
 
 

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.stu.software.place.domain.Site;
@@ -33,7 +34,7 @@ public class SiteController extends GenericController<Site, Long, SiteManager>{
 	/**
 	 * 
 	 */
-	@RequestMapping("/allsite")
+	@RequestMapping("/allsite")    //  /allsite
 	public String findAllSite(Model model) {
 		List<Site> siteList= this.siteManager.findallsite();
 		for(Site site:siteList) {
@@ -41,6 +42,26 @@ public class SiteController extends GenericController<Site, Long, SiteManager>{
 		}
 		model.addAttribute("siteList", siteList);
 		return "site/findallsite";
+	}
+	@RequestMapping("/delete")
+	public String delete(int siteId) {
+		this.siteManager.deleteSite(siteId);
+		return "forward:allsite.do";//turn to /allsite
+	}
+	@RequestMapping("/toupdatesite")
+	public String toupdate(int siteId,Model model) {
+		Site site=this.siteManager.findone(siteId);
+		System.out.println(site);
+//		Model model=new Model();
+		model.addAttribute("site", site);
+		return "site/upd";
+	}
+	@RequestMapping("/upd")
+	public String update(Site site) {
+		System.out.println(site);
+		this.siteManager.upd(site);
+		//this.siteManager.upd(site);
+		return "forward:allsite.do";//turn to /allsite
 	}
 
 }

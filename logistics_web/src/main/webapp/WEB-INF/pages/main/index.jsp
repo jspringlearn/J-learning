@@ -20,7 +20,11 @@
 		<p>Try Element</p>
 		</el-dialog>
 	</div>
-
+<form action="${pageContext.request.contextPath}/site/allsite.do" method="post">
+   物流仓储系统
+    <input type="submit" value="查看地点信息" >
+    
+</form>
 
 </body>
 <!-- import Vue before Element -->
