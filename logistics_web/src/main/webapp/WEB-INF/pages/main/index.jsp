@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	This is my main page!
+	测试页面
 
 	<div id="app">
 		<el-button @click="visible = true">Button</el-button>

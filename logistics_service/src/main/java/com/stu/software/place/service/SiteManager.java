@@ -12,26 +12,8 @@ import com.stu.software.service.GenericManager;
 @Component
 @Transactional
 public interface SiteManager extends GenericManager<Site, Long> {
-	/**
-	 * 查询地点编号
-	 * @param SiteId
-	 * @return
-	 */
-	List<Site> findBySite(String SiteId);
-	/**
-	 * 地点名称
-	 * @param SiteName
-	 * @return
-	 */
-	List<Site> findBySiteName(String SiteName);
-    /**
-     * 地点简介（信息）
-     * @param SiteInfo
-     * @return
-     */
-	List<Site> findBySiteInfo(String SiteInfo);
-	void savesite();
 	
+	void savesite(String name,String info);
 	List<Site> findallsite();
 
 

@@ -42,11 +42,11 @@
             <version>5.4.2.Final</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
-        <dependency>
+         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-dbcp2</artifactId>
             <version>2.6.0</version>
-        </dependency>
+        </dependency> 
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
@@ -79,6 +79,7 @@
                     <jdbcPassword>Student_123456</jdbcPassword>
                     <!--这里注释掉了-->
                     <!--<hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>-->
+                    <hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
                     <properties>
                         <hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
                     </properties>

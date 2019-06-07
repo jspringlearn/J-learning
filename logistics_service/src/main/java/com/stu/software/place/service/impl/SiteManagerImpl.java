@@ -10,29 +10,12 @@ import com.stu.software.place.dao.SiteDao;
 import com.stu.software.place.domain.Site;
 import com.stu.software.place.service.SiteManager;
 import com.stu.software.service.impl.GenericManagerImpl;
+import com.stu.software.zbase.SiteBaseDao;
 
 @Component
 public class SiteManagerImpl extends GenericManagerImpl<Site, Long> implements SiteManager {
 
-	SiteDao siteDao;
-	@Override
-	public List<Site> findBySite(String SiteId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Site> findBySiteName(String SiteName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Site> findBySiteInfo(String SiteInfo) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-    
+	SiteDao siteDao;   
 	@Autowired
 	public void setSiteDao(SiteDao siteDao) {
 		this.siteDao=siteDao;
@@ -40,25 +23,19 @@ public class SiteManagerImpl extends GenericManagerImpl<Site, Long> implements S
 		
 	}
 	@Override
-	public void savesite() {
+	public void savesite(String name,String info) {
 		// TODO Auto-generated method stub
-		int n=2;
-        for(int i = 1; i <= n; i++) {
             Site site = new Site();
-            site.setName("site_" + i);
-            this.siteDao.save(site);
-        }
-		
+            site.setName(name);
+            site.setInfo(info);
+            this.siteDao.save(site);		
 	}
 
 	@Override
 	public List<Site> findallsite() {
 		// TODO Auto-generated method stub
-		List<Site> all = this.siteDao.findAll();
-		for(Object o:all) {
-			o.toString();
-		}
-		return null;
+		List<Site> all = SiteBaseDao.getintstan().findAll();
+		return all;
 	}
 
 

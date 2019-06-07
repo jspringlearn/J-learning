@@ -35,7 +35,7 @@ private static final Logger logger = LogManager.getLogger(SiteManagerTest.class.
 	        List<Site> siteList = new ArrayList<Site>();
 	        for (int i = 0;i<10;i++) {
 	            Site site = new Site();
-	            
+	            site.setName("hello_"+i);
 	            siteList.add(site);
 
 	        }
