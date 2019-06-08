@@ -2,20 +2,16 @@
 <html>
 <head>
     <title>注册</title>
-    <script src="${pageContext.request.contextPath}/WEB-INF/resources/js/jquery-1.8.3.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
        function re() {
     	   alert("xxx");
-    	   
     	   var url='${pageContext.request.contextPath}/site/upd.do';
-    	   
     	   var siteId=$('#siteId').val();
     	   var name=$('#name').val();
     	   var info=$('#info').val();	   
     	   var jsonObj={siteId:siteId,name:name,info:info};
-    	   
     	   var parameters=JSON.stringify(jsonObj);
-    	   
     	   console.log(jsonObj);
     	   console.log(parameters);
     	   $.ajax({

@@ -20,12 +20,16 @@
 		<p>Try Element</p>
 		</el-dialog>
 	</div>
-<form action="${pageContext.request.contextPath}/site/allsite.do" method="post">
+    <form action="${pageContext.request.contextPath}/site/allsite.do" method="post">
    物流仓储系统
     <input type="submit" value="查看地点信息" >
     
-</form>
+    </form>
+	<form action="${pageContext.request.contextPath}/managementUser/findallmanagementUser.do" method="post">
+		物流仓储系统
+		<input type="submit" value="查看管理员信息" >
 
+	</form>
 </body>
 <!-- import Vue before Element -->
 <script src="https://unpkg.com/vue/dist/vue.js"></script>

@@ -21,7 +21,7 @@
 	</bean>
 
 	<context:property-placeholder
-	location="/WEB-INF/config/javaee/jdbc.properties" />
+		location="/WEB-INF/config/javaee/jdbc.properties" />
 
 	<!-- JNDI DataSource for J2EE environments -->
 	<!-- <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/appfuse"/> -->
