@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>注册</title>
-    <script src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
+    <script src="${pageContext.request.contextPath}/WEB-INF/resources/js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
        function re() {
     	   alert("xxx");

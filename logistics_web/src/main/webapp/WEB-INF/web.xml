@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>logistics_web</display-name>
-  <context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/config/spring/applicationContext-*.xml</param-value>
-	</context-param>
+    <!-- 加载Spring配置文件上下文 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:/applicationContext*.xml</param-value>
+    </context-param>
 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -82,9 +83,9 @@
         <servlet-name>DispatcherServlet</servlet-name>
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
-
+<!---->
 	<welcome-file-list>
-		<welcome-file>site/index.do</welcome-file>
+		<welcome-file>/WEB-INF/pages/main/index.jsp</welcome-file>
 	</welcome-file-list>
   
 </web-app>
