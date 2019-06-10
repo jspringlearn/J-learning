@@ -41,7 +41,7 @@ public class Goods_CURD extends BaseDao {
 		return list;
 	}
 	public int upd(Goods goods){
-		String sql="update T_GOODS GOODS_NAME=?,GOODS_NUMBER=? where GOODS_ID=?";
+		String sql="update T_GOODS set GOODS_NAME=?,GOODS_NUMBER=? where GOODS_ID=?";
 		String[] params={
 				goods.getName(),
 				goods.getNumber(),
