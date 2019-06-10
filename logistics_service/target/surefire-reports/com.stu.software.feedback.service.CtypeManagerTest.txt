@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.stu.software.feedback.service.CtypeManagerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.862 s - in com.stu.software.feedback.service.CtypeManagerTest
