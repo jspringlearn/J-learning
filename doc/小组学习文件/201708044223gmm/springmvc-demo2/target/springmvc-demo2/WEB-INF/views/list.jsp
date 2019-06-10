@@ -18,19 +18,22 @@
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
-                <c:forEach  items="${requestScope.employees}" var="emps">
+                <c:forEach  items="${requestScope.employees}" var="emp">
                     <tr>
-                        <td>${emps.id}</td>
-                        <td>${emps.lastName}</td>
-                        <td>${emps.email}</td>
-                        <td>${emps.gender}</td>
-                        <td>${emps.department.departmentName}</td>
-                        <td><a href=">Edit"></a> </td>
-                        <td><a href=">Delete"></a> </td>
+                        <td>${emp.id}</td>
+                        <td>${emp.lastName}</td>
+                        <td>${emp.email}</td>
+                        <td>${emp.gender}</td>
+                        <td>${emp.department.departmentName}</td>
+                        <td><a href="">Edit</a> </td>
+                        <td><a href="">Delete</a> </td>
                     </tr>
                 </c:forEach>
             </table>
         </c:if>
+
+        <br><br>
+        <a href="emp">Add New Employee</a>
 </body>
 </head>
 </html>

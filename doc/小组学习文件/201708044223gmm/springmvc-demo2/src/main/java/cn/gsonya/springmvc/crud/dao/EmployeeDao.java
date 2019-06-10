@@ -28,7 +28,6 @@ public class EmployeeDao {
         employees.put(1003,new Employee(1003,"E-CC","cc@163.com","女",new Department(103,"D-CC")));
         employees.put(1004,new Employee(1004,"E-DD","dd@163.com","女",new Department(104,"D-DD")));
         employees.put(1005,new Employee(1005,"E-EE","ee@163.com","男",new Department(105,"D-EE")));
-        System.out.println("employees.put()");
     }
     private static Integer initId=1006;
     public void save(Employee employee){
