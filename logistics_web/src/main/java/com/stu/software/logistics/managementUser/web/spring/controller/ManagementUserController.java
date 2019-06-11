@@ -30,9 +30,9 @@ public class ManagementUserController extends GenericController<ManagementUser,L
     @RequestMapping("/findallmanagementUser")    //  /allsite
     public String findallmanagementUser(Model model) {
         List<ManagementUser> managementUserList= this.managementUserManage.findAll();
-        for(ManagementUser managementUser:managementUserList) {
-            System.out.println(managementUser);
-        }
+//        for(ManagementUser managementUser:managementUserList) {
+//            System.out.println(managementUser);
+//        }
         model.addAttribute("managementUserList", managementUserList);
         return "managementUser/findallmanagementUser";
     }

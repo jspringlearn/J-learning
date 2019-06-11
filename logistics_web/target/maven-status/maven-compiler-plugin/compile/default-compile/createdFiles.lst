@@ -1,2 +1,3 @@
-com\stu\software\logistics\place\web\spiring\controller\SiteController.class
+com\stu\software\logistics\managementUser\web\spring\controller\ManagementUserController.class
 com\stu\software\logistics\goods\web\spring\controller\GoodsController.class
+com\stu\software\logistics\place\web\spiring\controller\SiteController.class

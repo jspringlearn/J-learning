@@ -43,7 +43,7 @@ public class SiteController extends GenericController<Site, Long, SiteManager>{
 
 	@RequestMapping("/allsite")    //  /allsite
 	public String findAllSite(Model model) {
-		List<Site> siteList= this.siteManager.findallsite();
+		List<Site> siteList= this.siteManager.findAll();
 		for(Site site:siteList) {
 			System.out.println(site);
 		}

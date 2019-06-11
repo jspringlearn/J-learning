@@ -14,6 +14,7 @@
         <module>logistics_service</module>
         <module>logistics_web</module>
 
+        <module>logistics_client</module>
     </modules>
 
 
