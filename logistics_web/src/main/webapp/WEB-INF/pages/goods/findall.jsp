@@ -17,7 +17,7 @@
 			<td>${goods.name}</td>
 			<td>${goods.number}
 				<a href="/goods/delete?goodsId=${goods.ID}">删除</a>
-				<a href="/goods/toupdatesite?goodsId=${goods.ID}">修改</a></td>
+				<a href="/goods/toupdategoods?goodsId=${goods.ID}">修改</a></td>
 		</tr>
 		</c:forEach>
 	</table>
