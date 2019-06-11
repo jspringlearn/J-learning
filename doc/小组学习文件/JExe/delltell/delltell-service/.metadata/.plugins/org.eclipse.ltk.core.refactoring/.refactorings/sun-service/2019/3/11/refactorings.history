@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;applicationContextTest-service.xml&apos; to &apos;service/src/test/resources&apos;&#x0D;&#x0A;- Original project: &apos;sun-service&apos;&#x0D;&#x0A;- Destination element: &apos;service/src/test/resources&apos;&#x0D;&#x0A;- Original element: &apos;applicationContextTest-service.xml&apos;" description="Copy file" destination="=service/src\/test\/resources" element1="src/test/resources/applicationContextTest-service.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1552701490605" units="0" version="1.0"/>
-</session>

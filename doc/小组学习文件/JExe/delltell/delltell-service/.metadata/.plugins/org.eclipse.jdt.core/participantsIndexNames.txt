@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-D:\Java\work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4070836524.index
-\JDBCExe\src\main\resources
