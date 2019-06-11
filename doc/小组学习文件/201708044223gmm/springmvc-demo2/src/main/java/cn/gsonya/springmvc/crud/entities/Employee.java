@@ -60,6 +60,9 @@ public class Employee {
         this.gender = gender;
         this.department = department;
     }
+
+    public Employee(){}
+
     public Integer getDepartmentId(){
         return this.department.getId();
     }
