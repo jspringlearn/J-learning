@@ -62,6 +62,11 @@
 
 	</form></li><ol>
 
+    <form action="${pageContext.request.contextPath}/road/allcircuit" method="post">
+		物流仓储系统---线路
+		<input type="submit" value="查看线路信息" >
+
+	</form>
 
 
 </body>
