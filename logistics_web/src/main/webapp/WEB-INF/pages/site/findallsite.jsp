@@ -16,8 +16,8 @@
 		<tr>
 			<td>${site.name}</td>
 			<td>${site.info}
-				<a href="/site/delete?siteId=${site.siteId}">删除</a>
-				<a href="/site/toupdatesite?siteId=${site.siteId}">修改</a></td>
+				<a href="${pageContext.request.contextPath}/site/delete.do?siteId=${site.siteId}">删除</a>
+				<a href="${pageContext.request.contextPath}/site/toupdatesite.do?siteId=${site.siteId}">修改</a></td>
 		</tr>
 		</c:forEach>
 	</table>
