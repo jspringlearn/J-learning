@@ -59,7 +59,7 @@ public class SiteManagerImpl extends GenericManagerImpl<Site, Long> implements S
 	public Site findone(int siteId) {
 		// TODO Auto-generated method stub
 		Site s=SiteBaseDao.getintstan().findOne(siteId);
-		System.out.println(s);
+		//System.out.println(s);
 		return s;
 	}
 

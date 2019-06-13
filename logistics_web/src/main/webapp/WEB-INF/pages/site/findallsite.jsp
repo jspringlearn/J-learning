@@ -2,8 +2,13 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+<<<<<<< HEAD
 <title>信息显示</title>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+=======
+<title>注册</title>
+
+>>>>>>> fa03173549321db597dfd23450b5993c21349547
 </head>
 <body>
 	地点:

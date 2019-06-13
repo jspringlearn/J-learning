@@ -6,7 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Main</title>
 <!-- 引入样式 -->
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <link rel="stylesheet"
 	href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 
@@ -15,31 +14,33 @@
 
 	测试页面
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> fa03173549321db597dfd23450b5993c21349547
 	<div id="app">
 		<el-button @click="visible = true">Button</el-button>
 		<el-dialog :visible.sync="visible" title="Hello world">
 		<p>Try Element</p>
 		</el-dialog>
 	</div>
-	<ol><li>
-	<form action="${pageContext.request.contextPath}/site/allsite"
-		method="post">
-		物流仓储系统 <input type="submit" value="查看地点信息">
+<form action="${pageContext.request.contextPath}/site/allsite" method="post">
+   物流仓储系统
+    <input type="submit" value="查看地点信息" >
+    
+</form>
 
-	</form></li>
-   <li>
-	<form action="/goods/allsite" method="post">
-		物流管理系统---货物 <input type="submit" value="查看货物信息">
-	</form></li>
-    <li>
-	<form
-		action="${pageContext.request.contextPath}/managementUser/findallmanagementUser.do"
-		method="post">
-		物流仓储系统 <input type="submit" value="查看管理员信息">
+	<form action="/goods/allgoods" method="post">
+		物流管理系统---货物
+		<input type="submit" value="查看货物信息" >
+	</form>
 
-	</form></li><ol>
+	<form action="${pageContext.request.contextPath}/managementUser/findallmanagementUser.do" method="post">
+		物流仓储系统
+		<input type="submit" value="查看管理员信息" >
+
+	</form>
 
 
 

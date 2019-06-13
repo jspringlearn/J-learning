@@ -27,33 +27,30 @@ public class ManagementUserController extends GenericController<ManagementUser,L
         return "main/index";
     }
 
-    @RequestMapping("/findallmanagementUser")    //  /allsite
+    @RequestMapping("/findallmanagementUser")
     public String findallmanagementUser(Model model) {
         List<ManagementUser> managementUserList= this.managementUserManage.findAll();
-//        for(ManagementUser managementUser:managementUserList) {
-//            System.out.println(managementUser);
-//        }
         model.addAttribute("managementUserList", managementUserList);
         return "managementUser/findallmanagementUser";
     }
-    @RequestMapping("AddManagementuser")
-    public String AddmanagementUser(Model model){
-        ManagementUser managementUser;
 
-        return "managementUser/AddManagementuser";
+    @RequestMapping("/upd")
+    public String update(ManagementUser managementUser) {
+        //System.out.println(managementUser);
+        this.managementUserManage.upd(managementUser);
+        return "forward:findallmanagementUser.do";
     }
-
-    @RequestMapping("findByName")
-    public String findByName(Model model){
-//        List<ManagementUser> managementUserList= this.managementUserManage.findAll();
-//        for(ManagementUser managementUser:managementUserList) {
-//
-//            System.out.println(managementUser);
-//        }
-//        model.addAttribute("managementUserList", managementUserList);
-        return "managementUser/findByName";
+    @RequestMapping("/delete")
+    public String delete(int managementID) {
+        this.managementUserManage.deletemanagementUser(managementID);
+        return "forward:findallmanagementUser";
     }
-
+    @RequestMapping("/toupdatemanagementUser")
+    public String toupdate(int managementID,Model model) {
+        ManagementUser managementUser=this.managementUserManage.findone(managementID);
+        model.addAttribute("managementUser", managementUser);
+        return "managementUser/upd";
+    }
 }
 
 

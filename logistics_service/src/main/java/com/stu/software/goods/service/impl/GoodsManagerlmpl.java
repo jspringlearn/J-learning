@@ -50,7 +50,7 @@ public class GoodsManagerlmpl extends GenericManagerImpl<Goods, Long> implements
         // TODO Auto-generated method stub
         Goods goods=new Goods();
         goods=Goods_CURD.getintstan().findOne(goodsId);
-        System.out.println(goods);
+       // System.out.println(goods);
         return goods;
     }
 

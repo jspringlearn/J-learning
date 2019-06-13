@@ -1,6 +1,8 @@
 package com.stu.software.goods.domain;
 
+import com.stu.software.admin.dao.UserDao;
 import com.stu.software.jdbc.BaseDao;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -75,6 +77,8 @@ public class Goods_CURD extends BaseDao {
 		} finally {
 			this.closeAll(rs, ps, conn);
 		}
+
+
 
 		return goods;
 	}
