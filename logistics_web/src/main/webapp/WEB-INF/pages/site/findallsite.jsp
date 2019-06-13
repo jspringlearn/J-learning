@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>信息显示</title>
-
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
 	地点:
@@ -21,5 +21,8 @@
 		</tr>
 		</c:forEach>
 	</table>
+	<div v-for="(name,info) in ${siteList}">
+  {{ ${site.name} }}: {{ ${site.info} }}
+</div>
 </body>
 </html>
