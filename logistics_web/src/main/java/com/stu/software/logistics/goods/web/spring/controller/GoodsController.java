@@ -28,7 +28,7 @@ public class GoodsController extends GenericController<Goods, Long, GoodsManager
     }
 
 
-    @RequestMapping("/allgoods")    //  显示所有  allsite
+    @RequestMapping("/allgoods")    //  显示货物
     public String findAllSite(Model model) {
         List<Goods> goodsList= this.goodsManager.findAll();
         for(Goods goods:goodsList) {
@@ -42,7 +42,7 @@ public class GoodsController extends GenericController<Goods, Long, GoodsManager
     public String update(Goods goods) {
         System.out.println(goods);
         this.goodsManager.update(goods);
-        return "forward:allgoods";    //turn to 方法的allsite
+        return "forward:allgoods";    //转向方法
     }
     @RequestMapping("/toupdategoods")
     public String toupdate(long goodsId,Model model) {

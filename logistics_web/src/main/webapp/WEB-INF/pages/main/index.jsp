@@ -26,7 +26,7 @@
     
 </form>
 
-	<form action="/goods/allsite" method="post">
+	<form action="/goods/allgoods" method="post">
 		物流管理系统---货物
 		<input type="submit" value="查看货物信息" >
 	</form>

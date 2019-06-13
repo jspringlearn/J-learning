@@ -15,7 +15,6 @@
     	   var jsonObj={ID:ID,name:name,number:number};
     	   
     	   var parameters=JSON.stringify(jsonObj);
-    	   
     	   console.log(jsonObj);
     	   console.log(parameters);
     	   $.ajax({
@@ -32,7 +31,7 @@
     </script>
 </head>
 <body>
-<form action="/goods/update" method="post">
+<form action="${pageContext.request.contextPath}/goods/update" method="post">
     ID:<input id="ID" type="text" value="${goods.ID}" name="ID"><br>
     名称:<input id="name" type="text" value="${goods.name}" name="name"><br>
     数量:<input id="number" type="text" value="${goods.number}" name="number"><br>
