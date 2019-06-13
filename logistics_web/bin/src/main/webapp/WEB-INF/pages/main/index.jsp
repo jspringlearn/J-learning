@@ -14,11 +14,6 @@
 
 	测试页面
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> fa03173549321db597dfd23450b5993c21349547
 	<div id="app">
 		<el-button @click="visible = true">Button</el-button>
 		<el-dialog :visible.sync="visible" title="Hello world">
@@ -42,10 +37,7 @@
 
 	</form>
 
-    <form action="${pageContext.request.contextPath}/road/allcircuit" method="post">
-        物流仓储系统---线路
-        <input type="submit" value="查看线路信息">
-    </form>
+
 
 </body>
 <!-- import Vue before Element -->
