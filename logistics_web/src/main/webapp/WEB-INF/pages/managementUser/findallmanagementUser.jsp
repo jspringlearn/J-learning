@@ -21,7 +21,9 @@
     <c:forEach items="${managementUserList}" var="managementUser">
         <tr>
             <td>${managementUser.MName}</td>
-            <td>${managementUser.MPhone}</td>
+            <td>${managementUser.MPhone}
+                <a href="${pageContext.request.contextPath}/managementUser/delete.do?managementID=${managementUser.managementID}">删除</a>
+                <a href="${pageContext.request.contextPath}/managementUser/toupdatemanagementUser.do?managementID=${managementUser.managementID}">修改</a></td>
         </tr>
     </c:forEach>
 </table>

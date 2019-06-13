@@ -20,6 +20,16 @@ public class ManagementUser extends BaseTreeEntity <ManagementUser>{
 	 String MName;
 	@Column(name="Management_MPhone")
 	 String MPhone;
+	@Column(name="Management_ID")
+	int ManagementID;
+
+	public int getManagementID() {
+		return ManagementID;
+	}
+
+	public void setManagementID(int managementID) {
+		ManagementID = managementID;
+	}
 
 	@ManyToOne
 	@JoinColumn(name="ManagementUserGroup_ID")
@@ -51,6 +61,6 @@ public class ManagementUser extends BaseTreeEntity <ManagementUser>{
 
 	@Override
 	public String toString() {
-		return "Site [ MName=" + MName + ", MPhone=" + MPhone + ", ManagementUserGroup=" + managementUserGroup +"]";
+		return "ManagementUser [ MName=" + MName + ", MPhone=" + MPhone  +"]";
 	}
 }

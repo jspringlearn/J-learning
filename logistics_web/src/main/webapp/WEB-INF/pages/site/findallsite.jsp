@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-<title>信息显示</title>
+<title>注册</title>
 
 </head>
 <body>

@@ -34,7 +34,7 @@ public class SiteController extends GenericController<Site, Long, SiteManager>{
 	 */
 	@RequestMapping("/upd")
 	public String update(Site site) {
-		System.out.println(site);
+		//System.out.println(site);
 		this.siteManager.upd(site);
 		//this.siteManager.upd(site);
 		return "forward:allsite.do";//turn to /allsite
