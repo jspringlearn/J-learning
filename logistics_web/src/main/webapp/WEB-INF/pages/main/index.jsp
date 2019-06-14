@@ -14,11 +14,6 @@
 
 	测试页面
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> fa03173549321db597dfd23450b5993c21349547
 	<div id="app">
 		<el-button @click="visible = true">Button</el-button>
 		<el-dialog :visible.sync="visible" title="Hello world">
