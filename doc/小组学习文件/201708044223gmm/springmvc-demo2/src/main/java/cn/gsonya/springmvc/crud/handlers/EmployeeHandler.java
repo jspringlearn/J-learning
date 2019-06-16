@@ -5,8 +5,7 @@ import cn.gsonya.springmvc.crud.dao.EmployeeDao;
 import cn.gsonya.springmvc.crud.entities.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -24,12 +23,43 @@ public class EmployeeHandler {
     @Autowired
     private DepartmentDao departmentDao;
 
+    //修改
+    @ModelAttribute
+    public void getEmployee(@RequestParam(value = "id",required = false)Integer id,Map<String,Object>map){
+        if(id!=null){
+            Employee employees=employeeDao.get(id);
+            map.put("employee",employees);
+        }
+    }
+
+    @RequestMapping(value = "/emp",method = RequestMethod.PUT)
+    public String update(Employee employee){
+        employeeDao.save(employee);
+        return "redirect:/emps";
+    }
+
+    @RequestMapping(value = "/emp/{id}",method = RequestMethod.GET)
+    public String input(@PathVariable("id")Integer id,Map<String,Object>map){
+        map.put("employee",employeeDao.get(id));
+        map.put("departments",departmentDao.getDepartments());
+        return "input";
+    }
+
+    //删除
+    @RequestMapping(value = "/emp/{id}",method = RequestMethod.DELETE)
+    public String delete(@PathVariable("id") Integer id){
+        employeeDao.delete(id);
+        return "redirect:/emps";
+    }
+
+    //添加
     @RequestMapping(value = "/emp",method = RequestMethod.POST)
     public String save(Employee employee){
         employeeDao.save(employee);
         return "redirect:/emps";
     }
 
+    //显示所有员工
     @RequestMapping(value = "/emp",method = RequestMethod.GET)
     public String input(Map<String,Object>map){
         map.put("departments",departmentDao.getDepartments());

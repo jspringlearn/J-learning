@@ -26,7 +26,7 @@
     
 </form>
 
-	<form action="/goods/allsite" method="post">
+	<form action="/goods/allgoods" method="post">
 		物流管理系统---货物
 		<input type="submit" value="查看货物信息" >
 	</form>
@@ -37,7 +37,10 @@
 
 	</form>
 
-
+    <form action="${pageContext.request.contextPath}/road/allcircuit" method="post">
+        物流仓储系统---线路
+        <input type="submit" value="查看线路信息">
+    </form>
 
 </body>
 <!-- import Vue before Element -->

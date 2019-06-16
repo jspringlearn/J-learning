@@ -89,8 +89,8 @@
 
 	<mvc:resources mapping="/js/**"
 				   location="/WEB-INF/resources/js/" />
-	<mvc:resources mapping="/style/**"
-				   location="/WEB-INF/resources/style/" />
+	<mvc:resources mapping="/css/**"
+				   location="/WEB-INF/resources/css/" />
 	<mvc:resources mapping="/images/**"
 				   location="/WEB-INF/resources/images/" />
 
