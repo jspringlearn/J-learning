@@ -67,14 +67,6 @@ public class Employee {
         return this.department.getId();
     }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", gender='" + gender + '\'' +
-                ", department=" + department +
-                '}';
-    }
+
+
 }
