@@ -6,7 +6,6 @@
     <script type="text/javascript">
        function re() {
     	   alert("xxx");
-    	   
     	   var url='${pageContext.request.contextPath}/goods/update';
     	   
     	   var ID=$('#ID').val();

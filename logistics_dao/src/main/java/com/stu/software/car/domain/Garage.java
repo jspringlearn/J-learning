@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 import com.stu.software.domain.BaseTreeEntity;
 
-@Table(name = "T_ADIMIN_GARAGE")
+@Table(name = "T_GARAGE")
 @Entity
 @NamedQueries({ @NamedQuery(name = "Garage.getRoot", query = "select g from Garage g where g.parent is null") })
 
@@ -32,7 +32,8 @@ public class Garage extends BaseTreeEntity<Garage> {
 	String garage_place;
 	@Column(name = "GARAGE_V")
 	String garage_v;
-	@OneToMany(mappedBy="garage",cascade=CascadeType.REMOVE,fetch=FetchType.EAGER)
+	//@OneToMany(mappedBy="garage",cascade=CascadeType.REMOVE,fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="garage")
 	Set<Car> cars;
 	
 	
