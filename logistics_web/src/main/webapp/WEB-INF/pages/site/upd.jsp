@@ -5,7 +5,6 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript">
        function re() {
-    	   alert("xxx");
     	   
     	   var url='${pageContext.request.contextPath}/site/upd.do';
     	   
@@ -15,7 +14,7 @@
     	   var jsonObj={siteId:siteId,name:name,info:info};
     	 //  var jsonObj={name:name,info:info};
     	   var parameters=JSON.stringify(jsonObj);
-    	   
+    	   alert(parameters);
     	   console.log(jsonObj);
     	   console.log(parameters);
     	   $.ajax({
