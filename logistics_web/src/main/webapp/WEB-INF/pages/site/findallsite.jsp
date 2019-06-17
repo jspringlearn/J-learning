@@ -52,9 +52,6 @@ $(document).ready(function(){
     
     <div class="rightinfo">
     
-    
-    
-    
     <table class="tablelist">
     	<thead>
     	<tr>
@@ -62,12 +59,14 @@ $(document).ready(function(){
         <th>ID<i class="sort"><img src="<%=basePath%>images/px.gif" /></i></th>
         <th>地点名称</th>
         <th>地点信息</th>
+        <th></th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${siteList}" var="site">
         <tr>
         <td><input name="" type="checkbox" value="" /></td>
+        <td>${site.siteId}</td>
         <td>${site.name}</td>
 		<td>${site.info}</td>
         <td><a href="${pageContext.request.contextPath}/site/delete.do?siteId=${site.siteId}" class="tablelink">删除</a>     <a href="${pageContext.request.contextPath}/site/toupdatesite.do?siteId=${site.siteId}" class="tablelink"> 修改</a></td>
