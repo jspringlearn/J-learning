@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 import com.stu.software.domain.BaseEntity;
 
-@Table(name="T_ADMIN_CAR")
+@Table(name="T_CAR")
 @Entity
 public class Car extends BaseEntity {
 
@@ -14,14 +14,18 @@ public class Car extends BaseEntity {
 //	    @GeneratedValue(strategy = GenerationType.AUTO)
 //	    Long id;
 	//BaseEntity里有这个主键ID这个可以不用写
-		@Column(name="CAR_NUMBER")
+		@Column(name="CAR_NUMBER")    //车牌号码
 	    String car_number;
-	    @Column(name="CAR_VOLUME")
+	    @Column(name="CAR_VOLUME")     //车辆描述（大货车，客车等）
 	    String car_volume;
-	    @Column(name="CAR_OWNER")
+	    @Column(name="CAR_OWNER")     //车主
 	    String car_owner;
-	    @Column(name="CAR_STATUS")
+	    @Column(name="CAR_STATUS")    //车的状态
 	    String car_status;
+	    @Column(name="CAR_OWNER_TEL")   //车主电话
+	    String car_owner_tel;
+	    @Column(name="CAR_ROAD")    //车辆运输路线
+	    String car_road;
 	    /**
 	     * @ManyToOne
 	     *  @JoinColumn 引入外键  
@@ -91,6 +95,22 @@ public class Car extends BaseEntity {
 		public void setInfo(String string) {
 			// TODO Auto-generated method stub
 			
+		}
+
+		public String getCar_owner_tel() {
+			return car_owner_tel;
+		}
+
+		public void setCar_owner_tel(String car_owner_tel) {
+			this.car_owner_tel = car_owner_tel;
+		}
+
+		public String getCar_road() {
+			return car_road;
+		}
+
+		public void setCar_road(String car_road) {
+			this.car_road = car_road;
 		}
 		
 }
