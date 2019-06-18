@@ -49,12 +49,13 @@ public class OrderManagerImlp extends GenericManagerImpl<Order, Long> implements
 	 * 
 	 * **/
 	@Override
-	public void saveorder(String orderID,String orderName, String orderPrice) {
+	public void saveorder(String orderID,String orderName, String orderPrice,String orderTime) {
 		// TODO Auto-generated method stub
 		Order order=new Order();
 		order.setOrderID(orderID);
 		order.setOrderName(orderName);
 		order.setOrderPrice(orderPrice);
+		order.setOrderTime(orderTime);
 		this.orderDao.save(order);
 	}
 	

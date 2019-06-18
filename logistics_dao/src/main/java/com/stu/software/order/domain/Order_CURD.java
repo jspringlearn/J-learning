@@ -30,6 +30,8 @@ public class Order_CURD extends BaseDao {
                 //	goods.setStore(rs.getObject("GOODS_STORE"));
             	order.setOrderID(rs.getString("ORDER_ID"));
             	order.setOrderName(rs.getString("ORDER_NAME"));
+            	order.setOrderPrice(rs.getString("PRICE"));
+            	order.setOrderTime(rs.getString("ORDER_TIME"));
                 list.add(order);
             }
         } catch (Exception e) {
@@ -40,10 +42,11 @@ public class Order_CURD extends BaseDao {
         return list;
     }
     public int upd(Order order){
-        String sql="update T_ORDER set ORDER_NAME=?,PRICE=? where ORDER_ID=?";
+        String sql="update T_ORDER set ORDER_NAME=?,PRICE=?,ORDER_TIME=? where ORDER_ID=?";
         String[] params={
         		order.getOrderName(),
         		order.getOrderPrice(),
+        		order.getOrderTime(),
                 String.valueOf(order.getOrderID())
         };
         return this.exeUda(params, sql);
@@ -68,6 +71,7 @@ public class Order_CURD extends BaseDao {
                 order.setOrderID(rs.getString("ORDER_ID"));
                 order.setOrderName(rs.getString("ORDER_NAME"));
                 order.setOrderPrice(rs.getString("PRICE"));
+                order.setOrderTime(rs.getString("ORDER_TIME"));
             }
         } catch (Exception e) {
             e.printStackTrace();

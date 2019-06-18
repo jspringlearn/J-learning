@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.servlet.ModelAndView;
 import com.stu.software.order.domain.Order;
 import com.stu.software.order.service.OrderManager;
 import com.stu.software.web.spring.controller.GenericController;
@@ -64,8 +64,19 @@ public class OrdeController extends GenericController<Order,Long, OrderManager> 
 	        model.addAttribute("order", order);
 	        return "order/upd";
 	    }
-	
-	
+	    
+	    @RequestMapping("/toadd")
+	    public String toadd(){
+	        return "order/addorder";
+	    }
+	    @RequestMapping("/addorder")
+	    public String Addorder(Order order){
+	        Order ord=orderManager.save(order);
+
+	        ModelAndView s=new ModelAndView();
+	        s.addObject(ord);
+	        return "forward:findorder.do";
+	    }
 
 
 }
