@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -50,6 +52,19 @@ public class ManagementUserController extends GenericController<ManagementUser,L
         ManagementUser managementUser=this.managementUserManage.findone(managementID);
         model.addAttribute("managementUser", managementUser);
         return "managementUser/upd";
+    }
+    @RequestMapping("/toadd")
+    public String toadd(){
+        return "managementUser/AddmanagementUser";
+    }
+    @RequestMapping("/AddmanagementUser")
+    public String AddmanagementUser(ManagementUser managementUser){
+        ManagementUser stu=managementUserManage.save(managementUser);
+
+        ModelAndView s=new ModelAndView();
+        s.addObject(stu);
+        //return managementUser;
+        return "forward:findallmanagementUser.do";
     }
 }
 

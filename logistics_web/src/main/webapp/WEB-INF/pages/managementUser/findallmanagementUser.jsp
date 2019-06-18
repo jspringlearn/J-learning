@@ -54,22 +54,25 @@
     <table class="tablelist" >
         <thead>
         <tr>
-            <th><input name="" type="checkbox" value="" checked="checked"/></th>
+            <th><input type="checkbox" checked="checked"/></th>
             <th>ID<i class="sort"><img src="<%=basePath%>images/px.gif" /></i></th>
             <th>姓名</th>
             <th>电话</th>
-            <th>操作</th>
+            <th>操作&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <a href="${pageContext.request.contextPath}/managementUser/toadd">添加</a></th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${managementUserList}" var="managementUser">
+            </tr>
             <tr>
-                <td><input name="" type="checkbox" value="" /></td>
+                <td><input type="checkbox"  /></td>
                 <td>${managementUser.managementID}</td>
                 <td>${managementUser.MName}</td>
                 <td>${managementUser.MPhone}</td>
                 <td> <a href="${pageContext.request.contextPath}/managementUser/delete.do?managementID=${managementUser.managementID}">删除</a>
-                    <a href="${pageContext.request.contextPath}/managementUser/toupdatemanagementUser.do?managementID=${managementUser.managementID}">修改</a></td>
+                     <a href="${pageContext.request.contextPath}/managementUser/toupdatemanagementUser.do?managementID=${managementUser.managementID}">修改</a>
+                </td>
             </tr>
         </c:forEach>
         </tbody>
