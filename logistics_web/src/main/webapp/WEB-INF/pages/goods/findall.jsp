@@ -62,7 +62,10 @@
             <th><input name="" type="checkbox" value="" checked="checked"/></th>
             <th>名字</th>
             <th>数量</th>
-            <th>操作</th>
+            <th>
+                <a>操作</a>
+                <a href="${pageContext.request.contextPath}/goods/add">添加</a>
+            </th>
         </tr>
         </thead>
         <tbody>

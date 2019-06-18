@@ -2,7 +2,6 @@ package com.stu.software.logistics.goods.web.spring.controller;
 
 import com.stu.software.goods.domain.Goods;
 import com.stu.software.goods.service.GoodsManager;
-import com.stu.software.place.domain.Site;
 import com.stu.software.web.spring.controller.GenericController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -55,6 +54,16 @@ public class GoodsController extends GenericController<Goods, Long, GoodsManager
     @RequestMapping("/delete")
     public String delete(long goodsId) {
         this.goodsManager.deletegoods(goodsId);
+        return "forward:allgoods";
+    }
+    @RequestMapping("/add")
+    public String addsome() {
+        return "goods/addsome";
+    }
+
+    @RequestMapping("/save")
+    public String savesome(Goods goods) {
+        this.goodsManager.save(goods);
         return "forward:allgoods";
     }
 }
