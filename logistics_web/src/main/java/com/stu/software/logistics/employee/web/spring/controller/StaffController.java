@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author gsonya
@@ -26,6 +25,7 @@ public class StaffController extends GenericController<Staff, Long, StaffManager
         this.staffManager=staffManager;
         this.manager=this.staffManager;
     }
+    //显示所有员工信息
     @RequestMapping("/allstaff")
     public String findAllStaff(Model model){
         List<Staff>staffList=this.staffManager.findAll();
@@ -35,5 +35,32 @@ public class StaffController extends GenericController<Staff, Long, StaffManager
         model.addAttribute("staffList",staffList);
         return "employee/list";
     }
+
+
+    @RequestMapping("upd")
+    public String update(Staff staff){
+        System.out.println("qqqqqqqqqqq:");
+        this.staffManager.upd(staff);
+        System.out.println("wwwwwwwwwwww:"+staff);
+       //staff.toString();
+        //this.staffManager.save(staff);
+        return "forward:allstaff.do";
+    }
+
+
+
+    @RequestMapping("/toupdatestaff")
+    public String toupdate(long id,Model model){
+        Staff staff=this.staffManager.findById(id);
+
+        model.addAttribute("staff",staff);
+        return "employee/upd";
+    }
+    @RequestMapping("/delete")
+    public String delete(long id){
+        this.staffManager.delete(id);
+        return "forward:allstaff";
+    }
+
 
 }

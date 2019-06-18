@@ -14,4 +14,5 @@ import java.util.List;
 public interface StaffManager extends GenericManager<Staff,Long> {
     String sayHello(String name);
     List<Staff> getAll();
+    void upd(Staff staff);
 }
