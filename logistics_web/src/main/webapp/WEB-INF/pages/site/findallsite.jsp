@@ -12,6 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>信息显示</title>
 <link rel="stylesheet" type="text/css" href="<%=basePath%>css/style.css"  />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 <script type="text/javascript">
@@ -40,7 +41,6 @@ $(document).ready(function(){
 
 
 <body>
-
 	<div class="place">
     <span>位置：</span>
     <ul class="placeul">
@@ -59,7 +59,7 @@ $(document).ready(function(){
         <th>ID<i class="sort"><img src="<%=basePath%>images/px.gif" /></i></th>
         <th>地点名称</th>
         <th>地点信息</th>
-        <th></th>
+        <th><a href="${pageContext.request.contextPath}/site/tosave">添加</a></th>
         </tr>
         </thead>
         <tbody>
@@ -74,13 +74,7 @@ $(document).ready(function(){
         </c:forEach>       
         </tbody>
     </table>
-    
- 
-    
     </div>
     
-    <script type="text/javascript">
-	$('.tablelist tbody tr:odd').addClass('odd');
-	</script>
 </body>
 </html>

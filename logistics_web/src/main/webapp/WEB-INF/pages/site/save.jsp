@@ -31,10 +31,10 @@
     </script>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/site/upd" method="post">
-  ID&nbsp;&nbsp;&nbsp;:<input id="siteId" type="text" value="${site.siteId}" name="siteId"><br>
-    名称:<input id="name" type="text" value="${site.name}" name="name"><br>
-    信息:<input id="info" type="text" value="${site.info}" name="info"><br>
+<form action="${pageContext.request.contextPath}/site/save" method="post">
+  ID&nbsp;&nbsp;&nbsp;:<input id="siteId" type="text" name="siteId"><br>
+    名称:<input id="name" type="text" name="name"><br>
+    信息:<input id="info" type="text" name="info"><br>
     <input type="button" value="提交json格式" onclick="re();">
     <input type="submit">
 </form>

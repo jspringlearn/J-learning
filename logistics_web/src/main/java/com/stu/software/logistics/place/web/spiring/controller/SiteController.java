@@ -32,13 +32,7 @@ public class SiteController extends GenericController<Site, Long, SiteManager>{
 	/**
 	 * 
 	 */
-	@RequestMapping("/upd")
-	public String update(Site site) {
-		//System.out.println(site);
-		this.siteManager.upd(site);
-		//this.siteManager.upd(site);
-		return "forward:allsite.do";//turn to /allsite
-	}
+	//find addsite
 
 
 	@RequestMapping("/allsite")    //  /allsite
@@ -50,19 +44,42 @@ public class SiteController extends GenericController<Site, Long, SiteManager>{
 		model.addAttribute("siteList", siteList);
 		return "site/findallsite";
 	}
+	
+	
+	//delete site 
+	
 	@RequestMapping("/delete")
 	public String delete(int siteId) {
 		this.siteManager.deleteSite(siteId);
 		return "forward:allsite";//turn to /allsite
 	}
+	
+	
+	
+	//update site
 	@RequestMapping("/toupdatesite")
 	public String toupdate(int siteId,Model model) {
 		Site site=this.siteManager.findone(siteId);
 		System.out.println(site);
-//		Model model=new Model();
 		model.addAttribute("site", site);
 		return "site/upd";
 	}
+	@RequestMapping("/upd")
+	public String update(Site site) {
+		this.siteManager.upd(site);
+		return "forward:allsite.do";//turn to /allsite
+	}
 
 
+	//save site
+	@RequestMapping("/tosave")
+	public String tosaveSite() {
+		return "site/save";
+	}
+	@RequestMapping("/save")
+	public String saveSite(Site site){
+		this.siteManager.save(site);
+		return "forward:allsite";
+		
+	}
 }
