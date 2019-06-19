@@ -12,7 +12,7 @@ import com.stu.software.service.GenericManager;
 @Transactional
 public interface CarManager extends GenericManager<Car, Long> {
 
-	List<Car> getAll();
+	
 	void saveCar(String car_number,String car_volume,String car_owner,String car_status,String car_owner_tel,String car_road);
 	void deleteCar(String car_number);
 	void update(Car car);

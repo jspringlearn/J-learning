@@ -2,12 +2,15 @@ package com.stu.software.employee.service.impl;
 
 import com.stu.software.Employee.dao.StaffDao;
 import com.stu.software.Employee.domain.Staff;
+import com.stu.software.Employee.domain.Staff_CURD;
 import com.stu.software.employee.service.StaffManager;
 import com.stu.software.service.impl.GenericManagerImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -17,7 +20,8 @@ import java.util.List;
  * @Package com.stu.software.admin.service.impl
  * @date 2019/5/20 15:50
  */
-@Service("StaffManager")
+//@Service("StaffManager")
+@Component
 public class StaffManagerImpl extends GenericManagerImpl<Staff, Long> implements StaffManager {
     /**
      * Logger for this class
@@ -47,6 +51,16 @@ public class StaffManagerImpl extends GenericManagerImpl<Staff, Long> implements
             logger.info("getAll() - List<Staff> all={}", all); //$NON-NLS-1$
         }
         return all;
+    }
+//    @Override
+//	public void upd(Site site) {
+//		// TODO Auto-generated method stub
+//		SiteBaseDao.getintstan().upd(site);
+//
+//	}
+    @Override
+    public void upd(Staff staff){
+        Staff_CURD.getintstan().upd(staff);
     }
 
 }
