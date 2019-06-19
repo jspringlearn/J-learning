@@ -10,8 +10,9 @@ import com.stu.software.service.GenericManager;
 
 public interface CircuitManager extends GenericManager<Circuit, Long> {
 
+	void upda(Circuit circuit);
     List<Circuit> findAll();
-    Circuit findByID(Long id);
+    Circuit findOne(Long id);
     Circuit findBySection(String aSite,String bSite);
     
     /**

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.stu.software.road.dao.CircuitDao;
 import com.stu.software.road.domain.Circuit;
+import com.stu.software.road.domain.CircuitCRUD;
 import com.stu.software.road.service.CircuitManager;
 import com.stu.software.service.impl.GenericManagerImpl;
 @Component
@@ -23,19 +24,9 @@ class CircuitManagerImpl extends GenericManagerImpl<Circuit, Long> implements Ci
 
 
 	@Override
-	public Circuit findByID(Long id) {
-		// TODO Auto-generated method stub
-		Circuit q =new Circuit();
-		q.setDateCreated(null);
-		q.setDateModified(null);
-		q.setId(id);
-		ExampleMatcher matcher = ExampleMatcher.matching()
-				.withStringMatcher(StringMatcher.CONTAINING)
-				.withIgnoreCase(true)
-				.withMatcher("id", GenericPropertyMatchers.startsWith());
-		Example<Circuit> ex =Example.of(q, matcher);
-		Circuit result =(Circuit) dao.findAll(ex);
-		return result;
+	public Circuit findOne(Long id) {
+		Circuit circuit=CircuitCRUD.getintstan().findOne(id);
+		return circuit;
 	}
 
 
@@ -91,5 +82,9 @@ class CircuitManagerImpl extends GenericManagerImpl<Circuit, Long> implements Ci
 		}
 		return r;
 	}
-
+	@Override
+	public void upda(Circuit circuit) {
+		CircuitCRUD.getintstan().upda(circuit);
+		
+	}
 }

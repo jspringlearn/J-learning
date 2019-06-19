@@ -32,5 +32,34 @@ public class RoadController extends GenericController<Circuit, Long, CircuitMana
 		model.addAttribute("circuitList", cList);
 		return "road/allcircuit";
 	}
-	
+	@RequestMapping("/delete")
+	public String dele(String id) {
+		System.out.println(id);
+		
+		this.circuitManager.delete(Long.valueOf(id));
+		return "forward:allcircuit";
+	}
+	@RequestMapping("/toupdate")
+	public String toupda(Long id,Model model) {
+		System.out.println(id);
+		Circuit circuit=this.circuitManager.findOne(id);
+		model.addAttribute("circuit", circuit);
+		return "road/update";
+	}
+	@RequestMapping("/update")
+	public String upda(Circuit circuit) {
+		this.circuitManager.upda(circuit);
+		return "forward:allcircuit";
+		
+	}
+	@RequestMapping("/tosave")
+	public String toSave() {
+		return "road/save";
+	}
+	@RequestMapping("/save")
+	public String saveCircuit(Circuit circuit) {
+		System.out.println(circuit.toString());
+		this.circuitManager.save(circuit);
+		return "forward:allcircuit";
+	}
 }
