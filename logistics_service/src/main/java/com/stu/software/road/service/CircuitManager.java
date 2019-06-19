@@ -13,4 +13,9 @@ public interface CircuitManager extends GenericManager<Circuit, Long> {
     List<Circuit> findAll();
     Circuit findByID(Long id);
     Circuit findBySection(String aSite,String bSite);
+    
+    /**
+     * route
+     */
+    String route(Circuit circuit);
 }

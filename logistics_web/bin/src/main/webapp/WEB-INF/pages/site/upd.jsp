@@ -24,7 +24,7 @@
     		   contentType:'application/json;charset=UTF-8',
     		   data:parameters,
     		   success:function(respData){
-    			   console.log("jsonp:"+respData);
+    			   console.log(respData);
     		   }
     	   })
 		
