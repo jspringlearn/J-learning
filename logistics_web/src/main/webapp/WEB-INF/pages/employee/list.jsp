@@ -63,6 +63,7 @@
             <th>性别</th>
             <th>电话</th>
             <th>操作</th>
+            <th><a href="${pageContext.request.contextPath}/employee/tosave">添加</a></th>
         </tr>
         </thead>
         <tbody>
@@ -87,8 +88,6 @@
 
     </c:if>
 
-    <br><br>
-    <a href="employee/staff">Add New Staff</a>
 
 
 </div>

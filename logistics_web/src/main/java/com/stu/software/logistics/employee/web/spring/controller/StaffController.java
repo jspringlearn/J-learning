@@ -2,6 +2,7 @@ package com.stu.software.logistics.employee.web.spring.controller;
 
 import com.stu.software.Employee.domain.Staff;
 import com.stu.software.employee.service.StaffManager;
+import com.stu.software.feedback.domain.Comment;
 import com.stu.software.web.spring.controller.GenericController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,11 +40,7 @@ public class StaffController extends GenericController<Staff, Long, StaffManager
 
     @RequestMapping("upd")
     public String update(Staff staff){
-        System.out.println("qqqqqqqqqqq:");
         this.staffManager.upd(staff);
-        System.out.println("wwwwwwwwwwww:"+staff);
-       //staff.toString();
-        //this.staffManager.save(staff);
         return "forward:allstaff.do";
     }
 
@@ -59,6 +56,17 @@ public class StaffController extends GenericController<Staff, Long, StaffManager
     @RequestMapping("/delete")
     public String delete(long id){
         this.staffManager.delete(id);
+        return "forward:allstaff";
+    }
+
+
+    @RequestMapping("/tosave")
+    public String tosaveStaff(){
+        return "employee/add";
+    }
+    @RequestMapping("/save")
+    public String saveStaff(Staff staff){
+        this.staffManager.save(staff);
         return "forward:allstaff";
     }
 
