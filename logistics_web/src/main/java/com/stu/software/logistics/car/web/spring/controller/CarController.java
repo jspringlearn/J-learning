@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.stu.software.car.domain.Car;
@@ -29,19 +27,30 @@ public class CarController extends GenericController<Car, Long, CarManager> {
 	/*
 	 * @RequestMapping("/index") public String mainIndex(){ return "main/index"; }
 	 */
-	
+
 	//show all car
-	@RequestMapping("/showcar")
-	// @RequestMapping(value = "/showcar", method = RequestMethod.POST)
-	public String findAllCar(Model model)
-	{
-		List<Car> carList = this.carManager.findAll();
-		/*
-		 * for(Car car:carList) { System.out.println(car); }
-		 */
-		model.addAttribute("carList",carList);
-		return "car/showcar";
+//	@RequestMapping("/showcar")
+//	// @RequestMapping(value = "/showcar", method = RequestMethod.POST)
+//	public String findAllCar(Model model)
+//	{
+//		List<Car> carList = this.carManager.findAll();
+//		/*
+//		 * for(Car car:carList) { System.out.println(car); }
+//		 */
+//		model.addAttribute("carList",carList);
+//		return "car/showcar";
+//	}
+
+
+	@ResponseBody//标识转换成JSON处理
+	@GetMapping(value = "all",produces = "application/json;charset=utf-8")
+	public List<Car> findAllUser(){
+		return this.manager.findAll();
 	}
+
+
+
+
 	
 	//modify car besides car_number
 	@RequestMapping("/update")

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -38,14 +39,20 @@ public class SiteController extends GenericController<Site, Long, SiteManager>{
 	//find addsite
 
 
-	@RequestMapping("/allsite")    //  /allsite
-	public String findAllSite(Model model) {
-		List<Site> siteList= this.siteManager.findAll();
-		for(Site site:siteList) {
-			System.out.println(site);
-		}
-		model.addAttribute("siteList", siteList);
-		return "site/findallsite";
+//	@RequestMapping("/allsite")    //  /allsite
+//	public String findAllSite(Model model) {
+//		List<Site> siteList= this.siteManager.findAll();
+//		for(Site site:siteList) {
+//			System.out.println(site);
+//		}
+//		model.addAttribute("siteList", siteList);
+//		return "site/findallsite";
+//	}
+
+	@ResponseBody//标识转换成JSON处理
+	@GetMapping(value = "all",produces = "application/json;charset=utf-8")
+	public List<Site> findAllUser(){
+		return this.manager.findAll();
 	}
 	//
 	@RequestMapping("/josn")    
