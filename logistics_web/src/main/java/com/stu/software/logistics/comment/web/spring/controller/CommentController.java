@@ -5,7 +5,9 @@ import com.stu.software.web.spring.controller.GenericController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -37,14 +39,21 @@ public class CommentController extends GenericController<Comment,Long, CommentMa
     /**
      * findcomment
      */
-    @RequestMapping("/findcomment")    //
-    public String findAllComment(Model model) {
-        List<Comment> commentList = this.commentManager.findAll();
-        for (Comment comment:commentList) {
-            System.out.println(comment);
-        }
-        model.addAttribute("commentList", commentList);
-        return "comment/findcomment";
+//    @RequestMapping("/findcomment")    //
+//    public String findAllComment(Model model) {
+//        List<Comment> commentList = this.commentManager.findAll();
+//        for (Comment comment:commentList) {
+//            System.out.println(comment);
+//        }
+//        model.addAttribute("commentList", commentList);
+//        return "comment/findcomment";
+//    }
+
+
+    @ResponseBody//标识转换成JSON处理
+    @GetMapping(value = "all",produces = "application/json;charset=utf-8")
+    public List<Comment> findAllUser(){
+        return this.manager.findAll();
     }
 
     @RequestMapping("/upd")

@@ -6,7 +6,9 @@ import com.stu.software.web.spring.controller.GenericController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -24,17 +26,24 @@ public class GoodsController extends GenericController<Goods, Long, GoodsManager
     @Autowired
     public void setGoodsManager(GoodsManager goodsManager) {
         this.goodsManager = goodsManager;
+        this.manager=this.goodsManager;
     }
 
 
-    @RequestMapping("/allgoods")    //  显示货物
-    public String findAllSite(Model model) {
-        List<Goods> goodsList= this.goodsManager.findAll();
-        for(Goods goods:goodsList) {
-          //  System.out.println(goods);
-        }
-        model.addAttribute("goodsList", goodsList);
-        return "goods/findall";
+//    @RequestMapping("/allgoods")    //  显示货物
+//    public String findAllSite(Model model) {
+//        List<Goods> goodsList= this.goodsManager.findAll();
+//        for(Goods goods:goodsList) {
+//          //  System.out.println(goods);
+//        }
+//        model.addAttribute("goodsList", goodsList);
+//        return "goods/findall";
+//    }
+
+    @ResponseBody//标识转换成JSON处理
+    @GetMapping(value = "all",produces = "application/json;charset=utf-8")
+    public List<Goods> findAllUser(){
+        return this.manager.findAll();
     }
 
     @RequestMapping("/update")
