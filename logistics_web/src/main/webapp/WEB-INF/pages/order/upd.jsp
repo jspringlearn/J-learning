@@ -4,14 +4,14 @@
     <title>修改订单</title>
     <script src="${pageContext.request.contextPath}/WEB-INF/resources/js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
-       function re() {
+       /*function re() {
     	   alert("xxx");
     	   
     	   var url='${pageContext.request.contextPath}/order/upd.do';
     	   
-    	   var siteId=$('#orderID').val();
-    	   var name=$('#orderName').val();
-    	   var info=$('#orderPrice').val();	   
+    	   var orderID=$('#orderID').val();
+    	   var orderName=$('#orderName').val();
+    	   var orderPrice=$('#orderPrice').val();	   
     	   var jsonObj={orderID:orderID,orderName:orderName,orderPrice:orderPrice};
     	   var parameters=JSON.stringify(jsonObj);
     	   
@@ -27,7 +27,7 @@
     		   }
     	   })
 		
-	}
+	}*/
     </script>
 </head>
 <body>
@@ -35,6 +35,7 @@
     订单号:<input id="orderID" type="text" value="${order.orderID}" name="orderID"><br>
     订单名:<input id="orderName" type="text" value="${order.orderName}" name="orderName"><br>
     订单价格:<input id="orderPrice" type="text" value="${order.orderPrice}" name="orderPrice"><br>
+    下单时间:<input id="orderTime" type="text" value="${order.orderTime}" name="orderTime"><br>
     <input type="submit"value="确认修改">
 </form>
 </body>

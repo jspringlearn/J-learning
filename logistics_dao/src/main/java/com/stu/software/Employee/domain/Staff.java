@@ -10,7 +10,7 @@ public class Staff extends BaseEntity {
     private static final long serialVersionUID = 5541402222324784680L;
     @Id
     @Column(name = "ID")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
     @Column(name="STAFF_NUM")
     String staff_num;
@@ -25,6 +25,12 @@ public class Staff extends BaseEntity {
     @ManyToOne
     @JoinColumn(name="BOSS_ID")
     Boss boss;
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Long getId() {
         return id;
     }

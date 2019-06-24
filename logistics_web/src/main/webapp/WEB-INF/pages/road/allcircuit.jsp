@@ -66,17 +66,21 @@ $(document).ready(function(){
           <th>时间</th>
           <th>起点</th>
           <th>终点</th>
+          <th><a href="${pageContext.request.contextPath}/road/tosave">添加</a></th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${circuitList}" var="circuit">
         <tr>
         <td><input name="" type="checkbox" value="" /></td>
+        <td>${circuit.id}</td>
         <td>${circuit.entityName}</td>
         <td>${circuit.distance}</td>
         <td>${circuit.elapTime}</td>
         <td>${circuit.aSite}</td>
         <td>${circuit.bSite}</td>
+        <td><a href="${pageContext.request.contextPath}/road/delete?id=${circuit.id}" class="tablelink">删除</a>     
+        <a href="${pageContext.request.contextPath}/road/toupdate?id=${circuit.id}" class="tablelink"> 修改</a></td>
         </tr>  
         </c:forEach>       
         </tbody>

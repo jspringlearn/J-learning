@@ -27,13 +27,13 @@ private static final Logger logger = LogManager.getLogger(CarManagerTest.class.g
 	        super(Car.class);
 	    }
 	@Autowired
-	public void setCarManafer(CarManager carManafer) {
-		this.carManager = carManafer;
+	public void setCarManafer(CarManager carManager) {
+		this.carManager = carManager;
 		this.manager=this.carManager;
 	}
 	 @Test
 	    public void testGetAll() {
-	        List<Car> all=this.carManager.getAll();
+	        List<Car> all=this.carManager.findAll();
 	        //assertNotNull(all);
 
 	        if (logger.isInfoEnabled()) {

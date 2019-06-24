@@ -30,13 +30,7 @@
                 $(".tip").fadeOut(100);
             });
         });
-        $(function () {
-            $(".delete").click(function () {
-                var href=$(this).attr("href");
-                $("form").attr("action",href).submit();
-                return false;
-            })
-        })
+
     </script>
 </head>
 <body>
@@ -69,6 +63,7 @@
             <th>性别</th>
             <th>电话</th>
             <th>操作</th>
+            <th><a href="${pageContext.request.contextPath}/employee/tosave">添加</a></th>
         </tr>
         </thead>
         <tbody>
@@ -82,8 +77,9 @@
                 <td>${staff.staff_sex}</td>
                 <td>${staff.staff_tel}</td>
                 <td>
-                    <a >Edit</a>
-                    <a >Delete</a>
+                    <a href= "${pageContext.request.contextPath}/employee/toupdatestaff.do?id=${staff.id}" class="tablelink">Edit</a>
+                    <a href="${pageContext.request.contextPath}/employee/delete.do?id=${staff.id}" class="tablelink">Delete</a>
+
                 </td>
             </tr>
         </c:forEach>
@@ -91,6 +87,7 @@
     </table>
 
     </c:if>
+
 
 
 </div>

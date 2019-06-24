@@ -70,6 +70,7 @@ $(document).ready(function(){
         <c:forEach items="${siteList}" var="site">
         <tr>
         <td><input name="" type="checkbox" value="" /></td>
+        <td>${site.siteId}</td>
         <td>${site.name}</td>
 		<td>${site.info}</td>
         <td><a href="${pageContext.request.contextPath}/site/delete.do?siteId=${site.siteId}" class="tablelink">删除</a>     <a href="${pageContext.request.contextPath}/site/toupdatesite.do?siteId=${site.siteId}" class="tablelink"> 修改</a></td>
@@ -78,6 +79,10 @@ $(document).ready(function(){
         </tbody>
     </table>
     </div>
+    <form action="${pageContext.request.contextPath}/site/josn" >
+    <input type="submit" value="生成json格式" >
+    
+</form>
     
 </body>
 </html>

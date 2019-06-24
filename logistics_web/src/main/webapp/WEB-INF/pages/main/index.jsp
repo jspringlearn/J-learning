@@ -41,7 +41,13 @@
         物流仓储系统---线路
         <input type="submit" value="查看线路信息">
     </form>
-
+    
+    <form action="${pageContext.request.contextPath}/car/showcar" method="post">
+        车辆管理系统
+        <input type="submit" value="查看车辆信息">
+    </form>
+    
+    
 </body>
 <!-- import Vue before Element -->
 <script src="https://unpkg.com/vue/dist/vue.js"></script>

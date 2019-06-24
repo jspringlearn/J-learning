@@ -15,7 +15,7 @@ public interface OrderManager extends GenericManager<Order, Long> {
 
 	
     List<Order> findbyOrderID(String orderID);
-    void saveorder(String orderID,String orderName,String orderPrice);
+    void saveorder(String orderID,String orderName,String orderPrice,String orderTime);
     void deleteorder(String orderID);
     void upd(Order order);
     Order findone(String orderID);

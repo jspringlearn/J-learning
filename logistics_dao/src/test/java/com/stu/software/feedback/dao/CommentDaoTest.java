@@ -18,12 +18,19 @@ public class CommentDaoTest extends GenericDaoTestCase<Long, Comment, CommentDao
     CommentDao commentDao;
 
     @Test
-    public void testFindAll() {
-        List<Comment> result = this.commentDao.findAll();
+    public void testGetRoot() {
+        int n=2;
+        for(int i = 1; i <= n; i++) {
+            Comment comment = new Comment();
+            comment.setCommentID("comment_"+i);
+            this.commentDao.save(comment);
+
+        }
+
+        List<Comment> all = this.commentDao.findAll();
         if (logger.isInfoEnabled()) {
-            logger.info("testFindAll() - List<User> result={}", result); //$NON-NLS-1$
+            logger.info("test() - List<comment> all size ={}", all.size()); //$NON-NLS-1$
         }
 
     }
-
 }
