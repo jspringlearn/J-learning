@@ -12,10 +12,10 @@ import java.util.List;
 @Transactional
 public interface CommentManager extends GenericManager<Comment, Long> {
 
-    List<Comment> findbyCommentID(String commentID);
-    void savecomment(String commentID,String commentContent,String commentTime);
-    void deletecomment(String commentID);
-    void upd(Comment comment);
-    Comment findone(String commentID);
+    List<Comment> findAll();
+    Comment save(Comment comment);
+    void delete(Long id);
+
+    Comment findById(Long id);
 
 }
