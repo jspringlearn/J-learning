@@ -19,5 +19,15 @@ public interface ManagementUserManage extends GenericManager<ManagementUser,Long
     void savemanagementUser(String name,String phone);
     void deletemanagementUser(int managementUserId);
     void upd(ManagementUser managementUser);
-    ManagementUser findone(int managementUserId);
+    ManagementUser findone1(int managementUserId);
+
+    List<ManagementUser> getAll();
+
+    List<ManagementUser> findBySno(int sno);
+
+
+    Boolean deleteById(Long id);
+
+    Boolean deleteBySno(int sno);
+
 }

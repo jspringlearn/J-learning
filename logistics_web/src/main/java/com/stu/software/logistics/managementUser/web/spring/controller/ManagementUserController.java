@@ -7,13 +7,7 @@ import com.stu.software.web.spring.controller.GenericController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.*;
-=======
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
->>>>>>> bad9b60eaf47e9ea582e83130e681f212fcc546f
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -38,7 +32,6 @@ public class ManagementUserController extends GenericController<ManagementUser,L
         return "main/index";
     }
 
-<<<<<<< HEAD
   /*  @RequestMapping("/findallmanagementUser")
     public String findallmanagementUser(Model model) {
         List<ManagementUser> managementUserList= this.managementUserManage.findAll();
@@ -49,19 +42,6 @@ public class ManagementUserController extends GenericController<ManagementUser,L
     @ResponseBody//标识转换成JSON处理
     @GetMapping(value = "all", produces = "application/json;charset=utf-8")
     public List<ManagementUser> findAllUser() {
-=======
-//    @RequestMapping("/findallmanagementUser")
-//    public String findallmanagementUser(Model model) {
-//        List<ManagementUser> managementUserList= this.managementUserManage.findAll();
-//        model.addAttribute("managementUserList", managementUserList);
-//        return "managementUser/findallmanagementUser";
-//    }
-
-
-    @ResponseBody//标识转换成JSON处理
-    @GetMapping(value = "all",produces = "application/json;charset=utf-8")
-    public List<ManagementUser> findAllUser(){
->>>>>>> bad9b60eaf47e9ea582e83130e681f212fcc546f
         return this.manager.findAll();
     }
 
