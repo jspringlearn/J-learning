@@ -3,7 +3,7 @@
   <el-table
     :data="tableData"
     height="650px"
-    style="width: 120%">
+    style="width: 120%;">
   <!--  <el-table-column
       label="ID"
       width="260">
@@ -13,33 +13,41 @@
       </template>
     </el-table-column>-->
 
+<!--    <el-table-column-->
+<!--      label="ID" sortable-->
+<!--      width="200">-->
+<!--      <template slot-scope="scope">-->
+<!--        &lt;!&ndash;<i class="el-icon-time"></i>&ndash;&gt;-->
+<!--        <span style="margin-left: 10px">{{ scope.row.staff_id}}</span>-->
+<!--      </template>-->
+<!--    </el-table-column>-->
     <el-table-column
-      label="评论时间" sortable
+      label="工号"
       width="200">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
         <span style="margin-left: 10px">{{ scope.row.staff_num }}</span>
       </template>
     </el-table-column>
-    <el-table-column
-      label="评论内容"
-      width="200">
-      <template slot-scope="scope">
-        <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 20px">{{ scope.row.staff_name }}</span>
-      </template>
-    </el-table-column>
 
       <el-table-column
-        label="地点信息"
+        label="姓名"
         width="160">
         <template slot-scope="scope">
           <!--<i class="el-icon-time"></i>-->
-          <span style="margin-left: 10px">{{ scope.row.staff_sex }}</span>
+          <span style="margin-left: 10px">{{ scope.row.staff_name }}</span>
         </template>
       </el-table-column>
     <el-table-column
-      label="地点信息"
+      label="性别"
+      width="160">
+      <template slot-scope="scope">
+        <!--<i class="el-icon-time"></i>-->
+        <span style="margin-left: 10px">{{ scope.row.staff_sex }}</span>
+      </template>
+    </el-table-column>
+    <el-table-column
+      label="年龄"
       width="160">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
@@ -47,7 +55,7 @@
       </template>
     </el-table-column>
     <el-table-column
-      label="地点信息"
+      label="电话"
       width="160">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
@@ -63,33 +71,34 @@
         <!-- Form -->
         <el-button type="primary" @click="dialogFormVisible = true" size="mini">新增</el-button>
 
-        <!--  <el-dialog title="关键词提取" :visible.sync="dialogFormVisible">
-            <el-form :model="Form">
-              <el-form-item label="text" :label-width="formLabelWidth">
-                <el-input v-model="Form.text" autocomplete="off"></el-input>
-              </el-form-item>
-              <el-form-item label="HanLP" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_1" autocomplete="off"></el-input>
-              </el-form-item>
-              <el-form-item label="FoolNlp" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_2" autocomplete="off">
-                </el-input>
-              </el-form-item>
-              <el-form-item label="StanfordNlp" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_3" autocomplete="off">
-                </el-input>
-              </el-form-item>
-              <el-form-item label="AnsjNlp" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_4" autocomplete="off">
-                </el-input>
-              </el-form-item>
-            </el-form>
-            <div slot="footer" class="dialog-footer">
-              <el-button @click="dialogFormVisible = false">取 消</el-button>
-              <el-button type="primary" @click="postForm">确 定</el-button>
-            </div>
-          </el-dialog>
-  -->
+
+        <el-dialog title="新添员工信息" :visible.sync="dialogFormVisible">
+          <el-form :model="from">
+            <el-form-item label="工号" :label-width="formLabelWidth">
+              <el-input v-model="form.staff_num" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="姓名" :label-width="formLabelWidth">
+                 <el-input v-model="form.staff_name" autocomplete="off"></el-input>
+                 </el-form-item>
+            <el-form-item label="性别" :label-width="formLabelWidth">
+                   <el-input v-model="form.staff_sex" autocomplete="off">
+                   </el-input>
+            </el-form-item>
+            <el-form-item label="年龄" :label-width="formLabelWidth">
+              <el-input v-model="form.staff_age" autocomplete="off">
+              </el-input>
+            </el-form-item>
+            <el-form-item label="电话" :label-width="formLabelWidth">
+              <el-input v-model="form.staff_tel" autocomplete="off">
+              </el-input>
+            </el-form-item>
+               </el-form>
+
+          <div slot="footer" class="dialog-footer">
+                       <el-button @click="dialogFormVisible = false">取 消</el-button>
+                       <el-button type="primary" @click="postForm">确 定</el-button>
+          </div>
+        </el-dialog>
 
 
         <el-button
@@ -117,8 +126,8 @@
         tableData: [],
         dialogTableVisible: false,
         dialogFormVisible: false,
-        Form: {
-          staff_id: '',
+        form: {
+          // staff_id: '',
           staff_num: '',
           staff_name:'',
           staff_sex:'',
@@ -129,17 +138,20 @@
       }
     },
     methods: {
-      update(index,row) {
-
-      },
+      // update(index,row) {
+      //
+      // },
       postForm() {
-        const url = this.HOST + '/nlpke/save';
+        const url = this.HOST + '/employee/save';
         this.dialogFormVisible = false;
 
         var params = new URLSearchParams();
-        params.append('goodName', this.epdtForm.goodName);
-        params.append('dealByPersonName', this.epdtForm.dealByPersonName);
-        params.append('dealMoney', this.epdtForm.dealMoney);
+        // params.append('staff_id', this.form.staff_id);
+        params.append('staff_num', this.form.staff_num);
+        params.append('staff_name', this.form.staff_name);
+        params.append('staff_sex', this.form.staff_sex);
+        params.append('staff_age', this.form.staff_age);
+        params.append('staff_tel', this.form.staff_tel);
 
         console.log(params);
         this.$axios({
@@ -166,10 +178,10 @@
       },
       handleDelete(index, row) {
         console.log(index, row);
-        var expenditureId = row.id;
-        console.log(expenditureId);
+        var staffId = row.id;
+        console.log(staffId);
         this.$axios
-          .delete(this.HOST + '/sun/expenditure/info/' + expenditureId)
+          .delete(this.HOST + '/employee/delete/' + staffId)
           .then(res => {
             console.log(res);
             this.tableData.splice(index, 1)
