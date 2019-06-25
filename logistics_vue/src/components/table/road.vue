@@ -5,8 +5,16 @@
     height="650px"
     style="width: 120%">
     <el-table-column
+      label="线路名"
+      width="200">
+      <template slot-scope="scope">
+        <!--<i class="el-icon-time"></i>-->
+        <span style="margin-left: 10px">{{ scope.row.entityName}}</span>
+      </template>
+    </el-table-column>
+    <el-table-column
       label="运输距离"
-      width="260">
+      width="200">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
         <span style="margin-left: 10px">{{ scope.row.distance }}</span>
@@ -15,7 +23,7 @@
 
     <el-table-column
       label="时间" sortable
-      width="260">
+      width="200">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
         <span style="margin-left: 10px">{{ scope.row.elapTime }}</span>
@@ -23,7 +31,7 @@
     </el-table-column>
     <el-table-column
       label="起始地点"
-      width="260">
+      width="200">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
         <span style="margin-left: 20px">{{ scope.row.aSite }}</span>
@@ -32,7 +40,7 @@
 
       <el-table-column
         label="终止地点"
-        width="160">
+        width="200">
         <template slot-scope="scope">
           <!--<i class="el-icon-time"></i>-->
           <span style="margin-left: 10px">{{ scope.row.bSite }}</span>
@@ -47,24 +55,24 @@
         <!-- Form -->
         <el-button type="primary" @click="dialogFormVisible = true" size="mini">新增</el-button>
 
-        <!--  <el-dialog title="关键词提取" :visible.sync="dialogFormVisible">
-            <el-form :model="Form">
-              <el-form-item label="text" :label-width="formLabelWidth">
-                <el-input v-model="Form.text" autocomplete="off"></el-input>
+        < <el-dialog title="添加线路" :visible.sync="dialogFormVisible">
+            <el-form :model="from">
+              <el-form-item label="线路名" :label-width="formLabelWidth">
+                <el-input v-model="form.entityName" autocomplete="off"></el-input>
               </el-form-item>
-              <el-form-item label="HanLP" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_1" autocomplete="off"></el-input>
+              <el-form-item label="距离" :label-width="formLabelWidth">
+                <el-input v-model="form.distance" autocomplete="off"></el-input>
               </el-form-item>
-              <el-form-item label="FoolNlp" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_2" autocomplete="off">
+              <el-form-item label="时长" :label-width="formLabelWidth">
+                <el-input v-model="form.elapTime" autocomplete="off">
                 </el-input>
               </el-form-item>
-              <el-form-item label="StanfordNlp" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_3" autocomplete="off">
+              <el-form-item label="起点" :label-width="formLabelWidth">
+                <el-input v-model="form.aSite" autocomplete="off">
                 </el-input>
               </el-form-item>
-              <el-form-item label="AnsjNlp" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_4" autocomplete="off">
+              <el-form-item label="终点" :label-width="formLabelWidth">
+                <el-input v-model="form.bSite" autocomplete="off">
                 </el-input>
               </el-form-item>
             </el-form>
@@ -73,7 +81,6 @@
               <el-button type="primary" @click="postForm">确 定</el-button>
             </div>
           </el-dialog>
-  -->
 
 
         <el-button
@@ -85,7 +92,31 @@
         <el-button
           type="success"
           size="mini"
-          @click="update(scope.$index, scope.row)">修改</el-button>
+          @click="update(scope.$index, scope.row);dialogUpFrom=true">修改</el-button>
+
+        <el-dialog title="修改线路" :visible.sync="dialogUpFrom">
+        <el-form :model="from">
+          <el-form-item label="线路名" :label-width="formLabelWidth">
+            <el-input v-model="form.entityName" autocomplete="off">{{this.onedata.entityName}}</el-input>
+          </el-form-item>
+          <el-form-item label="距离" :label-width="formLabelWidth">
+            <el-input v-model="form.distance" autocomplete="off">{{this.onedata.distance}}</el-input>
+          </el-form-item>
+          <el-form-item label="时长" :label-width="formLabelWidth">
+            <el-input v-model="form.elapTime" autocomplete="off">{{this.onedata.elapTime}}</el-input>
+          </el-form-item>
+          <el-form-item label="起点" :label-width="formLabelWidth">
+            <el-input v-model="form.aSite" autocomplete="off">{{this.onedata.aSite}}</el-input>
+          </el-form-item>
+          <el-form-item label="终点" :label-width="formLabelWidth">
+            <el-input v-model="form.bSite" autocomplete="off">{{this.onedata.bSite}}</el-input>
+          </el-form-item>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+          <el-button @click="dialogUpFrom = false">取 消</el-button>
+          <el-button type="primary" @click="updaFrom">确 定</el-button>
+        </div>
+      </el-dialog>
 
 
       </template>
@@ -99,9 +130,12 @@
     data() {
       return {
         tableData: [],
+        onedata: [],
         dialogTableVisible: false,
         dialogFormVisible: false,
-        Form: {
+        dialogUpFrom: false,
+        form: {
+          entityName:'',
           distance: '',
           elapTime: '',
           aSite:'',
@@ -112,46 +146,72 @@
     },
     methods: {
       update(index,row) {
-
+        console.log(index, row);
+        var expenditureId = row.id;
+        console.log(expenditureId);
+        this.$axios
+          .get(this.HOST + '/road/findDate/' + expenditureId)
+          .then(function (response){
+            console.log(response);
+            this.onedata=response.data;
+          })
+          .catch(err => {
+            console.log(err);
+          });
       },
       postForm() {
-        const url = this.HOST + '/nlpke/save';
+        const url = this.HOST + '/road/save';
         this.dialogFormVisible = false;
-
         var params = new URLSearchParams();
-        params.append('goodName', this.epdtForm.goodName);
-        params.append('dealByPersonName', this.epdtForm.dealByPersonName);
-        params.append('dealMoney', this.epdtForm.dealMoney);
-
+        params.append('entityName', this.form.entityName);
+        params.append('distance', this.form.distance);
+        params.append('elapTime', this.form.elapTime);
+        params.append('aSite', this.form.aSite);
+        params.append('bSite', this.form.bSite);
         console.log(params);
         this.$axios({
           method: 'post',
           url: url,
           data: params
         })
-
-          .then(function (response) {
-
-            console.log(response);
-
-          })
-
           .catch(function (error) {
-
             console.log(error);
 
           });
+        location. reload()
+        this.$router.go(0)
+
+      },
+      updaFrom(){
+        const url=this.HOST+ '/road/update';
+        this.dialogUpFrom=false;
+        var params =new URLSearchParams();
+        params.append('entityName', this.form.entityName);
+        params.append('distance', this.form.distance);
+        params.append('elapTime', this.form.elapTime);
+        params.append('aSite', this.form.aSite);
+        params.append('bSite', this.form.bSite);
+        this.$axios({
+          method: 'post',
+          url: url,
+          data: params
+        })
+          .catch(function (error) {
+            console.log(error);
+
+          });
+        location. reload()
+        this.$router.go(0)
       },
       handleEdit(index, row) {
         console.log(index, row);
-
       },
       handleDelete(index, row) {
         console.log(index, row);
         var expenditureId = row.id;
         console.log(expenditureId);
         this.$axios
-          .delete(this.HOST + '/sun/expenditure/info/' + expenditureId)
+          .delete(this.HOST + '/road/delete/' + expenditureId)
           .then(res => {
             console.log(res);
             this.tableData.splice(index, 1)
@@ -160,7 +220,6 @@
             console.log(err);
           });
       },
-
       //时间戳转化
       getLocalTime(nS) {
         return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');

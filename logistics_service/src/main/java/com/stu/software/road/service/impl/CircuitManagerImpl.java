@@ -69,19 +69,19 @@ class CircuitManagerImpl extends GenericManagerImpl<Circuit, Long> implements Ci
 
 
 
-	@Override
-	public String route(Circuit circuit) {
-		String r=circuit.getRoute_one();
-		double dis =circuit.getDistance_one();
-		if(dis > circuit.getDistance_two()) {
-			dis=circuit.getDistance_two();
-			r=circuit.getRoute_two();
-		}else if(dis>circuit.getDistance_three()) {
-			dis=circuit.getDistance_three();
-			r=circuit.getRoute_three();
-		}
-		return r;
-	}
+//	@Override
+//	public String route(Circuit circuit) {
+//		String r=circuit.getRoute_one();
+//		double dis =circuit.getDistance_one();
+//		if(dis > circuit.getDistance_two()) {
+//			dis=circuit.getDistance_two();
+//			r=circuit.getRoute_two();
+//		}else if(dis>circuit.getDistance_three()) {
+//			dis=circuit.getDistance_three();
+//			r=circuit.getRoute_three();
+//		}
+//		return r;
+//	}
 	@Override
 	public void upda(Circuit circuit) {
 		CircuitCRUD.getintstan().upda(circuit);

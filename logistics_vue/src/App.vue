@@ -47,7 +47,7 @@
               </el-menu-item>
               <el-menu-item index="/components/table/road" >
                 <i class="el-icon-discover
-el"></i>
+                el"></i>
                 <span slot="title">线路信息</span>
               </el-menu-item>
               <el-menu-item index="/components/table/feedback" >

@@ -18,5 +18,5 @@ public interface CircuitManager extends GenericManager<Circuit, Long> {
     /**
      * route
      */
-    String route(Circuit circuit);
+    //String route(Circuit circuit);
 }
