@@ -30,14 +30,6 @@
       </template>
     </el-table-column>
 
-    <!--<el-table-column
-      label="  "
-      width="160">
-      <template slot-scope="scope">
-        &lt;!&ndash;<i class="el-icon-time"></i>&ndash;&gt;
-        <span style="margin-left: 10px">{{ scope.row.managementUserGroup }}</span>
-      </template>
-    </el-table-column>-->
     <el-table-column  label="操作">
       <template slot-scope="scope">
         <!--<el-button-->
@@ -48,7 +40,7 @@
         <el-button type="primary" @click="dialogFormVisible = true" size="mini">新增</el-button>
 
         <el-dialog title="新添管理员" :visible.sync="dialogFormVisible">
-          <el-form :model="from">
+          <el-form :model="from" >
             <el-form-item label="ID" :label-width="formLabelWidth">
               <el-input v-model="form.managementID" autocomplete="off"></el-input>
             </el-form-item>
@@ -79,9 +71,21 @@
         <el-button
           type="success"
           size="mini"
-          @click="update(scope.$index, scope.row)">修改</el-button>
-
-
+          @click="handleEdit(scope.$index, scope.row )  ">编辑</el-button>
+          <el-dialog title="编辑" :visible.sync="editFormVisible" :close-on-click-modal="false">
+           <el-form :model="editForm" label-width="80px" :rules="editFormRules" ref="editForm">
+            <el-form-item label="管理员姓名" prop="name">
+              <el-input v-model="editForm.mname" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="管理员电话">
+              <el-input  v-model="editForm.mphone"  auto-complete="off"></el-input>
+            </el-form-item>
+          </el-form>
+          <div slot="footer" class="dialog-footer">
+            <el-button @click.native="editFormVisible = false">取消</el-button>
+            <el-button type="primary" @click.native="editSubmit" :loading="editLoading">提交</el-button>
+          </div>
+        </el-dialog>
       </template>
     </el-table-column>
 
@@ -95,6 +99,7 @@
         tableData: [],
         dialogTableVisible: false,
         dialogFormVisible: false,
+        editFormVisible:false,
         form: {
           managementID:'',
           mname: '',
@@ -102,39 +107,68 @@
         /*  managementUserGroup:'',*/
         },
         formLabelWidth: '100px',
+        editForm: {
+          name: '',
+          mphone:''
+        },
       }
     },
     methods: {
       update(index,row) {
-
       },
+
       postForm() {
         const url = this.HOST + '/managementUser/save';
         this.dialogFormVisible = false;
 
+        /*alert(this.form.mname);*/
         var params = new URLSearchParams();
-        params.append('managementID', this.form.managementID);
-        params.append('mname', this.form.mname);
-        params.append('mphone', this.form.mphone);
+        params.append('ManagementID', this.form.managementID);
+        params.append('MName', this.form.mname);
+        params.append('MPhone', this.form.mphone);
        /* params.append('managementUserGroup', this.form.managementUserGroup);*/
-        alert(params.managementID);
+       /* alert(this.params.mname);*/
         console.log(params);
         this.$axios({
           method: 'post',
           url: url,
-          data: params
+          data: params,
         })
           .then(function (response) {
             console.log(response);
-            alert(params.mname);
+           /* alert(params.mname);*/
           })
           .catch(function (error) {
             console.log(error);
           });
       },
-      handleEdit(index, row) {
-        console.log(index, row);
+      editSubmit(){
+        const url = this.HOST + '/managementUser/save';
+        this.dialogFormVisible = false;
 
+        /*alert(this.form.mname);*/
+        var params = new URLSearchParams();
+        params.set('mname', this.editForm.mname);
+        params.set('mphone', this.editForm.mphone);
+        /* params.append('managementUserGroup', this.form.managementUserGroup);*/
+        /* alert(this.params.mname);*/
+        console.log(params);
+        this.$axios({
+          method: 'post',
+          url: url,
+          data: params,
+        })
+          .then(function (response) {
+            console.log(response);
+            /* alert(params.mname);*/
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      },
+      handleEdit: function (index, row) {
+        this.editFormVisible = true;
+        this.editForm = Object.assign({}, row);
       },
       handleDelete(index, row) {
         console.log(index, row);
