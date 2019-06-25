@@ -4,14 +4,6 @@
     :data="tableData"
     height="650px"
     style="width: 120%">
-    <el-table-column
-      label="ID"
-      width="260">
-      <template slot-scope="scope">
-        <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 10px">{{ scope.row.commentId }}</span>
-      </template>
-    </el-table-column>
 
     <el-table-column
       label="评论时间" sortable
@@ -30,14 +22,7 @@
       </template>
     </el-table-column>
 
-  <!--  <el-table-column
-      label="地点信息"
-      width="160">
-      <template slot-scope="scope">
-        &lt;!&ndash;<i class="el-icon-time"></i>&ndash;&gt;
-        <span style="margin-left: 10px">{{ scope.row.info }}</span>
-      </template>
-    </el-table-column>-->
+
     <el-table-column  label="操作">
       <template slot-scope="scope">
         <!--<el-button-->
@@ -47,24 +32,13 @@
         <!-- Form -->
         <el-button type="primary" @click="dialogFormVisible = true" size="mini">新增</el-button>
 
-        <!--  <el-dialog title="关键词提取" :visible.sync="dialogFormVisible">
-            <el-form :model="Form">
-              <el-form-item label="text" :label-width="formLabelWidth">
-                <el-input v-model="Form.text" autocomplete="off"></el-input>
+        <el-dialog title="新增评论信息" :visible.sync="dialogFormVisible">
+            <el-form :model="from">
+              <el-form-item label="评论内容" :label-width="formLabelWidth">
+                <el-input v-model="form.commentContent" autocomplete="off"></el-input>
               </el-form-item>
-              <el-form-item label="HanLP" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_1" autocomplete="off"></el-input>
-              </el-form-item>
-              <el-form-item label="FoolNlp" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_2" autocomplete="off">
-                </el-input>
-              </el-form-item>
-              <el-form-item label="StanfordNlp" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_3" autocomplete="off">
-                </el-input>
-              </el-form-item>
-              <el-form-item label="AnsjNlp" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_4" autocomplete="off">
+              <el-form-item label="发布时间" :label-width="formLabelWidth">
+                <el-input v-model="form.commentTime" autocomplete="off">
                 </el-input>
               </el-form-item>
             </el-form>
@@ -73,7 +47,6 @@
               <el-button type="primary" @click="postForm">确 定</el-button>
             </div>
           </el-dialog>
-  -->
 
 
         <el-button
@@ -101,10 +74,10 @@
         tableData: [],
         dialogTableVisible: false,
         dialogFormVisible: false,
-        Form: {
-          commentId: '',
-          commentTime: '',
+        form: {
           commentContent:'',
+          commentTime: '',
+
         },
         formLabelWidth: '120px',
       }
@@ -114,13 +87,12 @@
 
       },
       postForm() {
-        const url = this.HOST + '/nlpke/save';
+        const url = this.HOST + '/comment/save';
         this.dialogFormVisible = false;
 
         var params = new URLSearchParams();
-        params.append('goodName', this.epdtForm.goodName);
-        params.append('dealByPersonName', this.epdtForm.dealByPersonName);
-        params.append('dealMoney', this.epdtForm.dealMoney);
+        params.append('commentContent', this.form.commentContent);
+        params.append('commentTime', this.form.commentTime);
 
         console.log(params);
         this.$axios({
@@ -147,10 +119,10 @@
       },
       handleDelete(index, row) {
         console.log(index, row);
-        var expenditureId = row.id;
-        console.log(expenditureId);
+        var commentid = row.id;
+        console.log(commentid);
         this.$axios
-          .delete(this.HOST + '/sun/expenditure/info/' + expenditureId)
+          .delete(this.HOST + '/comment/delete/' + commentid)
           .then(res => {
             console.log(res);
             this.tableData.splice(index, 1)
@@ -166,7 +138,7 @@
       }
     },
     created() {
-      this.$axios.get(this.HOST+'/feedback/all')
+      this.$axios.get(this.HOST+'/comment/all')
         .then(response=>{
 
           console.log(response);
