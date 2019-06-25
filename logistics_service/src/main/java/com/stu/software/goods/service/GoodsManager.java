@@ -19,12 +19,9 @@ import java.util.List;
 public interface GoodsManager  extends GenericManager<Goods, Long> {
 
     List<Goods> findAll();
-    void savegoods(String name,String number);
-    void deletegoods(long goodsId);
-    void update(Goods goods);
-    Goods findone(long goodsId);
-    Goods findbyGoodsname(String goodsname);
-
-
+    Goods save(Goods goods);
+    void delete(Long id);
+    Goods findById(Long id);
+   // void updateweight(Long id,double weight);
 
 }

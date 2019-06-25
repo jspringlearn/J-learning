@@ -2,7 +2,6 @@ package com.stu.software.goods.service.impl;
 
 import com.stu.software.goods.dao.GoodsDao;
 import com.stu.software.goods.domain.Goods;
-import com.stu.software.goods.domain.Goods_CURD;
 import com.stu.software.goods.service.GoodsManager;
 import com.stu.software.service.impl.GenericManagerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,59 +27,35 @@ public class GoodsManagerlmpl extends GenericManagerImpl<Goods, Long> implements
         this.dao=this.goodsDao;
     }
 
-    /**
-     * find all site
-     */
+
+
     @Override
-    public List<Goods> findAll() {
-        // TODO Auto-generated method stub
-        List<Goods> all = Goods_CURD.getintstan().findAll();
-        return all;
+    public List<Goods> findAll()
+    {
+        return goodsDao.findAll();
     }
 
     @Override
-    public Goods findbyGoodsname(String goodsname) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-
-    @Override
-    public Goods findone(long goodsId) {
-        // TODO Auto-generated method stub
-        Goods goods=new Goods();
-        goods=Goods_CURD.getintstan().findOne(goodsId);
-       // System.out.println(goods);
-        return goods;
+    public Goods save (Goods goods)
+    {
+        return goodsDao.save(goods);
     }
 
 
     @Override
-    public void savegoods(String name,String number) {
-        // TODO Auto-generated method stub
-        Goods goods = new Goods();
-        goods.setName(name);
-        goods.setNumber(number);
-        this.goodsDao.save(goods);
+    public void delete(Long id) {
+        this.goodsDao.deleteById(id);
     }
 
-
-    /**
-     * update
-     */
     @Override
-    public void update(Goods goods) {
-        // TODO Auto-generated method stub
-        Goods_CURD.getintstan().upd(goods);
-
+    public Goods findById(Long id)
+    {
+          return goodsDao.getOne(id);
     }
 
-    /**
-     * delete Site
-     */
-    @Override
-    public void deletegoods(long goodsId) {
-        // TODO Auto-generated method stub
-        Goods_CURD.getintstan().del(goodsId);
-    }
+//    public void updateweight(Long id,double weight)  //这里的封装类与数值类的区别,与用Double的区别
+//    {
+//        Goods goods=dao.getOne(id);
+//        goods.setWeight(weight);
+//    }
 }
