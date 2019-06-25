@@ -5,76 +5,65 @@
     height="650px"
     style="width: 120%">
     <el-table-column
-      label="ID"
+      label="名字"
       width="260">
-      <template slot-scope="scope">
-        <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 10px">{{ scope.row.id }}</span>
-      </template>
-    </el-table-column>
-
-    <!--<el-table-columni
-      label="订单号" sortable
-      width="260">
-      <template slot-scope="scope">
-        &lt;!&ndash;<i class="el-icon-time"></i>&ndash;&gt;
-        <span style="margin-left: 10px">{{ scope.row.orderId }}</span>
-      </template>
-    </el-table-column>-->
-    <el-table-column
-      label="数量"
-      width="260">
-      <template slot-scope="scope">
-        <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 20px">{{ scope.row.number }}</span>
-      </template>
-    </el-table-column>
-
-    <el-table-column
-      label="名称"
-      width="160">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
         <span style="margin-left: 10px">{{ scope.row.name }}</span>
       </template>
     </el-table-column>
+
+
+    <el-table-column
+      label="数量"
+      width="260">
+      <template slot-scope="scope">
+        <span style="margin-left: 20px">{{ scope.row.number }}</span>
+      </template>
+    </el-table-column>
+
+    <el-table-column
+      label="重量"
+      width="160">
+      <template slot-scope="scope">
+        <!--<i class="el-icon-time"></i>-->
+        <span style="margin-left: 10px">{{ scope.row.weight }}</span>
+      </template>
+    </el-table-column>
+
+
+    <el-table-column
+      label="仓库"
+      width="160">
+      <template slot-scope="scope">
+        <!--<i class="el-icon-time"></i>-->
+        <span style="margin-left: 10px">{{ scope.row.store }}</span>
+      </template>
+    </el-table-column>
     <el-table-column  label="操作">
       <template slot-scope="scope">
-        <!--<el-button-->
-        <!--size="mini"-->
-        <!--@click="handleEdit(scope.$index, scope.row)">编辑</el-button>-->
 
-        <!-- Form -->
         <el-button type="primary" @click="dialogFormVisible = true" size="mini">新增</el-button>
 
-        <!--  <el-dialog title="关键词提取" :visible.sync="dialogFormVisible">
-            <el-form :model="Form">
-              <el-form-item label="text" :label-width="formLabelWidth">
-                <el-input v-model="Form.text" autocomplete="off"></el-input>
-              </el-form-item>
-              <el-form-item label="HanLP" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_1" autocomplete="off"></el-input>
-              </el-form-item>
-              <el-form-item label="FoolNlp" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_2" autocomplete="off">
-                </el-input>
-              </el-form-item>
-              <el-form-item label="StanfordNlp" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_3" autocomplete="off">
-                </el-input>
-              </el-form-item>
-              <el-form-item label="AnsjNlp" :label-width="formLabelWidth">
-                <el-input v-model="Form.word_4" autocomplete="off">
-                </el-input>
-              </el-form-item>
-            </el-form>
-            <div slot="footer" class="dialog-footer">
-              <el-button @click="dialogFormVisible = false">取 消</el-button>
-              <el-button type="primary" @click="postForm">确 定</el-button>
-            </div>
-          </el-dialog>
-  -->
+        <el-dialog title="新添货物信息" :visible.sync="dialogFormVisible">
+          <el-form :model="from">
+            <el-form-item label="名字" :label-width="formLabelWidth">
+              <el-input v-model="form.name" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="数量" :label-width="formLabelWidth">
+              <el-input v-model="form.number" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="重量" :label-width="formLabelWidth">
+              <el-input v-model="form.weight" autocomplete="off">
+              </el-input>
+            </el-form-item>
+          </el-form>
 
+          <div slot="footer" class="dialog-footer">
+            <el-button @click="dialogFormVisible = false">取 消</el-button>
+            <el-button type="primary" @click="postForm">确 定</el-button>
+          </div>
+        </el-dialog>
 
         <el-button
           size="mini"
@@ -101,27 +90,63 @@
         tableData: [],
         dialogTableVisible: false,
         dialogFormVisible: false,
-        Form: {
-          d: '',
+        form: {
+          name: '',
           number: '',
-          name:'',
-
+          weight:'',
+         // store:'',
         },
         formLabelWidth: '120px',
       }
     },
     methods: {
-      update(index,row) {
-
-      },
+      // update(index,row) {
+      //   this.$prompt('更改后的重量', '修改', {
+      //     confirmButtonText: '确定',
+      //     cancelButtonText: '取消',
+      //   }).then(({value}) => {
+      //     this.$message({
+      //       type: 'success',
+      //       message: '已保存: '
+      //     });
+      //     console.log(row.id, value);
+      //
+      //
+      //     this.$axios({
+      //       method: "put",
+      //       url: this.HOST + '/goods/update?id=' + row.id + "&number=" + value,     //这里的传参---mvc问题，待解决
+      //       data:{
+      //
+      //       },
+      //     })
+      //       .then(function (response) {
+      //
+      //         console.log(response);
+      //
+      //       })
+      //
+      //       .catch(function (error) {
+      //
+      //         console.log(error);
+      //
+      //       });
+      //
+      //
+      //   }).catch(() => {
+      //     this.$message({
+      //       type: 'info',
+      //       message: '取消输入'
+      //     });
+      //   });
+      // },
       postForm() {
-        const url = this.HOST + '/nlpke/save';
+        const url = this.HOST + '/goods/save';
         this.dialogFormVisible = false;
 
         var params = new URLSearchParams();
-        params.append('goodName', this.epdtForm.goodName);
-        params.append('dealByPersonName', this.epdtForm.dealByPersonName);
-        params.append('dealMoney', this.epdtForm.dealMoney);
+        params.append('name', this.form.name);
+        params.append('number', this.form.number);
+        params.append('weight', this.form.weight);
 
         console.log(params);
         this.$axios({
@@ -148,10 +173,10 @@
       },
       handleDelete(index, row) {
         console.log(index, row);
-        var expenditureId = row.id;
-        console.log(expenditureId);
+        var goodsid = row.id;
+        console.log(goodsid);
         this.$axios
-          .delete(this.HOST + '/sun/expenditure/info/' + expenditureId)
+          .delete(this.HOST + '/goods/delete/' + goodsid)
           .then(res => {
             console.log(res);
             this.tableData.splice(index, 1)
@@ -186,3 +211,6 @@
     }
   }
 </script>
+
+
+
