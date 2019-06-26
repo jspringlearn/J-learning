@@ -9,6 +9,7 @@ import employee from '@/components/table/employee'
 import road from '@/components/table/road'
 import order from '@/components/table/order'
 import table7 from '@/components/table/table7'
+import car from '@/components/table/car'
 
 Vue.use(Router);
 
@@ -53,6 +54,11 @@ export default new Router({
       path:'/components/table/table7',
       name:'table7',
       component:table7
+    },
+    {
+      path:'/components/table/car',
+      name:'car',
+      component:car
     },
   ]
 })

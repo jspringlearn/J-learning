@@ -41,8 +41,8 @@
                 <i class="el-icon-bicycle"></i>
                 <span slot="title">员工信息</span>
               </el-menu-item>
-              <el-menu-item index="5" >
-                <i class="el-icon-truck"></i>
+              <el-menu-item index="/components/table/car" >
+                <i class="el-icon-bicycle"></i>
                 <span slot="title">车辆信息</span>
               </el-menu-item>
               <el-menu-item index="/components/table/road" >

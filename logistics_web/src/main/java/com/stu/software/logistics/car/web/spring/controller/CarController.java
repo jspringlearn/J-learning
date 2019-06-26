@@ -8,8 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.stu.software.Employee.domain.Staff;
 import com.stu.software.car.domain.Car;
 import com.stu.software.car.service.CarManager;
+import com.stu.software.goods.domain.Goods;
 import com.stu.software.order.domain.Order;
 import com.stu.software.web.spring.controller.GenericController;
 
@@ -44,8 +46,8 @@ public class CarController extends GenericController<Car, Long, CarManager> {
 
 	@ResponseBody//标识转换成JSON处理
 	@GetMapping(value = "all",produces = "application/json;charset=utf-8")
-	public List<Car> findAllUser(){
-		return this.manager.findAll();
+	public List<Car> findAllCar(){
+		return this.carManager.findAll();
 	}
 
 
@@ -56,18 +58,33 @@ public class CarController extends GenericController<Car, Long, CarManager> {
 	@RequestMapping("/update")
 	public String update(Car car)
 	{
-		System.out.println(car);
 		this.carManager.update(car);
 		return "forward:showcar.do";
 	}
 	
-	//delete car
-	@RequestMapping("/delete")
-	public String delete(String car_number) {
-		this.carManager.deleteCar(car_number);
-		return "forward:showcar";
-	}
 	
+	/*临时注释测试
+	//delete car
+	@RequestMapping(value = "/deleteCar/{car_number}",method = RequestMethod.DELETE,produces = "application/json;charset=utf-8")
+	public @ResponseBody Car deleteCar(@PathVariable(value ="car_number") String car_number) {
+        Car car=carManager.search(car_number);
+        this.carManager.deleteCar(car_number);
+        return car;
+    }
+	
+	
+	
+	//save(add)
+	 @RequestMapping(value = "save",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
+	    public @ResponseBody Car save(Car car) {
+	        this.carManager.save(car);
+	      return car;
+	    }
+	*/
+	
+	
+	
+/*
 	
 	//update car information
 	  @RequestMapping("/toupdatecar") 
@@ -88,9 +105,25 @@ public class CarController extends GenericController<Car, Long, CarManager> {
 	        return "forward:showcar";
 	    }
 
-		  
+		  */
 	 
 
+	 @RequestMapping(value = "/delete/{id}",method = RequestMethod.DELETE,produces = "application/json;charset=utf-8")
+	    public  @ResponseBody
+	    Car deleteone(@PathVariable(value = "id") Long id){
+	        Car car=carManager.findById(id);
+	        this.carManager.delete(id);
+	        return car;
+	    }
+
+	    @RequestMapping(value = "save",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
+	    public @ResponseBody Car save(Car car){
+	        this.carManager.save(car);
+	        return car;
+	    }
+
+	 
+	 
 }
 
 
