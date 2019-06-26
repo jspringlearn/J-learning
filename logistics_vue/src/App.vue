@@ -1,4 +1,4 @@
-<template >
+﻿<template >
   <div>
 
     <el-container >
@@ -32,7 +32,7 @@
                 <span slot="title">货物信息</span>
               </el-menu-item>
 
-              <el-menu-item index="3" >
+              <el-menu-item index="/components/table/order" >
                 <i class="el-icon-document"></i>
                 <span slot="title">订单信息</span>
               </el-menu-item>

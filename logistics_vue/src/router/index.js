@@ -7,6 +7,7 @@ import goods from '@/components/table/goods'
 import comment from '@/components/table/comment'
 import employee from '@/components/table/employee'
 import road from '@/components/table/road'
+import order from '@/components/table/order'
 import table7 from '@/components/table/table7'
 
 Vue.use(Router);
@@ -42,6 +43,11 @@ export default new Router({
       path:'/components/table/road',
       name:'road',
       component:road
+    },
+    {
+      path:'/components/table/order',
+      name:'order',
+      component:order
     },
     {
       path:'/components/table/table7',
