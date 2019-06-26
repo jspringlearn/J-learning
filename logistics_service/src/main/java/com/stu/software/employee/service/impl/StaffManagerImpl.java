@@ -52,15 +52,17 @@ public class StaffManagerImpl extends GenericManagerImpl<Staff, Long> implements
         }
         return all;
     }
-//    @Override
-//	public void upd(Site site) {
-//		// TODO Auto-generated method stub
-//		SiteBaseDao.getintstan().upd(site);
-//
-//	}
+
     @Override
     public void upd(Staff staff){
         Staff_CURD.getintstan().upd(staff);
     }
 
+    @Override
+    public String getlocation (Long id){return null;}
+
+    @Override
+    public String getmsg(String orderid) {
+        return null;
+    }
 }
