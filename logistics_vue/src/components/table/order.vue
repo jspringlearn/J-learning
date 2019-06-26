@@ -5,54 +5,60 @@
     height="650px"
     style="width: 120%">
     <el-table-column
-      label="ID"sortable
-      width="260">
+      label="订单号"
+      width="160">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 10px">{{ scope.row.orderId }}</span>
+        <span style="margin-left: 10px">{{ scope.row.orderID}}</span>
+      </template>
+    </el-table-column>
+
+
+    <el-table-column
+      label="订单名称"
+      width="160">
+      <template slot-scope="scope">
+        <span style="margin-left: 20px">{{ scope.row.orderName }}</span>
       </template>
     </el-table-column>
 
     <el-table-column
-      label="姓名"
+      label="下单时间"
       width="260">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 10px">{{ scope.row.orderName }}</span>
-      </template>
-    </el-table-column>
-    <el-table-column
-      label="电话"
-      width="260">
-      <template slot-scope="scope">
-        <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 20px">{{ scope.row.orderTime }}</span>
+        <span style="margin-left: 10px">{{ scope.row.orderTime }}</span>
       </template>
     </el-table-column>
 
+
+    <el-table-column
+      label="订单价格"
+      width="160">
+      <template slot-scope="scope">
+        <!--<i class="el-icon-time"></i>-->
+        <span style="margin-left: 10px">{{ scope.row.orderPrice }}</span>
+      </template>
+    </el-table-column>
     <el-table-column  label="操作">
       <template slot-scope="scope">
-        <!--<el-button-->
-        <!--size="mini"-->
-        <!--@click="handleEdit(scope.$index, scope.row)">编辑</el-button>-->
 
-        <!-- Form -->
         <el-button type="primary" @click="dialogFormVisible = true" size="mini">新增</el-button>
 
-        <el-dialog title="新添管理员" :visible.sync="dialogFormVisible">
+        <el-dialog title="新添订单信息" :visible.sync="dialogFormVisible">
           <el-form :model="from">
-            <el-form-item label="ID" :label-width="formLabelWidth">
-              <el-input v-model="form.managementID" autocomplete="off"></el-input>
+            <el-form-item label="订单名称" :label-width="formLabelWidth">
+              <el-input v-model="form.orderName" autocomplete="off"></el-input>
             </el-form-item>
-            <el-form-item label="姓名" :label-width="formLabelWidth">
-              <el-input v-model="form.mname" autocomplete="off"></el-input>
+            <el-form-item label="下单时间" :label-width="formLabelWidth">
+              <el-input v-model="form.orderTime" autocomplete="off"></el-input>
             </el-form-item>
-            <el-form-item label="电话" :label-width="formLabelWidth">
-              <el-input v-model="form.mphone" autocomplete="off">
+            <el-form-item label="订单价格" :label-width="formLabelWidth">
+              <el-input v-model="form.orderPrice" autocomplete="off">
               </el-input>
             </el-form-item>
-
           </el-form>
+
           <div slot="footer" class="dialog-footer">
             <el-button @click="dialogFormVisible = false">取 消</el-button>
             <el-button type="primary" @click="postForm">确 定</el-button>
@@ -68,21 +74,9 @@
         <el-button
           type="success"
           size="mini"
-          @click="handleEdit(scope.$index, scope.row )  ">编辑</el-button>
-        <el-dialog title="编辑" :visible.sync="editFormVisible" :close-on-click-modal="false">
-          <el-form :model="editForm" label-width="80px" :rules="editFormRules" ref="editForm">
-            <el-form-item label="管理员姓名" prop="name">
-              <el-input v-model="editForm.mname" auto-complete="off"></el-input>
-            </el-form-item>
-            <el-form-item label="管理员电话">
-              <el-input  v-model="editForm.mphone"  auto-complete="off"></el-input>
-            </el-form-item>
-          </el-form>
-          <div slot="footer" class="dialog-footer">
-            <el-button @click.native="editFormVisible = false">取消</el-button>
-            <el-button type="primary" @click.native="editSubmit" :loading="editLoading">提交</el-button>
-          </div>
-        </el-dialog>
+          @click="update(scope.$index, scope.row)">修改</el-button>
+
+
       </template>
     </el-table-column>
 
@@ -96,83 +90,93 @@
         tableData: [],
         dialogTableVisible: false,
         dialogFormVisible: false,
-        editFormVisible:false,
         form: {
-          orderId:'',
-          orderName: '',
-          orderTime: '',
-          /*  managementUserGroup:'',*/
-        },
-        formLabelWidth: '100px',
-        editForm: {
           name: '',
-          mphone:''
+          number: '',
+          weight:'',
+          // store:'',
         },
+        formLabelWidth: '120px',
       }
     },
     methods: {
-      update(index,row) {
-      },
-
+      // update(index,row) {
+      //   this.$prompt('更改后的重量', '修改', {
+      //     confirmButtonText: '确定',
+      //     cancelButtonText: '取消',
+      //   }).then(({value}) => {
+      //     this.$message({
+      //       type: 'success',
+      //       message: '已保存: '
+      //     });
+      //     console.log(row.id, value);
+      //
+      //
+      //     this.$axios({
+      //       method: "put",
+      //       url: this.HOST + '/goods/update?id=' + row.id + "&number=" + value,     //这里的传参---mvc问题，待解决
+      //       data:{
+      //
+      //       },
+      //     })
+      //       .then(function (response) {
+      //
+      //         console.log(response);
+      //
+      //       })
+      //
+      //       .catch(function (error) {
+      //
+      //         console.log(error);
+      //
+      //       });
+      //
+      //
+      //   }).catch(() => {
+      //     this.$message({
+      //       type: 'info',
+      //       message: '取消输入'
+      //     });
+      //   });
+      // },
       postForm() {
-        const url = this.HOST + '/managementUser/save';
+        const url = this.HOST + '/order/save';
         this.dialogFormVisible = false;
 
-        /*alert(this.form.mname);*/
         var params = new URLSearchParams();
-        params.append('managementID', this.form.managementID);
-        params.append('mname', this.form.mname);
-        params.append('mphone', this.form.mphone);
-        /* params.append('managementUserGroup', this.form.managementUserGroup);*/
-        /* alert(this.params.mname);*/
+        params.append('orderName', this.form.orderName);
+        params.append('orderTime', this.form.orderTime);
+        params.append('orderPrice', this.form.orderPrice);
+
         console.log(params);
         this.$axios({
           method: 'post',
           url: url,
-          data: params,
+          data: params
         })
-          .then(function (response) {
-            console.log(response);
-            /* alert(params.mname);*/
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-      },
-      editSubmit(){
-        const url = this.HOST + '/managementUser/save';
-        this.dialogFormVisible = false;
 
-        /*alert(this.form.mname);*/
-        var params = new URLSearchParams();
-        params.set('mname', this.editForm.mname);
-        params.set('mphone', this.editForm.mphone);
-        /* params.append('managementUserGroup', this.form.managementUserGroup);*/
-        /* alert(this.params.mname);*/
-        console.log(params);
-        this.$axios({
-          method: 'post',
-          url: url,
-          data: params,
-        })
           .then(function (response) {
+
             console.log(response);
-            /* alert(params.mname);*/
+
           })
+
           .catch(function (error) {
+
             console.log(error);
+
           });
       },
-      handleEdit: function (index, row) {
-        this.editFormVisible = true;
-        this.editForm = Object.assign({}, row);
+      handleEdit(index, row) {
+        console.log(index, row);
+
       },
       handleDelete(index, row) {
         console.log(index, row);
-        var expenditureId = row.id;
-        console.log(expenditureId);
+        var orderid = row.id;
+        console.log(orderid);
         this.$axios
-          .delete(this.HOST + '/managementUser/deleteById/' +expenditureId)
+          .delete(this.HOST + '/order/delete/' + orderid)
           .then(res => {
             console.log(res);
             this.tableData.splice(index, 1)
@@ -207,3 +211,6 @@
     }
   }
 </script>
+
+
+
