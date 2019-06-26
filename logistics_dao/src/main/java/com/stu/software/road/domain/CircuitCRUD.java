@@ -18,11 +18,13 @@ public class CircuitCRUD extends BaseDao {
 	PreparedStatement ps=null;
 	ResultSet rs=null;
 	public int upda(Circuit circuit) {
-		String sql="update T_ROAD_CIRCUIT set ENTITY_NAME=?,DISTANCE=?,ELAPTIME=? where ID=?";		
+		String sql="update T_ROAD_CIRCUIT set ENTITY_NAME=?,DISTANCE=?,ELAPTIME=?,ASITE=?,BSITE=? where ID=?";		
 		String[] parm= {
 				circuit.getEntityName(),
 				String.valueOf(circuit.getDistance()),
 				String.valueOf(circuit.getElapTime()),
+				circuit.getaSite(),
+				circuit.getbSite(),
 				String.valueOf(circuit.getId())
 		};
 		return this.exeUda(parm, sql);

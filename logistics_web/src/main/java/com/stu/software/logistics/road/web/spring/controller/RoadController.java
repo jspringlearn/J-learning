@@ -57,12 +57,14 @@ public class RoadController extends GenericController<Circuit, Long, CircuitMana
 		System.out.println(id);
 		this.circuitManager.delete(id);
 	}
-	@GetMapping(value="findDate/{id}",produces="application/json;charset=utf-8")
-	public @ResponseBody Circuit toupda(@PathVariable(value="id")Long id) {
-		System.out.println(id);
-		Circuit circuit=this.circuitManager.findOne(id);
-		return circuit;
-	}
+//	private List<Circuit> list;
+//	@GetMapping(value="findDate/{id}",produces="application/json;charset=utf-8")
+//	public @ResponseBody List<Circuit>  toupda(@PathVariable(value="id")Long id) {
+//		System.out.println(id);
+//		Circuit circuit=this.circuitManager.findOne(id);
+//		list.add(circuit);
+//		return list;
+//	}
 	@RequestMapping(value="update",method=RequestMethod.POST,produces = "application/json;charset=utf-8")
 	public @ResponseBody void upda(Circuit circuit) {
 		this.circuitManager.upda(circuit);

@@ -4,7 +4,7 @@ import Router from 'vue-router'
 import management from '@/components/table/management'
 import site from '@/components/table/site'
 import goods from '@/components/table/goods'
-import feedback from '@/components/table/feedback'
+import comment from '@/components/table/comment'
 import employee from '@/components/table/employee'
 import road from '@/components/table/road'
 import table7 from '@/components/table/table7'
@@ -29,9 +29,9 @@ export default new Router({
       component:goods
     },
     {
-      path:'/components/table/feedback',
-      name:'feedback',
-      component:feedback
+      path:'/components/table/comment',
+      name:'comment',
+      component:comment
     },
     {
       path:'/components/table/employee',

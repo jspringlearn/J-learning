@@ -92,24 +92,24 @@
         <el-button
           type="success"
           size="mini"
-          @click="update(scope.$index, scope.row);dialogUpFrom=true">修改</el-button>
+          @click="update(scope.$index, scope.row)">修改</el-button>
 
-        <el-dialog title="修改线路" :visible.sync="dialogUpFrom">
-        <el-form :model="from">
-          <el-form-item label="线路名" :label-width="formLabelWidth">
-            <el-input v-model="form.entityName" autocomplete="off">{{this.onedata.entityName}}</el-input>
+        <el-dialog title="修改线路" :visible.sync="dialogUpFrom" :close-on-click-modal="false">
+        <el-form :model="upform"  label-width="80px"  ref="upfrom">
+          <el-form-item label="线路名" prop="name" >
+            <el-input v-model="upform.entityName" auto-complete="off"></el-input>
           </el-form-item>
-          <el-form-item label="距离" :label-width="formLabelWidth">
-            <el-input v-model="form.distance" autocomplete="off">{{this.onedata.distance}}</el-input>
+          <el-form-item label="距离" >
+            <el-input v-model="upform.distance" auto-complete="off"></el-input>
           </el-form-item>
-          <el-form-item label="时长" :label-width="formLabelWidth">
-            <el-input v-model="form.elapTime" autocomplete="off">{{this.onedata.elapTime}}</el-input>
+          <el-form-item label="时长" >
+            <el-input v-model="upform.elapTime" auto-complete="off"></el-input>
           </el-form-item>
-          <el-form-item label="起点" :label-width="formLabelWidth">
-            <el-input v-model="form.aSite" autocomplete="off">{{this.onedata.aSite}}</el-input>
+          <el-form-item label="起点" >
+            <el-input v-model="upform.aSite" auto-complete="off"></el-input>
           </el-form-item>
-          <el-form-item label="终点" :label-width="formLabelWidth">
-            <el-input v-model="form.bSite" autocomplete="off">{{this.onedata.bSite}}</el-input>
+          <el-form-item label="终点" >
+            <el-input v-model="upform.bSite" auto-complete="off"></el-input>
           </el-form-item>
         </el-form>
         <div slot="footer" class="dialog-footer">
@@ -130,7 +130,6 @@
     data() {
       return {
         tableData: [],
-        onedata: [],
         dialogTableVisible: false,
         dialogFormVisible: false,
         dialogUpFrom: false,
@@ -142,22 +141,19 @@
           bSite:'',
         },
         formLabelWidth: '120px',
+        upform: {
+          entityName:'',
+          distance: '',
+          elapTime: '',
+          aSite:'',
+          bSite:'',
+        },
       }
     },
     methods: {
-      update(index,row) {
-        console.log(index, row);
-        var expenditureId = row.id;
-        console.log(expenditureId);
-        this.$axios
-          .get(this.HOST + '/road/findDate/' + expenditureId)
-          .then(function (response){
-            console.log(response);
-            this.onedata=response.data;
-          })
-          .catch(err => {
-            console.log(err);
-          });
+      update:function(index,row) {
+        this.dialogUpFrom=true;
+        this.upform=Object.assign({},row);
       },
       postForm() {
         const url = this.HOST + '/road/save';
@@ -178,6 +174,7 @@
             console.log(error);
 
           });
+
         location. reload()
         this.$router.go(0)
 
@@ -186,11 +183,12 @@
         const url=this.HOST+ '/road/update';
         this.dialogUpFrom=false;
         var params =new URLSearchParams();
-        params.append('entityName', this.form.entityName);
-        params.append('distance', this.form.distance);
-        params.append('elapTime', this.form.elapTime);
-        params.append('aSite', this.form.aSite);
-        params.append('bSite', this.form.bSite);
+        params.set('id',this.upform.id);
+        params.set('entityName', this.upform.entityName);
+        params.set('distance', this.upform.distance);
+        params.set('elapTime', this.upform.elapTime);
+        params.set('aSite', this.upform.aSite);
+        params.set('bSite', this.upform.bSite);
         this.$axios({
           method: 'post',
           url: url,
@@ -200,11 +198,9 @@
             console.log(error);
 
           });
+        clearTimeout(4000);
         location. reload()
         this.$router.go(0)
-      },
-      handleEdit(index, row) {
-        console.log(index, row);
       },
       handleDelete(index, row) {
         console.log(index, row);
