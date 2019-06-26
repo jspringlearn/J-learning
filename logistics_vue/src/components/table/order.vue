@@ -47,6 +47,9 @@
 
         <el-dialog title="新添订单信息" :visible.sync="dialogFormVisible">
           <el-form :model="from">
+            <el-form-item label="订单号" :label-width="formLabelWidth">
+              <el-input v-model="form.orderID" autocomplete="off"></el-input>
+            </el-form-item>
             <el-form-item label="订单名称" :label-width="formLabelWidth">
               <el-input v-model="form.orderName" autocomplete="off"></el-input>
             </el-form-item>
@@ -144,6 +147,7 @@
         this.dialogFormVisible = false;
 
         var params = new URLSearchParams();
+        params.append('orderID', this.form.orderID);
         params.append('orderName', this.form.orderName);
         params.append('orderTime', this.form.orderTime);
         params.append('orderPrice', this.form.orderPrice);
