@@ -13,11 +13,47 @@ import java.util.List;
  */
 public interface StaffManager extends GenericManager<Staff,Long> {
     String sayHello(String name);
-    Staff save(Staff staff);//保存员工信息
-    void delete(Long id);//根据员工id删除员工
-    Staff findById(Long id);//根据员工id找到员工
-    List<Staff> getAll();//所有员工信息
-    void upd(Staff staff);//通过员工实体更新员工信息
-    String getlocation (Long id);//根据id得到员工的地点
-    String getmsg (String orderid);//根据订单编号得到配送位置
+    Staff save(Staff staff);
+    /**
+     * * delete entity according given id
+     *
+     * @param id
+     */
+    void delete(Long id);
+    /**
+     * fetch specified entity according id;
+     *
+     * @param id
+     *            entity id;
+     * @return entity
+     */
+    Staff findById(Long id);
+    /**
+     * fetch all entities
+     *
+     * @return list for all entities
+     */
+    List<Staff> getAll();
+    /**
+     * update entities
+     *
+     * @param staff
+     */
+    void upd(Staff staff);
+    /**
+     * update entities
+     *
+     * @param id
+     *
+     * @return location
+     */
+    String getlocation (Long id);
+    /**
+     * update entities
+     *
+     * @param orderid
+     *
+     * @return place
+     */
+    String getmsg (String orderid);
 }
