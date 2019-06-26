@@ -11,25 +11,45 @@ import java.util.List;
 @Component
 @Transactional
 public interface CommentManager extends GenericManager<Comment, Long> {
-    /*
-     * 罗列出所有评论的信息
+    /**
+     * fetch all entities
      *
-     * */
+     * @return list for all entities
+     */
     List<Comment> findAll();
-    /*
-     * 保存评论信息
+
+
+    /**
+     * save specified entity;
      *
-     * */
+     * @param entity
+     *            entity for saving
+     * @return saved domain entity
+     */
     Comment save(Comment comment);
-    /*
-     * 根据id删除评论
+
+
+
+
+    
+    /**
+     * * delete entity according given id
      *
-     * */
+     * @param id
+     */
     void delete(Long id);
-    /*
-     * 根据id查找某条评论
+
+
+
+
+    /**
+     * fetch specified entity according id;
      *
-     * */
+     * @param id
+     *            entity id;
+     * @return entity
+     */
     Comment findById(Long id);
 
 }
+
