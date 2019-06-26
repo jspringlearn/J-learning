@@ -22,23 +22,23 @@ public class Goods extends BaseEntity {
     private static final long serialVersionUID = 2956980785739215106L;
 
     @ManyToOne
-    @JoinColumn(name = "STORE_ID")
+    @JoinColumn(name = "store")
     Store store;
 
-    @Column(name = "GOODS_NAME")
+    @Column(name = "name")
     String name;
 
-    @Column(name="GOODS_NUMBER")
+    @Column(name="number")
     String number;
-    @Column(name="GOODS_ID")
-    long ID;
+    @Column(name="weight")
+    double weight;
 
-    public long getID() {
-        return ID;
+    public double getWeight() {
+        return weight;
     }
 
-    public void setID(long ID) {
-        this.ID = ID;
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
     public Store getStore() {
