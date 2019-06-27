@@ -24,20 +24,17 @@ public class GoodsManagerlmpl extends GenericManagerImpl<Goods, Long> implements
     @Autowired
     public void setGoodsDao(GoodsDao goodsDao) {
         this.goodsDao = goodsDao;
-        this.dao=this.goodsDao;
+        this.dao = this.goodsDao;
     }
 
 
-
     @Override
-    public List<Goods> findAll()
-    {
+    public List<Goods> findAll() {
         return goodsDao.findAll();
     }
 
     @Override
-    public Goods save (Goods goods)
-    {
+    public Goods save(Goods goods) {
         return goodsDao.save(goods);
     }
 
@@ -48,14 +45,13 @@ public class GoodsManagerlmpl extends GenericManagerImpl<Goods, Long> implements
     }
 
     @Override
-    public Goods findById(Long id)
-    {
-          return goodsDao.getOne(id);
+    public Goods findById(Long id) {
+        return goodsDao.getOne(id);
     }
 
-//    public void updateweight(Long id,double weight)  //这里的封装类与数值类的区别,与用Double的区别
-//    {
-//        Goods goods=dao.getOne(id);
-//        goods.setWeight(weight);
-//    }
+    public void updateweight(Long id, double weight)  //这里的封装类与数值类的区别,与用Double的区别
+    {
+        Goods goods = dao.getOne(id);
+        goods.setWeight(weight);
+    }
 }

@@ -6,6 +6,7 @@ import com.stu.software.web.spring.controller.GenericController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 /**
@@ -22,39 +23,40 @@ public class GoodsController extends GenericController<Goods, Long, GoodsManager
     @Autowired
     public void setGoodsManager(GoodsManager goodsManager) {
         this.goodsManager = goodsManager;
-        this.manager=this.goodsManager;
+        this.manager = this.goodsManager;
     }
 
     @ResponseBody//标识转换成JSON处理
-    @GetMapping(value = "all",produces = "application/json;charset=utf-8")
-    public List<Goods> findAllUser(){
+    @GetMapping(value = "all", produces = "application/json;charset=utf-8")
+    public List<Goods> findAllUser() {
         return this.manager.findAll();
     }
 
 
-    @RequestMapping(value = "/delete/{id}",method = RequestMethod.DELETE,produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE, produces = "application/json;charset=utf-8")
     public @ResponseBody
-    Goods deleteone(@PathVariable(value="id") Long id) {
-        Goods goods=goodsManager.findById(id);
+    Goods deleteone(@PathVariable(value = "id") Long id) {
+        Goods goods = goodsManager.findById(id);
         this.goodsManager.delete(id);
         return goods;
     }
 
 
-    @RequestMapping(value = "save",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
-    public @ResponseBody Goods  save(Goods goods) {
+    @RequestMapping(value = "save", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    public @ResponseBody
+    Goods save(Goods goods) {
         this.goodsManager.save(goods);
-      return goods;
+        return goods;
     }
 
-  //更改的信息还没完成。
-//    @RequestMapping(value = "update",method = RequestMethod.PUT,produces = "application/json;charset=utf-8")
-//    public @ResponseBody Goods  update(Goods goods) {
-//        Goods goods1=this.goodsManager.findById(goods.getId());
-//        this.goodsManager.updateweight(goods.getId(),goods.getWeight());
-//        return goods1;
-//    }
-
+    // 更改的信息还没完成。
+    @RequestMapping(value = "/update", method = RequestMethod.PUT, produces = "application/json;charset=utf-8")
+    public @ResponseBody
+    Goods update(Goods goods) {
+        Goods goods1 = this.goodsManager.findById(goods.getId());
+        this.goodsManager.updateweight(goods.getId(), goods.getWeight());
+        return goods1;
+    }
 
 
 }

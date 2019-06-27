@@ -1,6 +1,5 @@
 package com.stu.software.goods.service.impl;
 
-import com.stu.software.admin.dao.GroupDao;
 import com.stu.software.goods.dao.StoreDao;
 import com.stu.software.goods.domain.Store;
 import com.stu.software.goods.service.StoreManager;
@@ -18,14 +17,15 @@ import javax.transaction.Transactional;
 
 @Component
 @Transactional
-public class StoreManagerlmpl  extends GenericTreeManagerImpl<Store, Long> implements StoreManager {
+public class StoreManagerlmpl extends GenericTreeManagerImpl<Store, Long> implements StoreManager {
 
 
     StoreDao storeDao;
+
     @Autowired
     public void setStoreDao(StoreDao storeDao) {
         this.storeDao = storeDao;
-        this.treeDao=this.storeDao;
-        this.dao=this.treeDao;
+        this.treeDao = this.storeDao;
+        this.dao = this.treeDao;
     }
 }

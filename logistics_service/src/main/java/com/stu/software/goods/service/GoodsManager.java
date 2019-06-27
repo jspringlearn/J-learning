@@ -1,7 +1,6 @@
 package com.stu.software.goods.service;
 
 import com.stu.software.goods.domain.Goods;
-import com.stu.software.place.domain.Site;
 import com.stu.software.service.GenericManager;
 import org.springframework.stereotype.Component;
 
@@ -16,12 +15,20 @@ import java.util.List;
 
 @Component
 @Transactional
-public interface GoodsManager  extends GenericManager<Goods, Long> {
+public interface GoodsManager extends GenericManager<Goods, Long> {
 
+    /**
+     * List<Goods> findAll()       find all the information about the goods
+     * Goods save(Goods goods)     Save the information to add
+     * void delete(Long id)        delete information according to id
+     * Goods findById(Long id);    Search by id
+     * void updateweight(Long id, double weight);  Update weight information
+     * @Author xs
+     */
     List<Goods> findAll();
     Goods save(Goods goods);
     void delete(Long id);
     Goods findById(Long id);
-   // void updateweight(Long id,double weight);
+    void updateweight(Long id, double weight);
 
 }
