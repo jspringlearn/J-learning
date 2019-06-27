@@ -1,4 +1,0 @@
-2019-5-7 14:30-16:30
-新建jpa project
-https://help.eclipse.org/oxygen/index.jsp?topic=%2Forg.eclipse.jpt.doc.user%2Ftask_create_new_project.htm
-编写实体类和服务类，没有完成测试类
