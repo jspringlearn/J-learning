@@ -2,7 +2,7 @@ package com.stu.software.customer.service.impl;
 
 import com.stu.software.customer.dao.CustomerDao;
 import com.stu.software.customer.domain.Customer;
-import com.stu.software.customer.service.CustomerManage;
+import com.stu.software.customer.service.CustomerManager;
 import com.stu.software.service.impl.GenericManagerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @Component
 @Transactional
-public class CustomerManagerImpl extends GenericManagerImpl<Customer, Long> implements CustomerManage {
+public class CustomerManagerImpl extends GenericManagerImpl<Customer, Long> implements CustomerManager {
 
     CustomerDao customerDao;
 

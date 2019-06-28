@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CustomerManage extends GenericManager<Customer, Long> {
+public interface CustomerManager extends GenericManager<Customer, Long> {
     /*
      *
      * 根据姓名查找管理员

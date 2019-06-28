@@ -16,10 +16,10 @@ import java.util.List;
  * @Date 2019/5/27 18:33
  * @Version 1.0
  * */
-public class CustomerManagerTest extends GenericManagerTestCase<Long, Customer, CustomerManage> {
+public class CustomerManagerTest extends GenericManagerTestCase<Long, Customer, CustomerManager> {
 
     private static final Logger logger = LogManager.getLogger(CustomerManagerTest.class.getName());
-    CustomerManage customerManage;
+    CustomerManager customerManager;
 
 
     public CustomerManagerTest() {
@@ -27,9 +27,9 @@ public class CustomerManagerTest extends GenericManagerTestCase<Long, Customer, 
     }
 
     @Autowired
-    public void setCustomerManage(CustomerManage customerManage) {
-        this.customerManage = customerManage;
-        this.manager = this.customerManage;
+    public void setCustomerManager(CustomerManager customerManager) {
+        this.customerManager = customerManager;
+        this.manager = this.customerManager;
     }
 
     @Test
@@ -50,6 +50,6 @@ public class CustomerManagerTest extends GenericManagerTestCase<Long, Customer, 
             Customer customer = new Customer();
             customerList.add(customer);
         }
-        this.customerManage.save(customerList);
+        this.customerManager.save(customerList);
     }
 }

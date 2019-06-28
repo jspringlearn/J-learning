@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class CustomerEntityGenerator extends GenericGenerator {
 
     @Autowired
-    CustomerManage customerManage;
+    CustomerManager customerManager;
 
     @Autowired
-    CustomerGroupManage customerGroupManage;
+    CustomerGroupManager customerGroupManager;
 
     @Test
     public void gen_ManagementUserGroup() {
@@ -20,7 +20,7 @@ public class CustomerEntityGenerator extends GenericGenerator {
             CustomerGroup MUG = new CustomerGroup();
             MUG.setManagementName("ManagementName" + i);
             MUG.setCommonManagementName("CommonManagementName" + i);
-            this.customerGroupManage.save(MUG);
+            this.customerGroupManager.save(MUG);
             for (int j = 0; j < 5; j++) {
                 CustomerGroup m = new CustomerGroup();
                 m.setManagementName("ManagementName" + i + "_" + j);
@@ -28,7 +28,7 @@ public class CustomerEntityGenerator extends GenericGenerator {
                 m.setManagementID("ManagementID" + i + j + j + j + j + j + j);
                 m.setCommonManagementID("CommonManagementID" + i + i + j + j + j + j + j + j + j);
                 m.setParent(MUG);
-                MUG = this.customerGroupManage.save(m);
+                MUG = this.customerGroupManager.save(m);
                 this.gen_ManagementUser(MUG);
             }
         }
@@ -39,7 +39,7 @@ public class CustomerEntityGenerator extends GenericGenerator {
             Customer customer = new Customer();
             customer.setMName("Management" + i);
             customer.setMPhone("Management" + i + i + i + i + i + i);
-            this.customerManage.save(customer);
+            this.customerManager.save(customer);
         }
     }
 }

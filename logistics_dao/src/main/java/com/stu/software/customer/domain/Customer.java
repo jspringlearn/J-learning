@@ -6,7 +6,7 @@ import com.stu.software.domain.BaseTreeEntity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "T_Management")
+@Table(name = "T_Customer")
 public class Customer extends BaseTreeEntity<Customer> {
     private static final long serialVersionUID = 2956980785739215106L;
     /**
@@ -24,20 +24,12 @@ public class Customer extends BaseTreeEntity<Customer> {
     @JoinColumn(name = "ManagementUserGroup_ID")
     CustomerGroup customerGroup;
 
-    public CustomerGroup getCustomerGroup() {
-        return customerGroup;
-    }
-
-    public void setManagementUserDaoGroup(CustomerGroup customerGroup) {
-        this.customerGroup = customerGroup;
-    }
-
     public String getMName() {
         return MName;
     }
 
-    public void setMName(String mname) {
-        MName = mname;
+    public void setMName(String MName) {
+        this.MName = MName;
     }
 
     public String getMPhone() {
@@ -48,8 +40,11 @@ public class Customer extends BaseTreeEntity<Customer> {
         this.MPhone = MPhone;
     }
 
-    @Override
-    public String toString() {
-        return "Customer [ MName=" + MName + ", MPhone=" + MPhone + "]";
+    public CustomerGroup getCustomerGroup() {
+        return customerGroup;
+    }
+
+    public void setCustomerGroup(CustomerGroup customerGroup) {
+        this.customerGroup = customerGroup;
     }
 }
