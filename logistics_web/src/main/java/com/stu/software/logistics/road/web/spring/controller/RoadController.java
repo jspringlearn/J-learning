@@ -45,7 +45,7 @@ public class RoadController extends GenericController<Circuit, Long, CircuitMana
 	}
 	@RequestMapping(value="update",method=RequestMethod.POST,produces = "application/json;charset=utf-8")
 	public @ResponseBody void upda(Circuit circuit) {
-		this.circuitManager.upda(circuit);
+		this.circuitManager.update(circuit.getId(), circuit.getEntityName());
 	}
 	@RequestMapping("/tosave")
 	public String toSave() {

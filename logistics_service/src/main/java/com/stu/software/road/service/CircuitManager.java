@@ -1,9 +1,6 @@
 package com.stu.software.road.service;
 
 import java.util.List;
-
-
-
 import com.stu.software.road.domain.Circuit;
 import com.stu.software.service.GenericManager;
 
@@ -43,5 +40,6 @@ public interface CircuitManager extends GenericManager<Circuit, Long> {
     /**
      * route
      */
+    int update(Long id,String name);
     //String route(Circuit circuit);
 }

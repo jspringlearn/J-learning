@@ -87,4 +87,15 @@ class CircuitManagerImpl extends GenericManagerImpl<Circuit, Long> implements Ci
 		CircuitCRUD.getintstan().upda(circuit);
 		
 	}
+
+
+
+	@Override
+	public int update(Long id, String name) {
+		System.out.println(id +name);
+		return circuitDao.updateName(id, name);
+		
+	}
+
+
 }
