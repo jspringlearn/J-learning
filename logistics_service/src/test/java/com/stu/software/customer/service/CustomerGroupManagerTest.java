@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerGroupManagerTest extends GenericTreeManagerTestCase<Long, CustomerGroup, CustomerGroupManage> {
+public class CustomerGroupManagerTest extends GenericTreeManagerTestCase<Long, CustomerGroup, CustomerGroupManager> {
     private static final Logger logger = LogManager.getLogger(CustomerManagerTest.class.getName());
-    CustomerGroupManage customerGroupManage;
+    CustomerGroupManager customerGroupManager;
 
 
     public CustomerGroupManagerTest() {
@@ -20,9 +20,9 @@ public class CustomerGroupManagerTest extends GenericTreeManagerTestCase<Long, C
     }
 
     @Autowired
-    public void setCustomerGroupManage(CustomerGroupManage customerGroupManage) {
-        this.customerGroupManage = customerGroupManage;
-        this.manager = this.customerGroupManage;
+    public void setCustomerGroupManager(CustomerGroupManager customerGroupManager) {
+        this.customerGroupManager = customerGroupManager;
+        this.manager = this.customerGroupManager;
     }
 
     @Test
@@ -33,6 +33,6 @@ public class CustomerGroupManagerTest extends GenericTreeManagerTestCase<Long, C
             CustomerGroup store = new CustomerGroup();
             storeList.add(store);
         }
-        this.customerGroupManage.save(storeList);
+        this.customerGroupManager.save(storeList);
     }
 }

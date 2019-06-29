@@ -1,4 +1,4 @@
-﻿<template >
+<template >
   <div>
 
     <el-container >
@@ -32,7 +32,7 @@
                 <span slot="title">货物信息</span>
               </el-menu-item>
 
-              <el-menu-item index="/components/table/order" >
+              <el-menu-item index="3" >
                 <i class="el-icon-document"></i>
                 <span slot="title">订单信息</span>
               </el-menu-item>
@@ -41,13 +41,13 @@
                 <i class="el-icon-bicycle"></i>
                 <span slot="title">员工信息</span>
               </el-menu-item>
-              <el-menu-item index="/components/table/car" >
-                <i class="el-icon-bicycle"></i>
+              <el-menu-item index="5" >
+                <i class="el-icon-truck"></i>
                 <span slot="title">车辆信息</span>
               </el-menu-item>
               <el-menu-item index="/components/table/road" >
                 <i class="el-icon-discover
-                el"></i>
+el"></i>
                 <span slot="title">线路信息</span>
               </el-menu-item>
               <el-menu-item index="/components/table/feedback" >

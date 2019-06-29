@@ -5,6 +5,6 @@ import com.stu.software.customer.domain.CustomerGroup;
 import com.stu.software.dao.GenericTreeDao;
 import org.springframework.stereotype.Repository;
 
-@Repository("managementUserDaoGroupDao")
+@Repository("customerGroupDao")
 public interface CustomerGroupDao extends GenericTreeDao<CustomerGroup, Long> {
 }

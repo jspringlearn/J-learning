@@ -5,7 +5,7 @@ import com.stu.software.service.GenericTreeManager;
 import org.springframework.stereotype.Component;
 
 @Component
-public interface CustomerGroupManage extends GenericTreeManager<CustomerGroup, Long> {
+public interface CustomerGroupManager extends GenericTreeManager<CustomerGroup, Long> {
 
     /*
      * 根据管理员姓名查找

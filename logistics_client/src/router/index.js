@@ -4,12 +4,10 @@ import Router from 'vue-router'
 import management from '@/components/table/management'
 import site from '@/components/table/site'
 import goods from '@/components/table/goods'
-import comment from '@/components/table/comment'
+import feedback from '@/components/table/feedback'
 import employee from '@/components/table/employee'
 import road from '@/components/table/road'
 import order from '@/components/table/order'
-import table7 from '@/components/table/table7'
-import car from '@/components/table/car'
 
 Vue.use(Router);
 
@@ -31,9 +29,9 @@ export default new Router({
       component:goods
     },
     {
-      path:'/components/table/comment',
-      name:'comment',
-      component:comment
+      path:'/components/table/feedback',
+      name:'feedback',
+      component:feedback
     },
     {
       path:'/components/table/employee',
@@ -49,16 +47,6 @@ export default new Router({
       path:'/components/table/order',
       name:'order',
       component:order
-    },
-    {
-      path:'/components/table/table7',
-      name:'table7',
-      component:table7
-    },
-    {
-      path:'/components/table/car',
-      name:'car',
-      component:car
     },
   ]
 })

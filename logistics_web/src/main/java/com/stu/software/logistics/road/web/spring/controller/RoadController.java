@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,12 +31,6 @@ public class RoadController extends GenericController<Circuit, Long, CircuitMana
 	public String mainIndex() {
 		return "main/index";
 	}
-//	@RequestMapping("/allcircuit")
-//	public String findAllCircuit(Model model) {
-//		List<Circuit> cList =this.circuitManager.findAll();
-//		model.addAttribute("circuitList", cList);
-//		return "road/allcircuit";
-//	}
 
 
 	@ResponseBody//标识转换成JSON处理
@@ -45,43 +38,21 @@ public class RoadController extends GenericController<Circuit, Long, CircuitMana
 	public List<Circuit> findAllUser(){
 		return this.manager.findAll();
 	}
-//	@RequestMapping("/delete/{id}")
-//	public String dele(String id) {
-//		System.out.println(id);
-//		
-//		this.circuitManager.delete(Long.valueOf(id));
-//		return "forward:allcircuit";
-//	}
 	@DeleteMapping(value="delete/{id}",produces="application/json;charset=utf-8")
 	public @ResponseBody void deletebyID(@PathVariable(value="id")Long id) {
 		System.out.println(id);
 		this.circuitManager.delete(id);
 	}
-//	private List<Circuit> list;
-//	@GetMapping(value="findDate/{id}",produces="application/json;charset=utf-8")
-//	public @ResponseBody List<Circuit>  toupda(@PathVariable(value="id")Long id) {
-//		System.out.println(id);
-//		Circuit circuit=this.circuitManager.findOne(id);
-//		list.add(circuit);
-//		return list;
-//	}
 	@RequestMapping(value="update",method=RequestMethod.POST,produces = "application/json;charset=utf-8")
 	public @ResponseBody void upda(Circuit circuit) {
-		this.circuitManager.upda(circuit);
+		this.circuitManager.update(circuit.getId(), circuit.getEntityName());
 	}
 	@RequestMapping("/tosave")
 	public String toSave() {
 		return "road/save";
 	}
-//	@RequestMapping("/save")
-//	public String saveCircuit(Circuit circuit) {
-//		System.out.println(circuit.toString());
-//		this.circuitManager.save(circuit);
-//		return "forward:allcircuit";
-//	}
 	@RequestMapping(value="save",method=RequestMethod.POST,produces = "application/json;charset=utf-8")
 	public @ResponseBody void save(Circuit circuit) {
-		System.out.println(circuit.toString());
 		this.circuitManager.save(circuit);
 	}
 }

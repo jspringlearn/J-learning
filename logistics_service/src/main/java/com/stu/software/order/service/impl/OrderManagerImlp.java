@@ -30,68 +30,28 @@ public class OrderManagerImlp extends GenericManagerImpl<Order, Long> implements
 		this.dao=this.orderDao;
 	}
 	
-	/**
-	 * findbyOrderID
-	 * 
-	 * find all site 
-	 * **/
-	@Override
-	public List<Order> findbyOrderID(String orderID) {
-		// TODO Auto-generated method stub
-		List<Order> all=Order_CURD.getintstan().findAll();
-		return all;
-		
-		
-	}
 	
-	/**
-	 * save
-	 * 
-	 * **/
-	@Override
-	public void saveorder(String orderID,String orderName, String orderPrice,String orderTime) {
-		// TODO Auto-generated method stub
-		Order order=new Order();
-		order.setOrderID(orderID);
-		order.setOrderName(orderName);
-		order.setOrderPrice(orderPrice);
-		order.setOrderTime(orderTime);
-		this.orderDao.save(order);
-	}
+	 @Override
+	    public List<Order> findAll() {
+	        return orderDao.findAll();
+	    }
+
+	    @Override
+	    public Order save(Order order) {
+	        return orderDao.save(order);
+	    }
+
+
+	    @Override
+	    public void delete(Long id) {
+	        this.orderDao.deleteById(id);
+	    }
+
+	    @Override
+	    public Order findById(Long id) {
+	        return orderDao.getOne(id);
+	    }
 	
-	/**
-	 * delete
-	 * 
-	 * **/
-	
-	@Override
-	public void deleteorder(String orderID) {
-		// TODO Auto-generated method stub
-		Order_CURD.getintstan().del(orderID);
-		
-	}
-	
-	/**
-	 * update
-	 * 
-	 * **/
-	@Override
-	public void upd(Order order) {
-		// TODO Auto-generated method stub
-		Order_CURD.getintstan().upd(order);
-		
-	}
-	
-	/**
-	 * findone
-	 * 
-	 * **/
-	@Override
-	public Order findone(String orderID) {
-		// TODO Auto-generated method stub
-		Order o=Order_CURD.getintstan().findOne(orderID);
-		return o;
-	}
 	
 	
 }

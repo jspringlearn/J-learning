@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       "/api":{
-        target:"http://localhost:777",   // 后端电脑的IP和端口
+        target:"http://localhost:8080",   // 后端电脑的IP和端口
         //change HOST
         changeOrigin:true,
         pathRewrite:{
@@ -23,7 +23,7 @@ module.exports = {
 
     // Various Dev Server settings
     host: 'localhost', // 自己电脑的IP
-    port: 808, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 8000, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

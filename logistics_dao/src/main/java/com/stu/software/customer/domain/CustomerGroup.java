@@ -6,8 +6,8 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "T_ADMIN_ManagementUser")
-@NamedQueries({@NamedQuery(name = "ManagementUserGroup.getRoot", query = "select s from CustomerGroup s where s.parent is null")})
+@Table(name = "T_CustomerGroup")
+@NamedQueries({@NamedQuery(name = "CustomerGroup.getRoot", query = "select s from CustomerGroup s where s.parent is null")})
 
 public class CustomerGroup extends BaseTreeEntity<CustomerGroup> {
 
@@ -33,14 +33,6 @@ public class CustomerGroup extends BaseTreeEntity<CustomerGroup> {
 
     @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER, mappedBy = "customerGroup")
     Set<Customer> customers;
-
-    public Set<Customer> getCustomers() {
-        return customers;
-    }
-
-    public void setCustomers(Set<Customer> customers) {
-        this.customers = customers;
-    }
 
     public String getManagementID() {
         return ManagementID;
@@ -74,9 +66,11 @@ public class CustomerGroup extends BaseTreeEntity<CustomerGroup> {
         CommonManagementName = commonManagementName;
     }
 
-    @Override
-    public String toString() {
-        return "Group [ManagementID=" + ManagementID + ", ManagementName=" + ManagementName + ", " +
-                " CommonManagementID=\" + CommonManagementID + \",CommonManagementName=\" + CommonManagementName + \",]";
+    public Set<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(Set<Customer> customers) {
+        this.customers = customers;
     }
 }

@@ -42,5 +42,14 @@ public class CircuitManagerTest extends GenericManagerTestCase<Long, Circuit, Ci
 		}
 		this.circuitManager.save(cList);
 	}
-
+	@Test
+	public void testupdate() {
+		logger.debug("this is update");
+		Circuit circuit=new Circuit();
+		circuit.setId(152L);
+		circuit.setEntityName("皇帝");
+		circuitManager.save(circuit);
+		Circuit circuit2 =circuitManager.findById(152L);
+		circuitManager.update(circuit2.getId(), "dhwddw");
+	}
 }

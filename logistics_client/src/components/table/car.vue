@@ -5,57 +5,83 @@
     height="650px"
     style="width: 120%">
     <el-table-column
-      label="名字"
-      width="260">
+      label="车牌号码"
+      width="150">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 10px">{{ scope.row.name }}</span>
+        <span style="margin-left: 10px">{{ scope.row.car_number }}</span>
       </template>
     </el-table-column>
 
 
     <el-table-column
-      label="数量"
+      label="载重量"
       width="260">
       <template slot-scope="scope">
-        <span style="margin-left: 20px">{{ scope.row.number }}</span>
+        <span style="margin-left: 20px">{{ scope.row.car_volume }}</span>
       </template>
     </el-table-column>
 
     <el-table-column
-      label="重量"
+      label="车主"
       width="160">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 10px">{{ scope.row.weight }}</span>
+        <span style="margin-left: 10px">{{ scope.row.car_owner }}</span>
       </template>
     </el-table-column>
 
-
     <el-table-column
-      label="仓库"
+      label="运输状态"
       width="160">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 10px">{{ scope.row.store }}</span>
+        <span style="margin-left: 10px">{{ scope.row.car_status }}</span>
+      </template>
+    </el-table-column>
+
+    <el-table-column
+      label="车主电话"
+      width="160">
+      <template slot-scope="scope">
+        <!--<i class="el-icon-time"></i>-->
+        <span style="margin-left: 10px">{{ scope.row.car_owner_tel }}</span>
+      </template>
+    </el-table-column>
+
+    <el-table-column
+      label="运输路线"
+      width="160">
+      <template slot-scope="scope">
+        <!--<i class="el-icon-time"></i>-->
+        <span style="margin-left: 10px">{{ scope.row.car_road }}</span>
       </template>
     </el-table-column>
     <el-table-column  label="操作">
       <template slot-scope="scope">
 
-        <el-button type="primary" @click="dialogFormVisible = true" size="mini">新增</el-button>
 
-        <el-dialog title="新添货物信息" :visible.sync="dialogFormVisible">
-          <el-form :model="from">
-            <el-form-item label="名字" :label-width="formLabelWidth">
-              <el-input v-model="form.name" autocomplete="off"></el-input>
+
+        <el-button type="primary" @click="dialogFormVisible = true" size="mini">新增</el-button>
+        <el-dialog title="新添车辆信息" :visible.sync="dialogFormVisible">
+          <el-form :model="form">
+            <el-form-item label="车牌号" :label-width="formLabelWidth">
+              <el-input v-model="form.car_number" autocomplete="off"></el-input>
             </el-form-item>
-            <el-form-item label="数量" :label-width="formLabelWidth">
-              <el-input v-model="form.number" autocomplete="off"></el-input>
+            <el-form-item label="载重量" :label-width="formLabelWidth">
+              <el-input v-model="form.car_volume" autocomplete="off"></el-input>
             </el-form-item>
-            <el-form-item label="重量" :label-width="formLabelWidth">
-              <el-input v-model="form.weight" autocomplete="off">
-              </el-input>
+            <el-form-item label="车主" :label-width="formLabelWidth">
+              <el-input v-model="form.car_owner" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="运输状态" :label-width="formLabelWidth">
+              <el-input v-model="form.car_status" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="车主电话" :label-width="formLabelWidth">
+              <el-input v-model="form.car_owner_tel" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="行驶路线" :label-width="formLabelWidth">
+              <el-input v-model="form.car_road" autocomplete="off"></el-input>
             </el-form-item>
           </el-form>
 
@@ -91,10 +117,13 @@
         dialogTableVisible: false,
         dialogFormVisible: false,
         form: {
-          name: '',
-          number: '',
-          weight:'',
-         // store:'',
+          car_number: '',
+          car_volume: '',
+          car_owner:'',
+          car_status: '',
+          car_owner_tel: '',
+          car_road: '',
+          // store:'',
         },
         formLabelWidth: '120px',
       }
@@ -140,13 +169,16 @@
       //   });
       // },
       postForm() {
-        const url = this.HOST + '/goods/save';
+        const url = this.HOST + '/car/save';
         this.dialogFormVisible = false;
 
         var params = new URLSearchParams();
-        params.append('name', this.form.name);
-        params.append('number', this.form.number);
-        params.append('weight', this.form.weight);
+        params.append('car_number', this.form.car_number);
+        params.append('car_volume', this.form.car_volume);
+        params.append('car_owner', this.form.car_owner);
+        params.append('car_status', this.form.car_status);
+        params.append('car_owner_tel', this.form.car_owner_tel);
+        params.append('car_road', this.form.car_road);
 
         console.log(params);
         this.$axios({
@@ -173,10 +205,10 @@
       },
       handleDelete(index, row) {
         console.log(index, row);
-        var goodsid = row.id;
-        console.log(goodsid);
+        var carNumber = row.id;
+        console.log(carNumber);
         this.$axios
-          .delete(this.HOST + '/goods/delete/' + goodsid)
+          .delete(this.HOST + '/car/delete/' + carNumber)
           .then(res => {
             console.log(res);
             this.tableData.splice(index, 1)
@@ -192,7 +224,7 @@
       }
     },
     created() {
-      this.$axios.get(this.HOST+'/goods/all')
+      this.$axios.get(this.HOST+'/car/all')
         .then(response=>{
 
           console.log(response);
