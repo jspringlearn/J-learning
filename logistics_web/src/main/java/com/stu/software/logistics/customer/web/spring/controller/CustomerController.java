@@ -29,13 +29,6 @@ public class CustomerController extends GenericController<Customer, Long, Custom
         return "main/index";
     }
 
-  /*  @RequestMapping("/findallmanagementUser")
-    public String findallmanagementUser(Model model) {
-        List<Customer> managementUserList= this.managementUserManage.findAll();
-        model.addAttribute("managementUserList", managementUserList);
-        return "customer/findallmanagementUser";
-    }*/
-
     @ResponseBody//标识转换成JSON处理
     @GetMapping(value = "all", produces = "application/json;charset=utf-8")
     public List<Customer> findAllUser() {
@@ -54,7 +47,6 @@ public class CustomerController extends GenericController<Customer, Long, Custom
 
         ModelAndView s = new ModelAndView();
         s.addObject(stu);
-        //return customer;
         return "forward:findallmanagementUser.do";
     }
 
